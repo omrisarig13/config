@@ -9,6 +9,7 @@ alias l="ls -b"
 alias ..="cd ../"
 alias ...="cd ../../"
 alias remove_exes="find . -perm -1 -type f -maxdepth 1 2>/dev/null | xargs rm"
+alias ivm="vim"
 
 alias :e="vim"
 alias :q="exit"
