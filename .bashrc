@@ -72,5 +72,6 @@ bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 set -o vi
 bind -m vi-insert "\C-l":clear-screen
+bind '"hh":vi-movement-mode'
 
-export PYTHONDOCS=/usr/share/doc/python2/html/
+expor=/usr/share/doc/python2/html/
