@@ -4,13 +4,13 @@
 
 
 " TODO {{{
-" Fix the grep script to ignore unimprtant files (and have a version which would
-"  not ignore those files).
+" Fix the grep script to ignore unimportant files (and have a version which
+"  would not ignore those files).
 " Add visual search for the visually selected text (just validate that the
-" * plugin works as needed).
-" Set your own convention for usage of mapping.
+"  * plugin works as needed).
 " Add better Windo action from here: https://vi.stackexchange.com/questions/4827/what-is-a-better-way-to-use-windo-without-changing-of-window
 " Decide what to do with the statusline after adding the airline (?) plugin.
+" Add an automatic script for adding abbreviations
 " }}}
 
 " General {{{

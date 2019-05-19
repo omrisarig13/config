@@ -10,6 +10,17 @@ let NERDTrimTrailingWhitespace=1
 let NERDUsePlaceHolders=0
 " }}}
 
+" EasyMotion Config. {{{
+map <leader>f <Plug>(easymotion-prefix)
+nmap <leader>fwf <Plug>(easymotion-overwin-f)
+nmap <leader>fwj <Plug>(easymotion-overwin-line)
+nmap <leader>fww <Plug>(easymotion-overwin-w)
+nmap <leader>f_ <Plug>(easymotion-jumptoanywhere)
+nmap <leader>f; <Plug>(easymotion-repeat)
+" Set the easymotion keys to be more comfortable to my Dvorak keyboard layout.
+let g:EasyMotion_keys="asonetpgyfbxmkc.wj,ruh"
+" }}}
+
 " TODO: Move on those values when the plugins are added.
 "        
 "        " Syntastic config
@@ -66,13 +77,6 @@ let NERDUsePlaceHolders=0
 "        let g:pymode_run = 1
 "        let g:pymode_run_bind = '<leader>r'
 "        
-"        " <Leader>f{char} to move to {char}
-"        noremap  <Leader>f <Plug>(easymotion-bd-f)
-"        nnoremap <Leader>f <Plug>(easymotion-overwin-f)
-"        noremap <Leader>L <Plug>(easymotion-bd-jk)
-"        nnoremap <Leader>L <Plug>(easymotion-overwin-line)
-"        noremap  <Leader>w <Plug>(easymotion-bd-w)
-"        nnoremap <Leader>w <Plug>(easymotion-overwin-w)
 "        
 "        let g:UltiSnipsExpandTrigger="<c-j>"
 "        

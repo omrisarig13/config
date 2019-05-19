@@ -18,13 +18,16 @@ Plugin 'scrooloose/nerdcommenter'
 " }}}
 " }}}
 
+" Movement plugins {{{
+Plugin 'easymotion/vim-easymotion'
+" }}}
+
 "Plugin 'honza/vim-snippets'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'valloric/youcompleteme'
 "Plugin 'tpope/vim-fugitive'
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'altercation/vim-colors-solarized'
-"Plugin 'easymotion/vim-easymotion'
 "Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'brookhong/cscope.vim'
 "Plugin 'hari-rangarajan/cctree'
@@ -72,6 +75,8 @@ Plugin 'scrooloose/nerdcommenter'
 "Plugin 'vcscommand.vim'
 "Plugin 'exUtility'
 "Plugin 'CRefVim'
+"Plugin 'osyo-manga/vim-over'
+"Plugin 't9md/vim-smalls'
 
 " }}}
 
