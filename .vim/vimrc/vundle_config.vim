@@ -22,10 +22,15 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'easymotion/vim-easymotion'
 " }}}
 
+" Source Control Plugins {{{
+" Git Plugins {{{
+Plugin 'tpope/vim-fugitive'
+" }}}
+" }}}
+
 "Plugin 'honza/vim-snippets'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'valloric/youcompleteme'
-"Plugin 'tpope/vim-fugitive'
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'altercation/vim-colors-solarized'
 "Plugin 'terryma/vim-multiple-cursors'
@@ -77,6 +82,11 @@ Plugin 'easymotion/vim-easymotion'
 "Plugin 'CRefVim'
 "Plugin 'osyo-manga/vim-over'
 "Plugin 't9md/vim-smalls'
+"Plugin 'plasticboy/vim-markdown'
+"Plugin 'iamcco/markdown-preview.nvim'
+"Plugin 'junegunn/limelight.vim'
+"Plugin 'junegunn/goyo.vim'
+"Plugin 'tpope/vim-rhubarb'
 
 " }}}
 

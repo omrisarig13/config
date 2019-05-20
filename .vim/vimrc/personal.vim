@@ -309,6 +309,21 @@ augroup python_matching
 augroup end
 " }}}
 
+" Set the status line {{{
+" TODO: Refactor it after adding airline.
+set statusline=%f                       " Filename of current file.
+set statusline+=\ -\                    " Separator
+set statusline+=%y                      " The type of the current file.
+set statusline+=\ -\                    " Separator
+set statusline+=%{getcwd()}             " The path of vim.
+set statusline+=\ -\                    " Separator
+set statusline+=%{FugitiveStatusline()} " Add the git branch name.
+set statusline+=%=                      " Move the rest of the line to the left side.
+set statusline+=%l                      " Current line number
+set statusline+=/                       " Separator
+set statusline+=%L                      " Total numbers in file.
+" }}}
+
 " Temp mapping, to create a better muscle memory. {{{
 nnoremap <leader>h OSTOP USING THE <LEADER>H KEYS!!!!<Esc>
 " }}}
