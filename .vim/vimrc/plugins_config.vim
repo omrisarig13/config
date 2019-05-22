@@ -21,6 +21,23 @@ nmap <leader>f; <Plug>(easymotion-repeat)
 let g:EasyMotion_keys="asonetpgyfbxmkc.wj,ruh"
 " }}}
 
+" Ctrlp Config. {{{
+let g:ctrlp_map = '<c-e>'
+noremap <leader>pe :CtrlPCurFile<CR>
+noremap <leader>pro :CtrlPRoot<CR>
+noremap <leader>pd :CtrlPDir<CR>
+noremap <leader>prt :CtrlPRTS<CR>
+noremap <leader>pm :CtrlPMixed<CR>
+let g:ctrlp_switch_buffer = 'T'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_extensions = ['quickfix', 'dir', 'rtscript', 'undo', 'mixed', 'bookmarkdir']
+" }}}
+
+" Solarized Colorscheme config {{{
+let g:solarized_termcolors=256
+" }}}
+
 " TODO: Move on those values when the plugins are added.
 "        
 "        " Syntastic config
@@ -30,8 +47,6 @@ let g:EasyMotion_keys="asonetpgyfbxmkc.wj,ruh"
 "        let g:syntastic_check_on_wq = 0
 "        let g:syntastic_c_checkers = ['gcc', 'clang_check', 'clang_tidy', 'cppclean', 'make']
 "        
-"        let g:ctrlp_map = '<c-e>'
-"        noremap <leader>e :CtrlPCurFile<CR>
 "        
 "        " Default mapping
 "        noremap <C-d> <Nop>

@@ -26,6 +26,7 @@ set lazyredraw " Don't redraw the screen when it is not needed.
 set timeoutlen=500 " Set the timeout to be half a second.
 filetype plugin indent on " Make vim understand the different file types.
 syntax on " Make vim understand the different syntax for the different file types
+set wildignore+=*/.git/*,*/.hg/* " Ignore hg and git directory when working on files.
 " }}}
 
 " Set the splitting of new files to be below and right to the current file. {{{

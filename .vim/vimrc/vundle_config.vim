@@ -8,8 +8,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end. {{{
+
+" Colorschemes plugins {{{
+Plugin 'altercation/vim-colors-solarized'
+" }}}
+
 " File system plugins {{{
 Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
 " }}}
 
 " Language plugins {{{
@@ -28,11 +34,10 @@ Plugin 'tpope/vim-fugitive'
 " }}}
 " }}}
 
+
 "Plugin 'honza/vim-snippets'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'valloric/youcompleteme'
-"Plugin 'kien/ctrlp.vim'
-"Plugin 'altercation/vim-colors-solarized'
 "Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'brookhong/cscope.vim'
 "Plugin 'hari-rangarajan/cctree'
