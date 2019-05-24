@@ -34,8 +34,26 @@ let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_extensions = ['quickfix', 'dir', 'rtscript', 'undo', 'mixed', 'bookmarkdir']
 " }}}
 
-" Solarized Colorscheme config {{{
-let g:solarized_termcolors=256
+" Solarized Colorscheme Config {{{
+function! SetSolarized()
+    let g:solarized_termcolors=256
+    set background=dark
+    colorscheme solarized
+endfunction
+command! Solarized call SetSolarized()
+" }}}
+
+" MultipleCursor Config {{{
+nnoremap <C-d> <Nop>
+let g:multi_cursor_use_default_mapping = 0
+let g:multi_cursor_start_key      = '<C-d>'
+let g:multi_cursor_start_word_key      = '<C-d>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<esc>'
+let g:multi_cursor_exit_from_visual_mode = 0
+let g:multi_cursor_exit_from_insert_mode = 0
 " }}}
 
 " TODO: Move on those values when the plugins are added.
@@ -49,14 +67,6 @@ let g:solarized_termcolors=256
 "        
 "        
 "        " Default mapping
-"        noremap <C-d> <Nop>
-"        let g:multi_cursor_use_default_mapping = 0
-"        let g:multi_cursor_start_key           = '<C-d>'
-"        let g:multi_cursor_start_word_key      = '<C-d>'
-"        let g:multi_cursor_next_key            = '<C-n>'
-"        let g:multi_cursor_prev_key            = '<C-p>'
-"        let g:multi_cursor_skip_key            = '<C-x>'
-"        let g:multi_cursor_quit_key            = '`'
 "        
 "        " Cscope vim config
 "        nnoremap <leader>bc :!cscope -b *.c *.h */*.c */*.h */*/*.c */*/*.h /usr/include/*.h /usr/include/*/*.h /usr/include/*/*/*.h /usr/include/*/*/*/*.h /usr/include/*/*/*/*/*.h /usr/include/*/*/*/*/*.h<CR>

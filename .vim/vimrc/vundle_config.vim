@@ -9,22 +9,22 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end. {{{
 
-" Colorschemes plugins {{{
+" Colorschemes Plugins {{{
 Plugin 'altercation/vim-colors-solarized'
 " }}}
 
-" File system plugins {{{
+" File system Plugins {{{
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 " }}}
 
-" Language plugins {{{
+" Language Plugins {{{
 " Comment Plugins {{{
 Plugin 'scrooloose/nerdcommenter'
 " }}}
 " }}}
 
-" Movement plugins {{{
+" Movement Plugins {{{
 Plugin 'easymotion/vim-easymotion'
 " }}}
 
@@ -34,11 +34,13 @@ Plugin 'tpope/vim-fugitive'
 " }}}
 " }}}
 
+" Feature Plugins {{{
+Plugin 'terryma/vim-multiple-cursors'
+" }}}
 
 "Plugin 'honza/vim-snippets'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'valloric/youcompleteme'
-"Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'brookhong/cscope.vim'
 "Plugin 'hari-rangarajan/cctree'
 "Plugin 'davits/dyevim'
