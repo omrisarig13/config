@@ -22,6 +22,9 @@ Plugin 'kien/ctrlp.vim'
 " Comment Plugins {{{
 Plugin 'scrooloose/nerdcommenter'
 " }}}
+" C Plugins {{{
+Plugin 'brookhong/cscope.vim'
+" }}}
 " }}}
 
 " Movement Plugins {{{
@@ -41,7 +44,6 @@ Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'honza/vim-snippets'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'valloric/youcompleteme'
-"Plugin 'brookhong/cscope.vim'
 "Plugin 'hari-rangarajan/cctree'
 "Plugin 'davits/dyevim'
 "Plugin 'jeaye/color_coded'
@@ -94,7 +96,7 @@ Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'junegunn/limelight.vim'
 "Plugin 'junegunn/goyo.vim'
 "Plugin 'tpope/vim-rhubarb'
-
+"Plugin 'dbakker/vim-projectroot'
 " }}}
 
 " Brief help
