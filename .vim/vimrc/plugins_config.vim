@@ -155,6 +155,18 @@ nnoremap  <leader>nti :call QueryInTab('i')<CR>
 " }}}
 " }}}
 
+" CCTree Config {{{
+let g:CCTreeKeyTraceForwardTree = '-cct>' 
+let g:CCTreeKeyTraceReverseTree = '-cct<' 
+let g:CCTreeKeyToggleWindow = '-cctt' 
+let g:CCTreeKeyHilightTree = '<C-l>'        " Static highlighting
+let g:CCTreeKeySaveWindow = '-ccty' 
+let g:CCTreeKeyCompressTree = 'zs'     " Compress call-tree 
+let g:CCTreeKeyDepthPlus = '-cct=' 
+let g:CCTreeKeyDepthMinus = '-cct-'
+" }}}
+
+
 " TODO: Move on those values when the plugins are added.
 "        
 "        " Syntastic config
@@ -163,9 +175,6 @@ nnoremap  <leader>nti :call QueryInTab('i')<CR>
 "        let g:syntastic_check_on_open = 1
 "        let g:syntastic_check_on_wq = 0
 "        let g:syntastic_c_checkers = ['gcc', 'clang_check', 'clang_tidy', 'cppclean', 'make']
-"        
-"        
-"        " Default mapping
 "        
 "        
 "        " Git mapping

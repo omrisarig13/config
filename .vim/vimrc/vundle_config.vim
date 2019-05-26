@@ -24,6 +24,7 @@ Plugin 'scrooloose/nerdcommenter'
 " }}}
 " C Plugins {{{
 Plugin 'brookhong/cscope.vim'
+Plugin 'hari-rangarajan/cctree'
 " }}}
 " }}}
 
@@ -44,7 +45,6 @@ Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'honza/vim-snippets'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'valloric/youcompleteme'
-"Plugin 'hari-rangarajan/cctree'
 "Plugin 'davits/dyevim'
 "Plugin 'jeaye/color_coded'
 "Plugin 'SirVer/ultisnips'
