@@ -166,6 +166,24 @@ let g:CCTreeKeyDepthPlus = '-cct='
 let g:CCTreeKeyDepthMinus = '-cct-'
 " }}}
 
+" Factorus Config {{{
+" Notes to self about the plugin:
+"   * Use manly the functions of 
+"      *  FExtractMethod
+"      *  FRenameArg - Works, but does the changes only locally to the function
+"                      (If doesn't change the header file, for example).
+"   * Check if those functions works as wanted:
+"      * FRenameType
+"      * FRenameMacro
+"      * FRenameField
+"   * TODO:
+"      * Check how this plugin handles python files.
+let g:factorus_ignored_files = ['cscope.out', '.ycm_extra_conf.py', '*.o', '*.a'] 
+let g:factorus_ignored_dirs = ['.git', 'bin', 'build']
+let g:factorus_line_length = 80
+let g:factorus_add_default = 1
+" }}}
+
 
 " TODO: Move on those values when the plugins are added.
 "        

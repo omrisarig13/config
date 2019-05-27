@@ -25,6 +25,7 @@ Plugin 'scrooloose/nerdcommenter'
 " C Plugins {{{
 Plugin 'brookhong/cscope.vim'
 Plugin 'hari-rangarajan/cctree'
+Plugin 'apalmer1377/factorus'
 " }}}
 " }}}
 
@@ -42,13 +43,15 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'terryma/vim-multiple-cursors'
 " }}}
 
+" Keep to last {{{
 "Plugin 'honza/vim-snippets'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'valloric/youcompleteme'
 "Plugin 'davits/dyevim'
-"Plugin 'jeaye/color_coded'
 "Plugin 'SirVer/ultisnips'
-"Plugin 'apalmer1377/factorus'
+" }}}
+
+" To un-comment, one at a time {{{
 "Plugin 'luchermitte/vim-refactor'
 "Plugin 'renamec.vim'
 "Plugin 'vim-airline/vim-airline'
@@ -97,6 +100,12 @@ Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'junegunn/goyo.vim'
 "Plugin 'tpope/vim-rhubarb'
 "Plugin 'dbakker/vim-projectroot'
+" }}}
+
+" Not working {{{
+" Have a compiled component, but it doesn't compile on the system.
+" Plugin 'jeaye/color_coded'
+" }}}
 " }}}
 
 " Brief help
