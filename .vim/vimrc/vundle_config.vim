@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Colorschemes Plugins {{{
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'flazz/vim-colorschemes'
 " }}}
 
 " File system Plugins {{{
@@ -55,7 +56,6 @@ Plugin 'terryma/vim-multiple-cursors'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'flazz/vim-colorschemes'
 "Plugin 'haya14busa/incsearch.vim'
 "Plugin 'haya14busa/incsearch-fuzzy.vim'
 "Plugin 'dominikduda/vim_current_word'
@@ -98,6 +98,7 @@ Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'junegunn/goyo.vim'
 "Plugin 'tpope/vim-rhubarb'
 "Plugin 'dbakker/vim-projectroot'
+"Plugin 'felixhummel/setcolors.vim'
 " }}}
 
 " Not working {{{
