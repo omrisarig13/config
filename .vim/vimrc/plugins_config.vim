@@ -184,6 +184,12 @@ let g:factorus_line_length = 80
 let g:factorus_add_default = 1
 " }}}
 
+" GitGutter Config {{{
+augroup GitGutterConfig
+    autocmd!
+    autocmd BufWritePost * GitGutter
+augroup END
+" }}}
 
 " TODO: Move on those values when the plugins are added.
 "        

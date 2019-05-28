@@ -27,6 +27,7 @@ set timeoutlen=500 " Set the timeout to be half a second.
 filetype plugin indent on " Make vim understand the different file types.
 syntax on " Make vim understand the different syntax for the different file types
 set wildignore+=*/.git/*,*/.hg/* " Ignore hg and git directory when working on files.
+set updatetime=100 " Set the update time to be very fast, instead of vim's 4 second default.
 " }}}
 
 " Set the splitting of new files to be below and right to the current file. {{{
@@ -272,7 +273,7 @@ augroup END
 " Stop the insert command once you are there too much time without action. {{{
 augroup stop_insert_group
     autocmd!
-    autocmd CursorHoldI,FocusLost * stopinsert
+    autocmd FocusLost * stopinsert
 augroup END
 " }}}
 

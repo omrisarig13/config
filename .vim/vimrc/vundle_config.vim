@@ -36,6 +36,7 @@ Plugin 'easymotion/vim-easymotion'
 " Source Control Plugins {{{
 " Git Plugins {{{
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 " }}}
 " }}}
 
@@ -49,14 +50,11 @@ Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'valloric/youcompleteme'
 "Plugin 'davits/dyevim'
 "Plugin 'SirVer/ultisnips'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'luchermitte/vim-refactor'
-"Plugin 'renamec.vim'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'airblade/vim-gitgutter'
 "Plugin 'flazz/vim-colorschemes'
 "Plugin 'haya14busa/incsearch.vim'
 "Plugin 'haya14busa/incsearch-fuzzy.vim'
