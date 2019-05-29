@@ -32,10 +32,6 @@ Plugin 'apalmer1377/factorus'
 
 " Movement Plugins {{{
 Plugin 'easymotion/vim-easymotion'
-" Searching {{{
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'haya14busa/incsearch-fuzzy.vim'
-" }}}
 " }}}
 
 " Source Control Plugins {{{
@@ -48,6 +44,7 @@ Plugin 'airblade/vim-gitgutter'
 " Feature Plugins {{{
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dominikduda/vim_current_word'
+Plugin 'google/vim-searchindex'
 " }}}
 
 " Keep to last {{{
@@ -61,7 +58,6 @@ Plugin 'dominikduda/vim_current_word'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'google/vim-searchindex'
 "Plugin 'sjl/gundo.vim'
 "Plugin 'octref/rootignore'
 "Plugin 'klen/python-mode'
@@ -106,6 +102,14 @@ Plugin 'dominikduda/vim_current_word'
 " Not working {{{
 " Have a compiled component, but it doesn't compile on the system.
 " Plugin 'jeaye/color_coded'
+" Searching {{{
+" This plugin being messed by vim-searchindex. For now, the search-index is more
+" important to, so I commented out those plugins. Hopefully,
+" google/vim-searchindex plugin would add enable/disable function to it shortly,
+" and than I would be able to use both of those plugins at once.
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/incsearch-fuzzy.vim'
+" }}}
 " }}}
 " }}}
 
