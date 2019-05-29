@@ -156,19 +156,19 @@ nnoremap  <leader>nti :call QueryInTab('i')<CR>
 " }}}
 
 " CCTree Config {{{
-let g:CCTreeKeyTraceForwardTree = '-cct>' 
-let g:CCTreeKeyTraceReverseTree = '-cct<' 
-let g:CCTreeKeyToggleWindow = '-cctt' 
+let g:CCTreeKeyTraceForwardTree = '-cct>'
+let g:CCTreeKeyTraceReverseTree = '-cct<'
+let g:CCTreeKeyToggleWindow = '-cctt'
 let g:CCTreeKeyHilightTree = '<C-l>'        " Static highlighting
-let g:CCTreeKeySaveWindow = '-ccty' 
-let g:CCTreeKeyCompressTree = 'zs'     " Compress call-tree 
-let g:CCTreeKeyDepthPlus = '-cct=' 
+let g:CCTreeKeySaveWindow = '-ccty'
+let g:CCTreeKeyCompressTree = 'zs'     " Compress call-tree
+let g:CCTreeKeyDepthPlus = '-cct='
 let g:CCTreeKeyDepthMinus = '-cct-'
 " }}}
 
 " Factorus Config {{{
 " Notes to self about the plugin:
-"   * Use manly the functions of 
+"   * Use manly the functions of
 "      *  FExtractMethod
 "      *  FRenameArg - Works, but does the changes only locally to the function
 "                      (If doesn't change the header file, for example).
@@ -178,7 +178,7 @@ let g:CCTreeKeyDepthMinus = '-cct-'
 "      * FRenameField
 "   * TODO:
 "      * Check how this plugin handles python files.
-let g:factorus_ignored_files = ['cscope.out', '.ycm_extra_conf.py', '*.o', '*.a'] 
+let g:factorus_ignored_files = ['cscope.out', '.ycm_extra_conf.py', '*.o', '*.a']
 let g:factorus_ignored_dirs = ['.git', 'bin', 'build']
 let g:factorus_line_length = 80
 let g:factorus_add_default = 1
@@ -191,73 +191,82 @@ augroup GitGutterConfig
 augroup END
 " }}}
 
+" Incsearch Config {{{
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+" }}}
+
+" Incsearch-Fuzzy Config {{{
+function! s:config_fuzzyall(...) abort
+  return extend(copy({
+  \   'converters': [
+  \     incsearch#config#fuzzy#converter(),
+  \     incsearch#config#fuzzyspell#converter()
+  \   ],
+  \ }), get(a:, 1, {}))
+endfunction
+
+noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
+noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
+noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
+" }}}
+
 " TODO: Move on those values when the plugins are added.
-"        
+"
 "        " Syntastic config
 "        let g:syntastic_always_populate_loc_list = 1
 "        let g:syntastic_auto_loc_list = 1
 "        let g:syntastic_check_on_open = 1
 "        let g:syntastic_check_on_wq = 0
 "        let g:syntastic_c_checkers = ['gcc', 'clang_check', 'clang_tidy', 'cppclean', 'make']
-"        
-"        
+"
+"
 "        " Git mapping
 "        nnoremap <leader>gs :Gstatus<CR>
 "        nnoremap <leader>gl :Git log<CR>
 "        nnoremap <leader>gc :Gcommit<CR>
 "        nnoremap <leader>gw :Gwrite<CR>
-"        
+"
 "        " General plugins config
 "        noremap <leader>gu :GundoToggle<CR>
 "        let g:pymode = 1
 "        let g:pymode_run = 1
 "        let g:pymode_run_bind = '<leader>r'
-"        
-"        
+"
+"
 "        let g:UltiSnipsExpandTrigger="<c-j>"
-"        
+"
 "        let g:airline_theme='molokai'
 "        let g:ycm_server_python_interpreter='/usr/bin/python3'
-"        
+"
 "        " you complete me (ycm) more config
 "        noremap <leader>fix :YcmCompleter FixIt<CR>
 "        noremap <leader>nf :YcmDiags<CR> <CR><leader>fix
 "        noremap <leader>af :g/^.*$/YcmCompleter FixIt<CR><leader>/
 "        "let g:ycm_extra_conf_globlist = ['~/Projects/*']
 "        autocmd BufWritePost * GitGutter
-"        
-"        function! s:config_fuzzyall(...) abort
-"          return extend(copy({
-"          \   'converters': [
-"          \     incsearch#config#fuzzy#converter(),
-"          \     incsearch#config#fuzzyspell#converter()
-"          \   ],
-"          \ }), get(a:, 1, {}))
-"        endfunction
-"        
-"        noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
-"        noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
-"        noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
-"        
+"
+"
 "        hi CurrentWord ctermbg=53
 "        hi CurrentWordTwins ctermbg=245
-"        
+"
 "        " If you want to start window resize mode by `Ctrl+T`
 "        let g:winresizer_start_key = '<C-q>'
 "        noremap <leader>rw :WinResizerStartResize<CR>
-"        
+"
 "        nnoremap <leader>as  :Grepper -tool ag -side -query ""
 "        nnoremap <leader>ar  :Grepper -tool ag -query ""
 "        nnoremap <leader>my :DoShowMarks!<CR>
 "        nnoremap <leader>mn :NoShowMarks!<CR>
-"        
+"
 "        autocmd Filetype * AnyFoldActivate
 "        set foldlevel=0
-"        
+"
 "        nnoremap <silent> <leader> :WhichKey '<leader>'<CR>
-"        
+"
 "        " Marvim support
 "        let marvim_store = '/home/omri/.vim/marvim'
 "        let marvim_find_key = '<F4>'
 "        let marvim_store_key = '<F5>'
-"        
+"

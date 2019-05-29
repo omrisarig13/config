@@ -43,6 +43,10 @@ Plugin 'airblade/vim-gitgutter'
 
 " Feature Plugins {{{
 Plugin 'terryma/vim-multiple-cursors'
+" Searching {{{
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/incsearch-fuzzy.vim'
+" }}}
 " }}}
 
 " Keep to last {{{
@@ -56,8 +60,6 @@ Plugin 'terryma/vim-multiple-cursors'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'haya14busa/incsearch.vim'
-"Plugin 'haya14busa/incsearch-fuzzy.vim'
 "Plugin 'dominikduda/vim_current_word'
 "Plugin 'google/vim-searchindex'
 "Plugin 'sjl/gundo.vim'
