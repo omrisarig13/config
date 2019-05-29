@@ -191,25 +191,31 @@ augroup GitGutterConfig
 augroup END
 " }}}
 
-" Incsearch Config {{{
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-" }}}
+" Commented out configs {{{
+" All those configs are commented out, from various reasons. In most cases, it
+" is because currently
+" I am not using those plugins, but I might want to use them again in the
+" future.
+" " Incsearch Config {{{
+" map /  <Plug>(incsearch-forward)
+" map ?  <Plug>(incsearch-backward)
+" map g/ <Plug>(incsearch-stay)
+" " }}}
 
-" Incsearch-Fuzzy Config {{{
-function! s:config_fuzzyall(...) abort
-  return extend(copy({
-  \   'converters': [
-  \     incsearch#config#fuzzy#converter(),
-  \     incsearch#config#fuzzyspell#converter()
-  \   ],
-  \ }), get(a:, 1, {}))
-endfunction
+" " Incsearch-Fuzzy Config {{{
+" function! s:config_fuzzyall(...) abort
+  " return extend(copy({
+  " \   'converters': [
+  " \     incsearch#config#fuzzy#converter(),
+  " \     incsearch#config#fuzzyspell#converter()
+  " \   ],
+  " \ }), get(a:, 1, {}))
+" endfunction
 
-noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
-noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
-noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
+" noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
+" noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
+" noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
+" " }}}
 " }}}
 
 " TODO: Move on those values when the plugins are added.
