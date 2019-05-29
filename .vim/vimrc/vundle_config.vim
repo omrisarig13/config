@@ -32,6 +32,10 @@ Plugin 'apalmer1377/factorus'
 
 " Movement Plugins {{{
 Plugin 'easymotion/vim-easymotion'
+" Searching {{{
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/incsearch-fuzzy.vim'
+" }}}
 " }}}
 
 " Source Control Plugins {{{
@@ -43,10 +47,7 @@ Plugin 'airblade/vim-gitgutter'
 
 " Feature Plugins {{{
 Plugin 'terryma/vim-multiple-cursors'
-" Searching {{{
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'haya14busa/incsearch-fuzzy.vim'
-" }}}
+Plugin 'dominikduda/vim_current_word'
 " }}}
 
 " Keep to last {{{
@@ -60,7 +61,6 @@ Plugin 'haya14busa/incsearch-fuzzy.vim'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'dominikduda/vim_current_word'
 "Plugin 'google/vim-searchindex'
 "Plugin 'sjl/gundo.vim'
 "Plugin 'octref/rootignore'

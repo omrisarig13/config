@@ -212,6 +212,7 @@ noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
 noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 " }}}
 
+
 " TODO: Move on those values when the plugins are added.
 "
 "        " Syntastic config
@@ -247,9 +248,6 @@ noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 "        "let g:ycm_extra_conf_globlist = ['~/Projects/*']
 "        autocmd BufWritePost * GitGutter
 "
-"
-"        hi CurrentWord ctermbg=53
-"        hi CurrentWordTwins ctermbg=245
 "
 "        " If you want to start window resize mode by `Ctrl+T`
 "        let g:winresizer_start_key = '<C-q>'
