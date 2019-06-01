@@ -32,6 +32,14 @@ Plugin 'apalmer1377/factorus'
 
 " Movement Plugins {{{
 Plugin 'easymotion/vim-easymotion'
+" Searching {{{
+" This plugin being messed by vim-searchindex. For now, the search-index is more
+" important to, so I commented out those plugins. Hopefully,
+" google/vim-searchindex plugin would add enable/disable function to it shortly,
+" and than I would be able to use both of those plugins at once.
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/incsearch-fuzzy.vim'
+" }}}
 " }}}
 
 " Source Control Plugins {{{
@@ -44,7 +52,10 @@ Plugin 'airblade/vim-gitgutter'
 " Feature Plugins {{{
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dominikduda/vim_current_word'
-Plugin 'google/vim-searchindex'
+" TODO: Restore this plugin to be google one's, once the pull request is
+" resolved.
+" Plugin 'google/vim-searchindex'
+Plugin 'omrisarig13/vim-searchindex'
 " }}}
 
 " Keep to last {{{
@@ -97,19 +108,14 @@ Plugin 'google/vim-searchindex'
 "Plugin 'tpope/vim-rhubarb'
 "Plugin 'dbakker/vim-projectroot'
 "Plugin 'felixhummel/setcolors.vim'
+"Plugin 'haya14busa/vim-asterisk'
+"Plugin 'janko/vim-test'
+"Plugin 'stefandtw/quickfix-reflector.vim'
 " }}}
 
 " Not working {{{
 " Have a compiled component, but it doesn't compile on the system.
 " Plugin 'jeaye/color_coded'
-" Searching {{{
-" This plugin being messed by vim-searchindex. For now, the search-index is more
-" important to, so I commented out those plugins. Hopefully,
-" google/vim-searchindex plugin would add enable/disable function to it shortly,
-" and than I would be able to use both of those plugins at once.
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'haya14busa/incsearch-fuzzy.vim'
-" }}}
 " }}}
 " }}}
 
