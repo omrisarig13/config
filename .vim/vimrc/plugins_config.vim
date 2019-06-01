@@ -212,6 +212,11 @@ noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
 noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 " }}}
 
+" Gundo Config {{{
+nnoremap <leader>gu :GundoToggle<CR>
+let g:gundo_preview_bottom=1
+" }}}
+
 " Commented out configs {{{
 " All those configs are commented out, from various reasons. In most cases, it
 " is because currently
@@ -237,7 +242,6 @@ noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 "        nnoremap <leader>gw :Gwrite<CR>
 "
 "        " General plugins config
-"        noremap <leader>gu :GundoToggle<CR>
 "        let g:pymode = 1
 "        let g:pymode_run = 1
 "        let g:pymode_run_bind = '<leader>r'

@@ -52,10 +52,13 @@ Plugin 'airblade/vim-gitgutter'
 " Feature Plugins {{{
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dominikduda/vim_current_word'
+" vim-searchindex {{{
 " TODO: Restore this plugin to be google one's, once the pull request is
 " resolved.
 " Plugin 'google/vim-searchindex'
 Plugin 'omrisarig13/vim-searchindex'
+" }}}
+Plugin 'sjl/gundo.vim'
 " }}}
 
 " Keep to last {{{
@@ -69,7 +72,6 @@ Plugin 'omrisarig13/vim-searchindex'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'sjl/gundo.vim'
 "Plugin 'octref/rootignore'
 "Plugin 'klen/python-mode'
 "Plugin 'simeji/winresizer'
