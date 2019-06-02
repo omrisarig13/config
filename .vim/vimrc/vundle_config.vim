@@ -43,6 +43,10 @@ Plugin 'haya14busa/incsearch-fuzzy.vim'
 " }}}
 " }}}
 
+" Windows Plugins {{{
+Plugin 'simeji/winresizer'
+" }}}
+
 " Source Control Plugins {{{
 " Git Plugins {{{
 Plugin 'tpope/vim-fugitive'
@@ -74,7 +78,6 @@ Plugin 'sjl/gundo.vim'
 
 " To un-comment, one at a time {{{
 "Plugin 'klen/python-mode'
-"Plugin 'simeji/winresizer'
 "Plugin 'FelikZ/ctrlp-py-matcher'
 "Plugin 'mhinz/vim-grepper'
 "Plugin 'jacquesbh/vim-showmarks'

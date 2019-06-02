@@ -224,6 +224,12 @@ let g:gundo_preview_bottom=1
 " future.
 " }}}
 
+" WinResizer Config {{{
+" TODO: Add the option to ignore the start key in the plugin at github.
+let g:winresizer_start_key = ''
+noremap <leader>wr :WinResizerStartResize<CR>
+noremap <leader>wm :WinResizerStartMove<CR>
+" }}}
 
 " TODO: Move on those values when the plugins are added.
 "
@@ -262,10 +268,6 @@ let g:gundo_preview_bottom=1
 "
 "        hi CurrentWord ctermbg=53
 "        hi CurrentWordTwins ctermbg=245
-"
-"        " If you want to start window resize mode by `Ctrl+T`
-"        let g:winresizer_start_key = '<C-q>'
-"        noremap <leader>rw :WinResizerStartResize<CR>
 "
 "        nnoremap <leader>as  :Grepper -tool ag -side -query ""
 "        nnoremap <leader>ar  :Grepper -tool ag -query ""
