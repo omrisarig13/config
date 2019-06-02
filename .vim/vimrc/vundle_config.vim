@@ -17,6 +17,7 @@ Plugin 'flazz/vim-colorschemes'
 " File system Plugins {{{
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+Plugin 'octref/rootignore'
 " }}}
 
 " Language Plugins {{{
@@ -72,7 +73,6 @@ Plugin 'sjl/gundo.vim'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'octref/rootignore'
 "Plugin 'klen/python-mode'
 "Plugin 'simeji/winresizer'
 "Plugin 'FelikZ/ctrlp-py-matcher'
@@ -113,6 +113,11 @@ Plugin 'sjl/gundo.vim'
 "Plugin 'haya14busa/vim-asterisk'
 "Plugin 'janko/vim-test'
 "Plugin 'stefandtw/quickfix-reflector.vim'
+" zoomwin {{{
+"TODO: Find a fork with bug fixes, since it seems like this version is old and
+"doesn't update.
+"Plugin 'vim-scripts/ZoomWin'
+"}}}
 " }}}
 
 " Not working {{{
