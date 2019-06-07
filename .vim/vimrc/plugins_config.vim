@@ -32,6 +32,21 @@ let g:ctrlp_switch_buffer = 'T'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_extensions = ['quickfix', 'dir', 'rtscript', 'undo', 'mixed', 'bookmarkdir']
+" Set delay to prevent extra search
+let g:ctrlp_lazy_update = 350
+
+" Do not clear filenames cache, to improve CtrlP startup
+" You can manualy clear it by <F5>
+let g:ctrlp_clear_cache_on_exit = 0
+
+" Set no file limit, we are building a big project
+let g:ctrlp_max_files = 0
+
+" If ag is available use it as filename list generator instead of 'find'
+if executable("ag")
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
+endif
 " }}}
 
 " Solarized Colorscheme Config {{{
@@ -231,6 +246,15 @@ let g:winresizer_enable_start_key = 0
 noremap <leader>wr :WinResizerStartResize<CR>
 noremap <leader>wm :WinResizerStartMove<CR>
 " }}}
+
+" Pymatcher Config. {{{
+if !has('python')
+    echo 'In order to use pymatcher plugin, you need +python compiled vim'
+else
+    let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+endif
+" }}}
+
 
 " TODO: Move on those values when the plugins are added.
 "

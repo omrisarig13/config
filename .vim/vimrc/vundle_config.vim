@@ -17,6 +17,7 @@ Plugin 'flazz/vim-colorschemes'
 " File system Plugins {{{
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'octref/rootignore'
 " }}}
 
@@ -73,11 +74,10 @@ Plugin 'sjl/gundo.vim'
 "Plugin 'SirVer/ultisnips'
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'klen/python-mode'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'klen/python-mode'
-"Plugin 'FelikZ/ctrlp-py-matcher'
 "Plugin 'mhinz/vim-grepper'
 "Plugin 'jacquesbh/vim-showmarks'
 "Plugin 'pseewald/vim-anyfold'
