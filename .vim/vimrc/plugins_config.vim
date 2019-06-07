@@ -255,6 +255,12 @@ else
 endif
 " }}}
 
+" Grepper Config {{{
+nmap <leader>gs  <plug>(GrepperOperator)
+xmap <leader>gs  <plug>(GrepperOperator)
+nnoremap <leader>gg :Grepper<cr>
+let g:grepper = {'side' : 1}
+" }}}
 
 " TODO: Move on those values when the plugins are added.
 "

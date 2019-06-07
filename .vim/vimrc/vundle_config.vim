@@ -35,12 +35,9 @@ Plugin 'apalmer1377/factorus'
 " Movement Plugins {{{
 Plugin 'easymotion/vim-easymotion'
 " Searching {{{
-" This plugin being messed by vim-searchindex. For now, the search-index is more
-" important to, so I commented out those plugins. Hopefully,
-" google/vim-searchindex plugin would add enable/disable function to it shortly,
-" and than I would be able to use both of those plugins at once.
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
+Plugin 'mhinz/vim-grepper'
 " }}}
 " }}}
 
@@ -78,7 +75,6 @@ Plugin 'sjl/gundo.vim'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'mhinz/vim-grepper'
 "Plugin 'jacquesbh/vim-showmarks'
 "Plugin 'pseewald/vim-anyfold'
 "Plugin 'w0rp/ale'
