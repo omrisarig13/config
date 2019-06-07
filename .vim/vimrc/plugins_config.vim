@@ -226,7 +226,8 @@ let g:gundo_preview_bottom=1
 
 " WinResizer Config {{{
 " TODO: Add the option to ignore the start key in the plugin at github.
-let g:winresizer_start_key = ''
+" let g:winresizer_start_key = ''
+let g:winresizer_enable_start_key = 0
 noremap <leader>wr :WinResizerStartResize<CR>
 noremap <leader>wm :WinResizerStartMove<CR>
 " }}}

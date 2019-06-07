@@ -44,7 +44,9 @@ Plugin 'haya14busa/incsearch-fuzzy.vim'
 " }}}
 
 " Windows Plugins {{{
-Plugin 'simeji/winresizer'
+" Plugin 'simeji/winresizer'
+" TODO: Revert to the old win-reasizer once the pull request is approved.
+Plugin 'omrisarig13/winresizer'
 " }}}
 
 " Source Control Plugins {{{
@@ -58,10 +60,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dominikduda/vim_current_word'
 " vim-searchindex {{{
-" TODO: Restore this plugin to be google one's, once the pull request is
-" resolved.
-" Plugin 'google/vim-searchindex'
-Plugin 'omrisarig13/vim-searchindex'
+Plugin 'google/vim-searchindex'
 " }}}
 Plugin 'sjl/gundo.vim'
 " }}}
