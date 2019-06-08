@@ -262,6 +262,11 @@ nnoremap <leader>gg :Grepper<cr>
 let g:grepper = {'side' : 1}
 " }}}
 
+" ShowMarks Config {{{
+let g:showmarks_enable = 0
+let g:showmarks_enable_unfocused = 0
+" }}}
+
 " TODO: Move on those values when the plugins are added.
 "
 "        " Syntastic config
@@ -302,8 +307,6 @@ let g:grepper = {'side' : 1}
 "
 "        nnoremap <leader>as  :Grepper -tool ag -side -query ""
 "        nnoremap <leader>ar  :Grepper -tool ag -query ""
-"        nnoremap <leader>my :DoShowMarks!<CR>
-"        nnoremap <leader>mn :NoShowMarks!<CR>
 "
 "        autocmd Filetype * AnyFoldActivate
 "        set foldlevel=0

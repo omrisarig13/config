@@ -11,3 +11,5 @@ iabbrev leadr leader
 cabbrev leadre leader
 cabbrev learde leader
 cabbrev leadr leader
+abbrev orignal original
+abbrev orginal original

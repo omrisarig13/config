@@ -61,7 +61,9 @@ Plugin 'dominikduda/vim_current_word'
 Plugin 'google/vim-searchindex'
 " }}}
 Plugin 'sjl/gundo.vim'
-Plugin 'bootleq/ShowMarks'
+" TODO: Revert to the original version if the pull request would be approved.
+" Plugin 'bootleq/ShowMarks'
+Plugin 'omrisarig13/ShowMarks'
 " }}}
 
 " Keep to last {{{
@@ -125,6 +127,7 @@ Plugin 'bootleq/ShowMarks'
 "Plugin 'nelstrom/vim-qargs'
 "Plugin 'junegunn/fzf.vim'
 "Plugin 'tpope/vim-abolish'
+"Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 " }}}
 
 " Not working {{{
