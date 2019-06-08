@@ -19,6 +19,7 @@ nmap <leader>f_ <Plug>(easymotion-jumptoanywhere)
 nmap <leader>f; <Plug>(easymotion-repeat)
 " Set the easymotion keys to be more comfortable to my Dvorak keyboard layout.
 let g:EasyMotion_keys="asonetpgyfbxmkc.wj,ruh"
+
 " }}}
 
 " Ctrlp Config. {{{
@@ -60,13 +61,13 @@ command! Solarized call SetSolarized()
 
 " MultipleCursor Config {{{
 nnoremap <C-d> <Nop>
-let g:multi_cursor_use_default_mapping = 0
-let g:multi_cursor_start_key      = '<C-d>'
-let g:multi_cursor_start_word_key      = '<C-d>'
-let g:multi_cursor_next_key            = '<C-n>'
-let g:multi_cursor_prev_key            = '<C-p>'
-let g:multi_cursor_skip_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<esc>'
+let g:multi_cursor_use_default_mapping   = 0
+let g:multi_cursor_start_key             = '<C-d>'
+let g:multi_cursor_start_word_key        = '<C-d>'
+let g:multi_cursor_next_key              = '<C-n>'
+let g:multi_cursor_prev_key              = '<C-p>'
+let g:multi_cursor_skip_key              = '<C-x>'
+let g:multi_cursor_quit_key              = '<esc>'
 let g:multi_cursor_exit_from_visual_mode = 0
 let g:multi_cursor_exit_from_insert_mode = 0
 " }}}
@@ -272,9 +273,25 @@ autocmd Filetype python,text AnyFoldActivate
 set foldlevel=0
 " }}}
 
+" Which-key Config {{{
+nnoremap <silent> <leader> :WhichKey '-'<CR>
+let g:which_key_map =  {}
+call which_key#register('-', "g:which_key_map")
+nnoremap <silent> <leader> :<c-u>WhichKey '-'<CR>
+vnoremap <silent> <leader> :<c-u>WhichKeyVisual '-'<CR>
+
+let g:which_key_map.p = {'name' : '+ctrlp'}
+let g:which_key_map.f = {'name' : '+easymotion'}
+let g:which_key_map.c = {'name' : '+commenter'}
+let g:which_key_map.n = {'name' : '+cscope'}
+let g:which_key_map.w = {'name' : '+winresizer'}
+let g:which_key_map.g = {'name' : '+grepper'}
+let g:which_key_map.m = {'name' : '+ShowMarks'}
+let g:which_key_map.s = {'name' : '+self'}
+" }}}
 
 
-" TODO: Move on those values when the plugins are added.
+" TODO: Move on those values when the plugins are added. {{{
 "
 "        " Syntastic config
 "        let g:syntastic_always_populate_loc_list = 1
@@ -312,14 +329,10 @@ set foldlevel=0
 "        hi CurrentWord ctermbg=53
 "        hi CurrentWordTwins ctermbg=245
 "
-"        nnoremap <leader>as  :Grepper -tool ag -side -query ""
-"        nnoremap <leader>ar  :Grepper -tool ag -query ""
 "
-"
-"        nnoremap <silent> <leader> :WhichKey '<leader>'<CR>
 "
 "        " Marvim support
 "        let marvim_store = '/home/omri/.vim/marvim'
 "        let marvim_find_key = '<F4>'
 "        let marvim_store_key = '<F5>'
-"
+" }}}
