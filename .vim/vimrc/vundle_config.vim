@@ -61,8 +61,7 @@ Plugin 'dominikduda/vim_current_word'
 Plugin 'google/vim-searchindex'
 " }}}
 Plugin 'sjl/gundo.vim'
-" TODO: Improve the plugin - add help file, and enable automatic loading of it.
-Plugin 'file:///home/omri/.vim/local_plugins/vim-showmarks'
+Plugin 'bootleq/ShowMarks'
 " }}}
 
 " Keep to last {{{

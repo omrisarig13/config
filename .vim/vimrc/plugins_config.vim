@@ -262,12 +262,6 @@ nnoremap <leader>gg :Grepper<cr>
 let g:grepper = {'side' : 1}
 " }}}
 
-" Showmarks Config {{{
-let g:showmarks_default_load = 1
-nnoremap <leader>sm :ShowMarksOnce<cr>
-nnoremap <leader>sa :DoShowMarks!<cr>
-" }}}
-
 " TODO: Move on those values when the plugins are added.
 "
 "        " Syntastic config
