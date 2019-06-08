@@ -61,6 +61,8 @@ Plugin 'dominikduda/vim_current_word'
 Plugin 'google/vim-searchindex'
 " }}}
 Plugin 'sjl/gundo.vim'
+" TODO: Improve the plugin - add help file, and enable automatic loading of it.
+Plugin 'jacquesbh/vim-showmarks'
 " }}}
 
 " Keep to last {{{
@@ -75,7 +77,6 @@ Plugin 'sjl/gundo.vim'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'jacquesbh/vim-showmarks'
 "Plugin 'pseewald/vim-anyfold'
 "Plugin 'w0rp/ale'
 "Plugin 'godlygeek/tabular'
@@ -116,6 +117,15 @@ Plugin 'sjl/gundo.vim'
 "doesn't update.
 "Plugin 'vim-scripts/ZoomWin'
 "}}}
+"Plugin 'romainl/vim-qf'
+"Plugin 'yssl/QFEnter'
+"Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'tpope/vim-vinegar'
+"Plugin 'vim-scripts/LustyExplorer'
+"Plugin 'jaredgorski/SpaceCamp'
+"Plugin 'nelstrom/vim-qargs'
+"Plugin 'junegunn/fzf.vim'
+"Plugin 'tpope/vim-abolish'
 " }}}
 
 " Not working {{{
