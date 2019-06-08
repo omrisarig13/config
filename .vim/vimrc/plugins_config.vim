@@ -263,6 +263,7 @@ let g:grepper = {'side' : 1}
 " }}}
 
 " Showmarks Config {{{
+let g:showmarks_default_load = 1
 nnoremap <leader>sm :ShowMarksOnce<cr>
 nnoremap <leader>sa :DoShowMarks!<cr>
 " }}}

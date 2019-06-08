@@ -62,7 +62,7 @@ Plugin 'google/vim-searchindex'
 " }}}
 Plugin 'sjl/gundo.vim'
 " TODO: Improve the plugin - add help file, and enable automatic loading of it.
-Plugin 'jacquesbh/vim-showmarks'
+Plugin 'file:///home/omri/.vim/local_plugins/vim-showmarks'
 " }}}
 
 " Keep to last {{{
