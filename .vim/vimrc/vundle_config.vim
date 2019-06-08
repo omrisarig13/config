@@ -62,15 +62,19 @@ Plugin 'dominikduda/vim_current_word'
 Plugin 'google/vim-searchindex'
 " }}}
 Plugin 'sjl/gundo.vim'
+" ShowMarks {{{
 " TODO: Revert to the original version if the pull request would be approved.
 " Plugin 'bootleq/ShowMarks'
 Plugin 'omrisarig13/ShowMarks'
+" }}}
+Plugin 'godlygeek/tabular'
 " }}}
 
 " Keep to last {{{
 "Plugin 'honza/vim-snippets'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'valloric/youcompleteme'
+"Plugin 'rdnetto/YCM-Generator'
 "Plugin 'davits/dyevim'
 "Plugin 'SirVer/ultisnips'
 "Plugin 'vim-airline/vim-airline'
@@ -80,8 +84,6 @@ Plugin 'omrisarig13/ShowMarks'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'godlygeek/tabular'
-"Plugin 'rdnetto/YCM-Generator'
 "Plugin 'liuchengxu/vim-which-key'
 "Plugin 'arthurxavierx/vim-caser'
 "Plugin 'tpope/vim-surround'
