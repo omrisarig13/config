@@ -267,6 +267,13 @@ let g:showmarks_enable = 0
 let g:showmarks_enable_unfocused = 0
 " }}}
 
+" Anyfold Config {{{
+autocmd Filetype python,text AnyFoldActivate
+set foldlevel=0
+" }}}
+
+
+
 " TODO: Move on those values when the plugins are added.
 "
 "        " Syntastic config
@@ -308,8 +315,6 @@ let g:showmarks_enable_unfocused = 0
 "        nnoremap <leader>as  :Grepper -tool ag -side -query ""
 "        nnoremap <leader>ar  :Grepper -tool ag -query ""
 "
-"        autocmd Filetype * AnyFoldActivate
-"        set foldlevel=0
 "
 "        nnoremap <silent> <leader> :WhichKey '<leader>'<CR>
 "

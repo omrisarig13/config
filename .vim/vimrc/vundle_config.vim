@@ -39,6 +39,7 @@ Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'mhinz/vim-grepper'
 " }}}
+Plugin 'pseewald/vim-anyfold'
 " }}}
 
 " Windows Plugins {{{
@@ -75,11 +76,10 @@ Plugin 'omrisarig13/ShowMarks'
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'klen/python-mode'
+"Plugin 'w0rp/ale'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'pseewald/vim-anyfold'
-"Plugin 'w0rp/ale'
 "Plugin 'godlygeek/tabular'
 "Plugin 'rdnetto/YCM-Generator'
 "Plugin 'liuchengxu/vim-which-key'
