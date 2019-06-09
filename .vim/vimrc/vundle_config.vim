@@ -69,6 +69,7 @@ Plugin 'omrisarig13/ShowMarks'
 " }}}
 Plugin 'godlygeek/tabular'
 Plugin 'liuchengxu/vim-which-key'
+Plugin 'arthurxavierx/vim-caser'
 " }}}
 
 " Keep to last {{{
@@ -85,7 +86,6 @@ Plugin 'liuchengxu/vim-which-key'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'arthurxavierx/vim-caser'
 "Plugin 'tpope/vim-surround'
 "Plugin 'vim-scripts/marvim'
 "Plugin 'aklt/plantuml-syntax'

@@ -265,7 +265,7 @@ let g:grepper = {'side' : 1}
 
 " ShowMarks Config {{{
 let g:showmarks_enable = 0
-let g:showmarks_enable_unfocused = 0
+let g:showmarks_auto_toggle = 2
 " }}}
 
 " Anyfold Config {{{
@@ -289,7 +289,6 @@ let g:which_key_map.g = {'name' : '+grepper'}
 let g:which_key_map.m = {'name' : '+ShowMarks'}
 let g:which_key_map.s = {'name' : '+self'}
 " }}}
-
 
 " TODO: Move on those values when the plugins are added. {{{
 "
