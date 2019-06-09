@@ -286,9 +286,16 @@ let g:which_key_map.c = {'name' : '+commenter'}
 let g:which_key_map.n = {'name' : '+cscope'}
 let g:which_key_map.w = {'name' : '+winresizer'}
 let g:which_key_map.g = {'name' : '+grepper'}
-let g:which_key_map.m = {'name' : '+ShowMarks'}
+let g:which_key_map.m = {'name' : '+ShowMarks,Marvim'}
 let g:which_key_map.s = {'name' : '+self'}
 " }}}
+
+" Marvim Config {{{
+let marvim_store = '/home/omri/.vim/marvim'
+let marvim_find_key = '-mf'
+let marvim_store_key = '-ms'
+"}}}
+
 
 " TODO: Move on those values when the plugins are added. {{{
 "
@@ -330,8 +337,4 @@ let g:which_key_map.s = {'name' : '+self'}
 "
 "
 "
-"        " Marvim support
-"        let marvim_store = '/home/omri/.vim/marvim'
-"        let marvim_find_key = '<F4>'
-"        let marvim_store_key = '<F5>'
 " }}}

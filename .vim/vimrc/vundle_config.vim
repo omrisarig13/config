@@ -70,6 +70,8 @@ Plugin 'omrisarig13/ShowMarks'
 Plugin 'godlygeek/tabular'
 Plugin 'liuchengxu/vim-which-key'
 Plugin 'arthurxavierx/vim-caser'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-scripts/marvim'
 " }}}
 
 " Keep to last {{{
@@ -86,8 +88,6 @@ Plugin 'arthurxavierx/vim-caser'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'tpope/vim-surround'
-"Plugin 'vim-scripts/marvim'
 "Plugin 'aklt/plantuml-syntax'
 "Plugin 'scrooloose/vim-slumlord'
 "Plugin 'tpope/vim-obsession'
@@ -130,6 +130,7 @@ Plugin 'arthurxavierx/vim-caser'
 "Plugin 'junegunn/fzf.vim'
 "Plugin 'tpope/vim-abolish'
 "Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+"Plugin 'rbtnn/vim-popup_signature'
 " }}}
 
 " Not working {{{
