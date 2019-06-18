@@ -271,6 +271,7 @@ let g:showmarks_auto_toggle = ['cursor_hold', 'current_buffer']
 " Anyfold Config {{{
 autocmd Filetype python,text AnyFoldActivate
 set foldlevel=0
+set foldlevelstart=20
 " }}}
 
 " Which-key Config {{{
@@ -296,6 +297,12 @@ let g:marvim_find_key = '-mf'
 let g:marvim_store_key = '-ms'
 "}}}
 
+" Prosession Config {{{
+let g:prosession_tmux_title = 1
+let g:prosession_per_branch = 1
+" Create a command to close the current session and close vim together.
+command! PQ execute "normal! :ProsessionDelete\<cr>:qa\<cr>"
+" }}}
 
 " TODO: Move on those values when the plugins are added. {{{
 "

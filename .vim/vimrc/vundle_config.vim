@@ -21,6 +21,11 @@ Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'octref/rootignore'
 " }}}
 
+" Sessions Plugins {{{
+Plugin 'tpope/vim-obsession'
+Plugin 'dhruvasagar/vim-prosession'
+" }}}
+
 " Language Plugins {{{
 " Comment Plugins {{{
 Plugin 'scrooloose/nerdcommenter'
@@ -63,9 +68,7 @@ Plugin 'google/vim-searchindex'
 " }}}
 Plugin 'sjl/gundo.vim'
 " ShowMarks {{{
-" TODO: Revert to the original version if the pull request would be approved.
-" Plugin 'bootleq/ShowMarks'
-Plugin 'omrisarig13/ShowMarks'
+Plugin 'bootleq/ShowMarks'
 " }}}
 Plugin 'godlygeek/tabular'
 Plugin 'liuchengxu/vim-which-key'
@@ -92,8 +95,6 @@ Plugin 'omrisarig13/marvim'
 " To un-comment, one at a time {{{
 "Plugin 'aklt/plantuml-syntax'
 "Plugin 'scrooloose/vim-slumlord'
-"Plugin 'tpope/vim-obsession'
-"Plugin 'dhruvasagar/vim-prosession'
 "Plugin 'gikmx/vim-ctrlposession'
 "Plugin 'kracejic/themeinabox.vim'
 "Plugin 'bronson/vim-visual-star-search'
@@ -189,6 +190,7 @@ Plugin 'omrisarig13/marvim'
 "Plugin 'embear/vim-localvimrc'
 "Plugin 'wellle/tmux-complete.vim'
 "Plugin 'vim-scripts/DoxygenToolkit.vim'
+"Plugin 'Shougo/denite.nvim'
 " }}}
 
 " Not working {{{
