@@ -265,7 +265,7 @@ let g:grepper = {'side' : 1}
 
 " ShowMarks Config {{{
 let g:showmarks_enable = 0
-let g:showmarks_auto_toggle = 2
+let g:showmarks_auto_toggle = ['cursor_hold', 'current_buffer']
 " }}}
 
 " Anyfold Config {{{
@@ -291,9 +291,9 @@ let g:which_key_map.s = {'name' : '+self'}
 " }}}
 
 " Marvim Config {{{
-let marvim_store = '/home/omri/.vim/marvim'
-let marvim_find_key = '-mf'
-let marvim_store_key = '-ms'
+let g:marvim_store = '/home/omri/.vim/marvim'
+let g:marvim_find_key = '-mf'
+let g:marvim_store_key = '-ms'
 "}}}
 
 

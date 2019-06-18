@@ -71,7 +71,9 @@ Plugin 'godlygeek/tabular'
 Plugin 'liuchengxu/vim-which-key'
 Plugin 'arthurxavierx/vim-caser'
 Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/marvim'
+" TODO: Change this to be Chamindra plugin back once the development and the
+" pull request would be done.
+Plugin 'omrisarig13/marvim'
 " }}}
 
 " Keep to last {{{
@@ -186,6 +188,7 @@ Plugin 'vim-scripts/marvim'
 "Plugin 'machakann/vim-swap'
 "Plugin 'embear/vim-localvimrc'
 "Plugin 'wellle/tmux-complete.vim'
+"Plugin 'vim-scripts/DoxygenToolkit.vim'
 " }}}
 
 " Not working {{{
