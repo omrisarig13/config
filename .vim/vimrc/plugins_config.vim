@@ -304,6 +304,11 @@ let g:prosession_per_branch = 1
 command! PQ execute "normal! :ProsessionDelete\<cr>:qa\<cr>"
 " }}}
 
+" Plantuml syntax config {{{
+let g:plantuml_executable_script = "/home/omri/.vim/scripts/plantuml.sh"
+" }}}
+
+
 " TODO: Move on those values when the plugins are added. {{{
 "
 "        " Syntastic config

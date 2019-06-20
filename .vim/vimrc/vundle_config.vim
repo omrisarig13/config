@@ -35,6 +35,10 @@ Plugin 'brookhong/cscope.vim'
 Plugin 'hari-rangarajan/cctree'
 Plugin 'apalmer1377/factorus'
 " }}}
+" Plant Uml Plugins {{{
+Plugin 'aklt/plantuml-syntax'
+Plugin 'scrooloose/vim-slumlord'
+" }}}
 " }}}
 
 " Movement Plugins {{{
@@ -93,8 +97,6 @@ Plugin 'omrisarig13/marvim'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'aklt/plantuml-syntax'
-"Plugin 'scrooloose/vim-slumlord'
 "Plugin 'gikmx/vim-ctrlposession'
 "Plugin 'kracejic/themeinabox.vim'
 "Plugin 'bronson/vim-visual-star-search'
@@ -191,6 +193,8 @@ Plugin 'omrisarig13/marvim'
 "Plugin 'wellle/tmux-complete.vim'
 "Plugin 'vim-scripts/DoxygenToolkit.vim'
 "Plugin 'Shougo/denite.nvim'
+" To check out:
+"   https://github.com/tpope?tab=repositories
 " }}}
 
 " Not working {{{
