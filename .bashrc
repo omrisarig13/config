@@ -4,8 +4,9 @@
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-alias ll="ls -la"
-alias l="ls -b"
+alias ls="ls --color"
+alias ll="ls -la --color"
+alias l="ls -b --color"
 alias ..="cd ../"
 alias ...="cd ../../"
 alias remove_exes="find . -perm -1 -type f -maxdepth 1 2>/dev/null | xargs rm"
