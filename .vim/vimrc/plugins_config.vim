@@ -50,13 +50,15 @@ if executable("ag")
 endif
 " }}}
 
-" Solarized Colorscheme Config {{{
+" Colorscheme Config {{{
 function! SetSolarized()
     let g:solarized_termcolors=256
     set background=dark
     colorscheme solarized
 endfunction
 command! Solarized call SetSolarized()
+command! TheMeInABox colorscheme themeinabox
+command! SpringNight colorscheme spring-night
 " }}}
 
 " MultipleCursor Config {{{

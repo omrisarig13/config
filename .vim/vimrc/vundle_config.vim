@@ -10,8 +10,10 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end. {{{
 
 " Colorschemes Plugins {{{
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kracejic/themeinabox.vim'
+Plugin 'rhysd/vim-color-spring-night'
 " }}}
 
 " File system Plugins {{{
@@ -97,8 +99,6 @@ Plugin 'omrisarig13/marvim'
 " }}}
 
 " To un-comment, one at a time {{{
-"Plugin 'gikmx/vim-ctrlposession'
-"Plugin 'kracejic/themeinabox.vim'
 "Plugin 'bronson/vim-visual-star-search'
 "Plugin 'unblevable/quick-scope'
 "Plugin 'matze/vim-move'
@@ -156,7 +156,6 @@ Plugin 'omrisarig13/marvim'
 "Plugin 'srstevenson/vim-picker'
 "Plugin 'christoomey/vim-system-copy'
 "Plugin 'TaDaa/vimade'
-"Plugin 'rhysd/vim-color-spring-night'
 "Plugin 'paroxayte/vwm.vim'
 "Plugin 'chaoren/vim-wordmotion'
 "Plugin 'markonm/traces.vim'
