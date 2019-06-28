@@ -410,6 +410,13 @@ inoremap <F4> <C-\><C-n>:Nuake<CR>
 tnoremap <F4> <C-\><C-n>:Nuake<CR>
 " }}}
 
+" Vim calander {{{
+let g:calendar_google_calendar = 1
+let g:calendar_view = "week"
+let g:calendar_google_task = 1
+let g:calendar_cyclic_view = 1
+" }}}
+
 " TODO: Move on those values when the plugins are added. {{{
 "
 "        " Syntastic config

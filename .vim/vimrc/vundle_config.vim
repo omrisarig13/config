@@ -152,6 +152,10 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-unimpaired'
 " }}}
 
+" Application Plugins {{{
+Plugin 'itchyny/calendar.vim'
+" }}}
+
 " Keep to last {{{
 "Plugin 'honza/vim-snippets'
 "Plugin 'scrooloose/syntastic'
