@@ -9,18 +9,24 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end. {{{
 
+" Color Plugins {{{
 " Colorschemes Plugins {{{
 Plugin 'flazz/vim-colorschemes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kracejic/themeinabox.vim'
 Plugin 'rhysd/vim-color-spring-night'
+Plugin 'jaredgorski/SpaceCamp'
+" }}}
+Plugin 'junegunn/limelight.vim'
 " }}}
 
 " File system Plugins {{{
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'octref/rootignore'
+Plugin 'junegunn/fzf.vim'
 " }}}
 
 " Sessions Plugins {{{
@@ -31,58 +37,119 @@ Plugin 'dhruvasagar/vim-prosession'
 " Language Plugins {{{
 " Comment Plugins {{{
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
 " }}}
 " C Plugins {{{
 Plugin 'brookhong/cscope.vim'
 Plugin 'hari-rangarajan/cctree'
 Plugin 'apalmer1377/factorus'
 " }}}
+" CPP Plugins {{{
+Plugin 'bfrg/vim-cpp-modern'
+" }}}
 " Plant Uml Plugins {{{
 Plugin 'aklt/plantuml-syntax'
 Plugin 'scrooloose/vim-slumlord'
+" }}}
+" Markdown Plugins {{{
+" tabular must precede vim-markdown.
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'iamcco/markdown-preview.nvim'
+" }}}
+" Vim-script Plugins {{{
+Plugin 'rbtnn/vim-popup_signature'
+Plugin 'google/vimdoc'
+" }}}
+" Spelling Plugins {{{
+Plugin 'tpope/vim-abolish'
+" }}}
+" English Text Plugins {{{
+Plugin 'Ron89/thesaurus_query.vim'
 " }}}
 " }}}
 
 " Movement Plugins {{{
 Plugin 'easymotion/vim-easymotion'
+Plugin 'unblevable/quick-scope'
 " Searching {{{
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
-Plugin 'mhinz/vim-grepper'
+Plugin 'bronson/vim-visual-star-search'
+" Plugin 'mhinz/vim-grepper'
+Plugin 'omrisarig13/vim-grepper'
+Plugin 'wincent/ferret'
 " }}}
+" Folding {{{
+Plugin 'Konfekt/FastFold'
 Plugin 'pseewald/vim-anyfold'
+" }}}
+Plugin 'matze/vim-move'
 " }}}
 
 " Windows Plugins {{{
 " Plugin 'simeji/winresizer'
 " TODO: Revert to the old win-reasizer once the pull request is approved.
 Plugin 'omrisarig13/winresizer'
+Plugin 'dhruvasagar/vim-zoom'
 " }}}
 
 " Source Control Plugins {{{
+Plugin 'airblade/vim-rooter'
 " Git Plugins {{{
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'whiteinge/diffconflicts'
+Plugin 'rbong/vim-flog'
+Plugin 'rhysd/committia.vim'
+Plugin 'sodapopcan/vim-twiggy'
 " }}}
+" }}}
+
+" Marks Plugins {{{
+Plugin 'bootleq/ShowMarks'
+Plugin 'kshenoy/vim-signature'
+" }}}
+
+" Quickfix Plugins {{{
+Plugin 'yssl/QFEnter'
+" }}}
+
+" Auto Completion Plugins {{{
+Plugin 'wellle/tmux-complete.vim'
 " }}}
 
 " Feature Plugins {{{
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dominikduda/vim_current_word'
-" vim-searchindex {{{
 Plugin 'google/vim-searchindex'
-" }}}
-Plugin 'sjl/gundo.vim'
-" ShowMarks {{{
-Plugin 'bootleq/ShowMarks'
-" }}}
-Plugin 'godlygeek/tabular'
+Plugin 'simnalamburt/vim-mundo'
 Plugin 'liuchengxu/vim-which-key'
 Plugin 'arthurxavierx/vim-caser'
 Plugin 'tpope/vim-surround'
+" marvim {{{
 " TODO: Change this to be Chamindra plugin back once the development and the
 " pull request would be done.
 Plugin 'omrisarig13/marvim'
+" }}}
+Plugin 'tpope/vim-repeat'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'zhimsel/vim-stay'
+Plugin 'christoomey/vim-system-copy'
+Plugin 'chaoren/vim-wordmotion'
+Plugin 'markonm/traces.vim'
+Plugin 'junegunn/vim-peekaboo'
+" YankRing {{{
+" TODO: Read the full documentation and understand how to best use this suprer
+" usefull plugin.
+Plugin 'vim-scripts/YankRing.vim'
+" }}}
+Plugin 'AndrewRadev/sideways.vim'
+Plugin 'Lenovsky/nuake'
+Plugin 'chrisbra/NrrwRgn'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-unimpaired'
 " }}}
 
 " Keep to last {{{
@@ -96,109 +163,84 @@ Plugin 'omrisarig13/marvim'
 "Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'klen/python-mode'
 "Plugin 'w0rp/ale'
-" }}}
-
-" To un-comment, one at a time {{{
-"Plugin 'bronson/vim-visual-star-search'
-"Plugin 'unblevable/quick-scope'
-"Plugin 'matze/vim-move'
-"Plugin 'kana/vim-textobj-lastpat'
-"Plugin 'vim-scripts/textobj-fatpack'
-"Plugin 'tpope/vim-repeat'
-"Plugin 'vcscommand.vim'
-"Plugin 'exUtility'
-"Plugin 'CRefVim'
-"Plugin 'osyo-manga/vim-over'
-"Plugin 't9md/vim-smalls'
-"Plugin 'plasticboy/vim-markdown'
-"Plugin 'iamcco/markdown-preview.nvim'
-"Plugin 'junegunn/limelight.vim'
-"Plugin 'junegunn/goyo.vim'
-"Plugin 'tpope/vim-rhubarb'
-"Plugin 'dbakker/vim-projectroot'
-"Plugin 'felixhummel/setcolors.vim'
-"Plugin 'haya14busa/vim-asterisk'
 "Plugin 'janko/vim-test'
-"Plugin 'stefandtw/quickfix-reflector.vim'
-" zoomwin {{{
-"TODO: Find a fork with bug fixes, since it seems like this version is old and
-"doesn't update.
-"Plugin 'vim-scripts/ZoomWin'
-"}}}
 "Plugin 'romainl/vim-qf'
-"Plugin 'yssl/QFEnter'
-"Plugin 'jistr/vim-nerdtree-tabs'
-"Plugin 'tpope/vim-vinegar'
-"Plugin 'vim-scripts/LustyExplorer'
-"Plugin 'jaredgorski/SpaceCamp'
-"Plugin 'nelstrom/vim-qargs'
-"Plugin 'junegunn/fzf.vim'
-"Plugin 'tpope/vim-abolish'
-"Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-"Plugin 'rbtnn/vim-popup_signature'
-"Plugin 'kana/vim-textobj-user'
-"Plugin 'machakann/vim-sandwich'
-"Plugin 'tomtom/tcomment_vim'
-"Plugin 'AndrewRadev/switch.vim'
-"Plugin 'zhimsel/vim-stay'
-"Plugin 'dhruvasagar/vim-zoom'
-"Plugin 'tpope/vim-apathy'
-"Plugin 'AndrewRadev/splitjoin.vim'
-"Plugin 'vim-advent-calendar/vimways.org'
-"Plugin 'rhysd/clever-f.vim'
-"Plugin 'google/vimdoc'
-"Plugin 'justinmk/vim-dirvish'
-"Plugin 'whiteinge/diffconflicts'
-"Plugin 'airblade/vim-rooter'
-"Plugin 'thaerkh/vim-workspace'
-"Plugin 'tpope/vim-tbone'
-"Plugin 'kshenoy/vim-signature'
-"Plugin 'srstevenson/vim-picker'
-"Plugin 'christoomey/vim-system-copy'
-"Plugin 'TaDaa/vimade'
-"Plugin 'paroxayte/vwm.vim'
-"Plugin 'chaoren/vim-wordmotion'
-"Plugin 'markonm/traces.vim'
-"Plugin 'LucHermitte/lh-cpp'
-"Plugin 'rbong/vim-flog'
-"Plugin 'samoshkin/vim-mergetool'
-"Plugin 'vim-ctrlspace/vim-ctrlspace'
-"Plugin 'rhysd/committia.vim'
-"Plugin 'simnalamburt/vim-mundo'
-"Plugin 'tpope/vim-abolish'
-"Plugin 'thaerkh/vim-indentguides'
-"Plugin 'osyo-manga/vim-over'
-"Plugin 'thinca/vim-themis'
-"Plugin 'sodapopcan/vim-twiggy'
-"Plugin 'junegunn/vim-peekaboo'
-"Plugin 'romainl/vim-qf'
-"Plugin 'romainl/vim-cool'
-"Plugin 'justinmk/vim-gtfo'
-"Plugin 'vim-scripts/YankRing.vim'
-"Plugin 'junegunn/vim-slash'
-"Plugin 'AndrewRadev/sideways.vim'
-"Plugin 'trevordmiller/nova-vim'
-"Plugin 'bfrg/vim-cpp-modern'
-"Plugin 'trevordmiller/nova-vim'
-"Plugin 'Ron89/thesaurus_query.vim'
-"Plugin 'wincent/ferret'
-"Plugin 'Konfekt/FastFold'
-"Plugin 'lambdalisue/gina.vim'
-"Plugin 'Lenovsky/nuake'
-"Plugin 'chrisbra/NrrwRgn'
-"Plugin 'zefei/vim-wintab'
-"Plugin 'machakann/vim-swap'
-"Plugin 'embear/vim-localvimrc'
-"Plugin 'wellle/tmux-complete.vim'
-"Plugin 'vim-scripts/DoxygenToolkit.vim'
-"Plugin 'Shougo/denite.nvim'
-" To check out:
-"   https://github.com/tpope?tab=repositories
+" TODO: Move on the textobjects in the link and add the useful ones. {{{
+" Plugin 'kana/vim-textobj-user' }}}
+" Plugin 'kana/vim-textobj-lastpat'
+" splitjoin {{{
+" TODO: Check if it is possible to change the splitting of c files, and if it
+" is, than do it and restore this plugin.
+" Plugin 'AndrewRadev/splitjoin.vim'
+" }}}
+" Plugin 'LucHermitte/lh-cpp'
+" TODO: Add option to change the flags used for this plugin, so it would be {{{
+" able to run with my vim configuration.
+" Plugin 'CRefVim'
+" }}}
+" Plugin 'neoclide/coc.nvim'
 " }}}
 
-" Not working {{{
+" To check out {{{
+"   https://github.com/tpope?tab=repositories
+"   https://www.vim.org/scripts/script.php?script_id=2353
+"   https://www.vim.org/scripts/script.php?script_id=213
+" }}}
+
+" Not Used {{{
+" Not Working {{{
 " Have a compiled component, but it doesn't compile on the system.
 " Plugin 'jeaye/color_coded'
+" Plugin 'vim-scripts/textobj-fatpack'
+" Plugin 'exUtility'
+" TODO: Try to understand why it doesn't work and fix it, since it looks {{{
+" like a good plugin.
+" Plugin 'stefandtw/quickfix-reflector.vim' }}}
+" TODO: Try to understand why it doesn't work and fix it, since it looks {{{
+" like a good plugin.
+" Plugin 'sjbach/lustyz' }}}
+" }}}
+" Unnecessary {{{
+" Plugin 'vcscommand.vim'
+" Plugin 'felixhummel/setcolors.vim'
+" Plugin 'osyo-manga/vim-over'
+" Plugin 't9md/vim-smalls'
+" Plugin 'junegunn/goyo.vim'
+" Plugin 'haya14busa/vim-asterisk'
+" Plugin 'tpope/vim-vinegar'
+" Plugin 'nelstrom/vim-qargs'
+" Plugin 'machakann/vim-sandwich' - vim-surround used
+" Plugin 'tomtom/tcomment_vim' - NerdCommenter used
+" Plugin 'AndrewRadev/switch.vim'
+" Plugin 'vim-scripts/ZoomWin' - vim-zoom used
+" Plugin 'tpope/vim-apathy'
+" Plugin 'rhysd/clever-f.vim'
+" Plugin 'justinmk/vim-dirvish'
+" Plugin 'dbakker/vim-projectroot' vim-rooter used
+" Plugin 'thaerkh/vim-workspace' - Prosession used
+" Plugin 'tpope/vim-tbone'
+" Plugin 'srstevenson/vim-picker' - FZF used
+" Plugin 'TaDaa/vimade'
+" Plugin 'paroxayte/vwm.vim'
+" Plugin 'vim-ctrlspace/vim-ctrlspace' - fzf is used
+" Plugin 'samoshkin/vim-mergetool' - diffconflicts is used
+" mundo seems to be the better option even though it is a fork if this plugin.
+" Plugin 'sjl/gundo.vim'
+" Plugin 'thaerkh/vim-indentguides' - built in listchar is good enough.
+" Plugin 'thinca/vim-themis' - It seems that the assert mechanism has changed.
+" Plugin 'romainl/vim-cool' - Does unwanted functionality
+" Plugin 'justinmk/vim-gtfo' - vim now has terminal feature
+" Plugin 'junegunn/vim-slash' - starsearch does good enough job for searching.
+" Plugin 'lambdalisue/gina.vim' - Other git plugins work good enough.
+" Plugin 'machakann/vim-swap' - vim-sideways is good enough.
+" Plugin 'embear/vim-localvimrc'
+" Plugin 'kamykn/spelunker.vim'
+" Plugin 'Shougo/denite.nvim' - fzf searches good enough.
+" Plugin 'svermeulen/vim-easyclip' - YankRing works good enough.
+" Plugin 'dan-t/vim-cpp-include' - cscope works good enough.
+" Plugin 'neoclide/vim-node-rpc' - Coc seems to be the better option.
+" Plugin 'andymass/vim-matchup' - The regular vim behavior is good enough.
+" }}}
 " }}}
 " }}}
 
@@ -217,4 +259,6 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
-"
+
+
+" vim:nospell

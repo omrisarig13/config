@@ -1,15 +1,16 @@
-iabbrev tihs this
-iabbrev htis this
-iabbrev teh the
-iabbrev adn and
-iabbrev tahn than
-iabbrev tehn then
-iabbrev waht what
-iabbrev leadre leader
-iabbrev learde leader
-iabbrev leadr leader
-cabbrev leadre leader
-cabbrev learde leader
-cabbrev leadr leader
-abbrev orignal original
-abbrev orginal original
+source ~/.vim/bundle/vim-abolish/plugin/abolish.vim
+
+Abolish tihs this
+Abolish htis this
+Abolish teh the
+Abolish adn and
+Abolish tahn than
+Abolish tehn then
+Abolish waht what
+Abolish leadre leader
+Abolish learde leader
+Abolish leadr leader
+Abolish leadre leader
+Abolish learde leader
+Abolish leadr leader
+Abolish or{ig,gi}nal original

@@ -28,6 +28,8 @@ filetype plugin indent on " Make vim understand the different file types.
 syntax on " Make vim understand the different syntax for the different file types
 set wildignore+=*/.git/*,*/.hg/* " Ignore hg and git directory when working on files.
 set updatetime=100 " Set the update time to be very fast, instead of vim's 4 second default.
+set number " Set the line numbers to show.
+set relativenumber " Set the lines number to be relative as well.
 " }}}
 
 " Set the splitting of new files to be below and right to the current file. {{{
@@ -286,7 +288,12 @@ augroup folding
     autocmd FileType c,cpp setlocal foldmethod=syntax
     autocmd FileType diff setlocal foldmethod=diff
     autocmd FileType python setlocal foldmethod=indent
+    autocmd FileType xml setlocal foldmethod=syntax
 augroup END
+let python_highlight_all = 1
+let g:vimsyn_folding='afP'
+let g:xml_syntax_folding = 1
+let g:sh_fold_enabled= 7
 " }}}
 
 " Matching for all files and special files. {{{

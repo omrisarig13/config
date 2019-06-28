@@ -1,6 +1,7 @@
 
 " NERDTree Config. {{{
 nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <leader><F2> :NERDTreeTabsToggle<CR>
 " }}}
 
 " NERDCommenter Config. {{{
@@ -24,11 +25,11 @@ let g:EasyMotion_keys="asonetpgyfbxmkc.wj,ruh"
 
 " Ctrlp Config. {{{
 let g:ctrlp_map = '<c-e>'
-noremap <leader>pe :CtrlPCurFile<CR>
-noremap <leader>pro :CtrlPRoot<CR>
-noremap <leader>pd :CtrlPDir<CR>
-noremap <leader>prt :CtrlPRTS<CR>
-noremap <leader>pm :CtrlPMixed<CR>
+" noremap <leader>pe :CtrlPCurFile<CR>
+" noremap <leader>pro :CtrlPRoot<CR>
+" noremap <leader>pd :CtrlPDir<CR>
+" noremap <leader>prt :CtrlPRTS<CR>
+" noremap <leader>pm :CtrlPMixed<CR>
 let g:ctrlp_switch_buffer = 'T'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_follow_symlinks = 1
@@ -56,9 +57,10 @@ function! SetSolarized()
     set background=dark
     colorscheme solarized
 endfunction
-command! Solarized call SetSolarized()
-command! TheMeInABox colorscheme themeinabox
-command! SpringNight colorscheme spring-night
+command! ColorSolarized call SetSolarized()
+command! ColorTheMeInABox colorscheme themeinabox
+command! ColorSpringNight colorscheme spring-night
+command! ColorSpaceCamp colorscheme spacecamp_lite
 " }}}
 
 " MultipleCursor Config {{{
@@ -230,16 +232,9 @@ noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
 noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 " }}}
 
-" Gundo Config {{{
-nnoremap <leader>gu :GundoToggle<CR>
-let g:gundo_preview_bottom=1
-" }}}
-
-" Commented out configs {{{
-" All those configs are commented out, from various reasons. In most cases, it
-" is because currently
-" I am not using those plugins, but I might want to use them again in the
-" future.
+" Mundo Config {{{
+nnoremap <leader>gu :MundoToggle<CR>
+let g:mundo_preview_bottom=1
 " }}}
 
 " WinResizer Config {{{
@@ -310,6 +305,110 @@ command! PQ execute "normal! :ProsessionDelete\<cr>:qa\<cr>"
 let g:plantuml_executable_script = "/home/omri/.vim/scripts/plantuml.sh"
 " }}}
 
+" vim-move Config {{{
+let g:move_map_keys = 0
+vmap <c-j> <Plug>MoveBlockDown
+vmap <c-k> <Plug>MoveBlockUp
+vmap <c-h> <Plug>MoveBlockLeft
+vmap <c-l> <Plug>MoveBlockRight
+nmap <c-j> <Plug>MoveLineDown
+nmap <c-k> <Plug>MoveLineUp
+nmap <c-h> <Plug>MoveCharLeft
+nmap <c-l> <Plug>MoveCharRight
+" }}}
+
+" vim-markdown Config {{{
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_follow_anchor = 1
+let g:vim_markdown_no_extensions_in_markdown = 1
+let g:vim_markdown_autowrite = 1
+
+augroup MarkdownSyntax
+    autocmd!
+    autocmd FileType markdown setlocal conceallevel=2
+augroup END
+" }}}
+
+" Markdown Preview Config {{{
+nmap <leader>mps <Plug>MarkdownPreview
+nmap <leader>mpe <Plug>MarkdownPreviewStop
+" }}}
+
+" Fzf Config {{{
+let g:fzf_history_dir = '~/.vim/fzf_history'
+let g:fzf_buffers_jump = 1
+nnoremap <leader>efb :Files<cr>
+nnoremap <leader>efc :execute "Files " . expand("%:p:h")<cr>
+nnoremap <leader>efr :execute "Files " . FindRootDirectory()<cr>
+nnoremap <leader>egf :GFiles<cr>
+nnoremap <leader>egs :GFiles?<cr>
+nnoremap <leader>eb :Buffers<cr>
+nnoremap <leader>el :Lines<CR>
+nnoremap <leader>ebl :BLines<cr>
+nnoremap <leader>et :Tags<cr>
+nnoremap <leader>ebt :BTags<cr>
+nnoremap <leader>em :Marks<cr>
+nnoremap <leader>ew :Windowns<cr>
+nnoremap <leader>es :Snippets<cr>
+nnoremap <leader>ec :Commits<cr>
+nnoremap <leader>ebc :BCommits<cr>
+nnoremap <leader>eco :Commands<cr>
+nnoremap <leader>ema :Maps<cr>
+nnoremap <leader>eft :Filetypes<cr>
+" }}}
+
+" Fugitive Config {{{
+nnoremap <leader>Gs :Gstatus<CR>
+nnoremap <leader>Gl :Git log<CR>
+nnoremap <leader>Gc :Gcommit<CR>
+nnoremap <leader>Gw :Gwrite<CR>
+" }}}
+
+" Stay Config {{{
+set viewoptions=cursor,folds,slash,unix
+" }}}
+
+" Rooter Config {{{
+let g:rooter_manual_only = 1
+let g:rooter_patterns = ['Makefile', '.git/', '.hg/']
+let g:rooter_use_lcd = 1
+" }}}
+
+" vim-system-copy Config {{{
+" Use nmap and not nnoremap, since we want to actually run the functionality of
+" the newly mapped cv.
+nmap cvv aa<esc>cvl
+" }}}
+
+" Twiggy Config {{{
+let g:twiggy_adapt_columns = 1
+" }}}
+
+" Yankring Config {{{
+let g:yankring_replace_n_pkey = ''
+let g:yankring_replace_n_nkey = ''
+nnoremap <silent> <leader>yr :YRShow<CR>
+" }}}
+
+" Thesaurus Query Config {{{
+let g:tq_map_keys=0
+nnoremap <Leader>tq :ThesaurusQueryReplaceCurrentWord<CR>
+vnoremap <Leader>tq "ky:ThesaurusQueryReplace <C-r>k<CR>
+let g:tq_enabled_backends = ["datamuse_com", "mthesaur_txt"]
+let g:tq_online_backends_timeout = 0.5
+" }}}
+
+" Ferret Config {{{
+let g:FerretMap = 0
+nmap <leader>rw <Plug>(FerretAckWord)
+nmap <leader>rs <Plug>(FerretAcks)
+" }}}
+
+" Nuake Config {{{
+nnoremap <F4> :Nuake<CR>
+inoremap <F4> <C-\><C-n>:Nuake<CR>
+tnoremap <F4> <C-\><C-n>:Nuake<CR>
+" }}}
 
 " TODO: Move on those values when the plugins are added. {{{
 "
@@ -321,11 +420,6 @@ let g:plantuml_executable_script = "/home/omri/.vim/scripts/plantuml.sh"
 "        let g:syntastic_c_checkers = ['gcc', 'clang_check', 'clang_tidy', 'cppclean', 'make']
 "
 "
-"        " Git mapping
-"        nnoremap <leader>gs :Gstatus<CR>
-"        nnoremap <leader>gl :Git log<CR>
-"        nnoremap <leader>gc :Gcommit<CR>
-"        nnoremap <leader>gw :Gwrite<CR>
 "
 "        " General plugins config
 "        let g:pymode = 1
@@ -344,11 +438,6 @@ let g:plantuml_executable_script = "/home/omri/.vim/scripts/plantuml.sh"
 "        noremap <leader>af :g/^.*$/YcmCompleter FixIt<CR><leader>/
 "        "let g:ycm_extra_conf_globlist = ['~/Projects/*']
 "        autocmd BufWritePost * GitGutter
-"
-"
-"        hi CurrentWord ctermbg=53
-"        hi CurrentWordTwins ctermbg=245
-"
-"
-"
 " }}}
+
+" vim:nospell
