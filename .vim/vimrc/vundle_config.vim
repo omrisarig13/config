@@ -79,6 +79,8 @@ Plugin 'bronson/vim-visual-star-search'
 " Plugin 'mhinz/vim-grepper'
 Plugin 'omrisarig13/vim-grepper'
 Plugin 'wincent/ferret'
+Plugin 'google/vim-searchindex'
+Plugin 'brooth/far.vim'
 " }}}
 " Folding {{{
 Plugin 'Konfekt/FastFold'
@@ -123,16 +125,11 @@ Plugin 'wellle/tmux-complete.vim'
 " Feature Plugins {{{
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dominikduda/vim_current_word'
-Plugin 'google/vim-searchindex'
 Plugin 'simnalamburt/vim-mundo'
 Plugin 'liuchengxu/vim-which-key'
 Plugin 'arthurxavierx/vim-caser'
 Plugin 'tpope/vim-surround'
-" marvim {{{
-" TODO: Change this to be Chamindra plugin back once the development and the
-" pull request would be done.
-Plugin 'omrisarig13/marvim'
-" }}}
+Plugin 'chamindra/marvim'
 Plugin 'tpope/vim-repeat'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'zhimsel/vim-stay'
@@ -150,6 +147,7 @@ Plugin 'Lenovsky/nuake'
 Plugin 'chrisbra/NrrwRgn'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'ntpeters/vim-better-whitespace'
 " }}}
 
 " Application Plugins {{{
@@ -183,12 +181,24 @@ Plugin 'itchyny/calendar.vim'
 " Plugin 'CRefVim'
 " }}}
 " Plugin 'neoclide/coc.nvim'
+" Plugin 'WolfgangMehner/vim-plugins'
+" Plugin 'rbong/vim-crystalline' - If airline doesn't work
+" }}}
+
+" To Add {{{
 " }}}
 
 " To check out {{{
 "   https://github.com/tpope?tab=repositories
 "   https://www.vim.org/scripts/script.php?script_id=2353
 "   https://www.vim.org/scripts/script.php?script_id=213
+"   https://github.com/dhruvasagar/dotfiles
+"   https://github.com/braintreeps/vim_dotfiles
+"   https://github.com/Tarptaeya/vim-dotfiles
+"   https://github.com/dmitmel/dotfiles
+"   https://github.com/wsdjeg/DotFiles
+"   https://github.com/huyvohcmc/dotfiles
+"   https://github.com/reireias/dotfiles
 " }}}
 
 " Not Used {{{
@@ -203,6 +213,9 @@ Plugin 'itchyny/calendar.vim'
 " TODO: Try to understand why it doesn't work and fix it, since it looks {{{
 " like a good plugin.
 " Plugin 'sjbach/lustyz' }}}
+" TODO: Try to understand why it doesn't work and fix it, since it looks {{{
+" like a good plugin. - from some reason it always take over the c-n mapping.
+" Plugin 'mg979/vim-visual-multi' }}}
 " }}}
 " Unnecessary {{{
 " Plugin 'vcscommand.vim'
@@ -244,6 +257,8 @@ Plugin 'itchyny/calendar.vim'
 " Plugin 'dan-t/vim-cpp-include' - cscope works good enough.
 " Plugin 'neoclide/vim-node-rpc' - Coc seems to be the better option.
 " Plugin 'andymass/vim-matchup' - The regular vim behavior is good enough.
+" Plugin 'zivyangll/git-blame.vim' - Fugitive has Gblame that is a better option.
+" Plugin 'soywod/kronos.vim'
 " }}}
 " }}}
 " }}}
