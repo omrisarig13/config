@@ -148,6 +148,8 @@ Plugin 'chrisbra/NrrwRgn'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'soywod/kronos.vim'
+Plugin 'omrisarig13/vim-auto-abbrev'
 " }}}
 
 " Application Plugins {{{
@@ -258,7 +260,6 @@ Plugin 'itchyny/calendar.vim'
 " Plugin 'neoclide/vim-node-rpc' - Coc seems to be the better option.
 " Plugin 'andymass/vim-matchup' - The regular vim behavior is good enough.
 " Plugin 'zivyangll/git-blame.vim' - Fugitive has Gblame that is a better option.
-" Plugin 'soywod/kronos.vim'
 " }}}
 " }}}
 " }}}

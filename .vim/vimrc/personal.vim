@@ -26,6 +26,7 @@ set lazyredraw " Don't redraw the screen when it is not needed.
 set timeoutlen=500 " Set the timeout to be half a second.
 filetype plugin indent on " Make vim understand the different file types.
 syntax on " Make vim understand the different syntax for the different file types
+let g:load_doxygen_syntax=1
 set wildignore+=*/.git/*,*/.hg/* " Ignore hg and git directory when working on files.
 set updatetime=100 " Set the update time to be very fast, instead of vim's 4 second default.
 set number " Set the line numbers to show.
@@ -109,10 +110,16 @@ set background=dark
 " English spell checks {{{
 set spell
 set spelllang=en_us
-" }}}
 
-" remove trailing spaces. {{{
-noremap <leader>srts :%s/\s\+$//e<cr>
+augroup SyntaxSpell
+    autocmd!
+    autocmd FileType * syntax spell toplevel
+    autocmd FileType c,cpp set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/c.utf-8.add
+    autocmd FileType markdown set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/md.utf-8.add
+    autocmd FileType python set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/py.utf-8.add
+    autocmd FileType plantuml set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/puml.utf-8.add
+    autocmd FileType vim set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/vim.utf-8.add
+augroup END
 " }}}
 
 " Set vim to save the undo files and the swap files in a dedicated place. {{{
@@ -299,7 +306,7 @@ let g:sh_fold_enabled= 7
 " Matching for all files and special files. {{{
 " General Matching
 highlight TrailingSpaces ctermbg=red
-nnoremap <leader>rts :execute "normal! mm:" . '%s/\v\s+$//g' . "\<lt>cr>`m" <cr>
+nnoremap <leader>srts :execute "normal!:" . '%s/\v\s+$//eg' . "\<lt>cr>``" <cr>
 highlight TODO ctermbg=yellow
 highlight CR ctermbg=lightred
 " Trailing spaces
@@ -336,4 +343,3 @@ set statusline+=%L                      " Total numbers in file.
 " Temp mapping, to create a better muscle memory. {{{
 nnoremap <leader>h OSTOP USING THE <LEADER>H KEYS!!!!<Esc>
 " }}}
-

@@ -107,7 +107,7 @@ augroup CscopeAuto
     autocmd Filetype c,cpp,h :call InitCscope()
 augroup END
 " }}}
-" Custom commands {{{
+" Custom commands {{{{{{
 " Create a new cscope database, and add it to the current instance of vim. {{{
 function! CreateCscope()
     execute "!cscope -b *.c *.h */*.c */*.h */*/*.c */*/*.h /usr/include/*.h /usr/include/*/*.h /usr/include/*/*/*.h /usr/include/*/*/*/*.h /usr/include/*/*/*/*/*.h /usr/include/*/*/*/*/*.h"
@@ -172,7 +172,7 @@ nnoremap  <leader>nvi :vsplit<CR>:call CscopeFind('i', expand('<cword>'))<CR>
 nnoremap  <leader>nsi :split<CR>:call CscopeFind('i', expand('<cword>'))<CR>
 nnoremap  <leader>nti :call QueryInTab('i')<CR>
 " }}}
-" }}}
+" }}}}}}
 " }}}
 
 " CCTree Config {{{
@@ -415,6 +415,10 @@ let g:calendar_google_calendar = 1
 let g:calendar_view = "week"
 let g:calendar_google_task = 1
 let g:calendar_cyclic_view = 1
+" }}}
+
+" vim-auto-abbrev {{{
+let g:auto_abbrev_file_path = "/home/omri/Temp/abbrev.vim"
 " }}}
 
 " TODO: Move on those values when the plugins are added. {{{
