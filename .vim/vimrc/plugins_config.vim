@@ -61,6 +61,7 @@ command! ColorSolarized call SetSolarized()
 command! ColorTheMeInABox colorscheme themeinabox
 command! ColorSpringNight colorscheme spring-night
 command! ColorSpaceCamp colorscheme spacecamp_lite
+command! ColorDesertNight colorscheme desert-night
 " }}}
 
 " MultipleCursor Config {{{
@@ -417,9 +418,11 @@ let g:calendar_google_task = 1
 let g:calendar_cyclic_view = 1
 " }}}
 
-" vim-auto-abbrev {{{
-let g:auto_abbrev_file_path = "/home/omri/Temp/abbrev.vim"
-" }}}
+" UltiSnips Config {{{
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+" UltiSnips Config }}}
 
 " TODO: Move on those values when the plugins are added. {{{
 "
@@ -438,7 +441,6 @@ let g:auto_abbrev_file_path = "/home/omri/Temp/abbrev.vim"
 "        let g:pymode_run_bind = '<leader>r'
 "
 "
-"        let g:UltiSnipsExpandTrigger="<c-j>"
 "
 "        let g:airline_theme='molokai'
 "        let g:ycm_server_python_interpreter='/usr/bin/python3'

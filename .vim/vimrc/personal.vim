@@ -118,7 +118,7 @@ augroup SyntaxSpell
     autocmd FileType markdown set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/md.utf-8.add
     autocmd FileType python set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/py.utf-8.add
     autocmd FileType plantuml set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/puml.utf-8.add
-    autocmd FileType vim set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/vim.utf-8.add
+    autocmd FileType vim,help set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/vim.utf-8.add
 augroup END
 " }}}
 

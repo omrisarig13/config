@@ -49,3 +49,17 @@ return
 rhs
 globals
 AutoAbbrev
+doxygen
+md
+Sarig
+Omri
+lsh
+txt
+AutoAbbrevAddAbbrev
+AutoAbbrevAddCurrentWord
+AutoAbbrevAddCurrentLhsWord
+AutoAbbrevAddCurrentRhsWord
+AutoAbbrevDelAbbrev
+AutoAbbrevReload
+vim
+cpp

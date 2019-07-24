@@ -16,6 +16,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'kracejic/themeinabox.vim'
 Plugin 'rhysd/vim-color-spring-night'
 Plugin 'jaredgorski/SpaceCamp'
+Plugin 'sainnhe/vim-color-desert-night'
 " }}}
 Plugin 'junegunn/limelight.vim'
 " }}}
@@ -38,6 +39,9 @@ Plugin 'dhruvasagar/vim-prosession'
 " Comment Plugins {{{
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
+" Documentation Plugins {{{
+Plugin 'kkoomen/vim-doge'
+" Documentation Plugins }}}
 " }}}
 " C Plugins {{{
 Plugin 'brookhong/cscope.vim'
@@ -66,6 +70,10 @@ Plugin 'tpope/vim-abolish'
 " }}}
 " English Text Plugins {{{
 Plugin 'Ron89/thesaurus_query.vim'
+" }}}
+" Cmake Plugins {{{
+Plugin 'pboettch/vim-cmake-syntax'
+Plugin 'vhdirk/vim-cmake'
 " }}}
 " }}}
 
@@ -157,14 +165,14 @@ Plugin 'itchyny/calendar.vim'
 " }}}
 
 " Keep to last {{{
-"Plugin 'honza/vim-snippets'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'valloric/youcompleteme'
+Plugin 'honza/vim-snippets'
+Plugin 'scrooloose/syntastic'
+Plugin 'valloric/youcompleteme'
 "Plugin 'rdnetto/YCM-Generator'
 "Plugin 'davits/dyevim'
-"Plugin 'SirVer/ultisnips'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'SirVer/ultisnips'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'klen/python-mode'
 "Plugin 'w0rp/ale'
 "Plugin 'janko/vim-test'
