@@ -343,3 +343,7 @@ set statusline+=%L                      " Total numbers in file.
 " Temp mapping, to create a better muscle memory. {{{
 nnoremap <leader>h OSTOP USING THE <LEADER>H KEYS!!!!<Esc>
 " }}}
+
+" Diff format {{{
+set diffopt=filler,internal,algorithm:histogram,indent-heuristic
+" Diff format }}}

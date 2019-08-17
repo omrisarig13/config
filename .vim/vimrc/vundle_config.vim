@@ -158,6 +158,10 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'soywod/kronos.vim'
 Plugin 'omrisarig13/vim-auto-abbrev'
+
+Plugin 'kana/vim-operator-user'
+Plugin 'mwgkgk/vim-operator-insert'
+Plugin 'mwgkgk/vim-operator-append'
 " }}}
 
 " Application Plugins {{{
@@ -173,6 +177,7 @@ Plugin 'valloric/youcompleteme'
 Plugin 'SirVer/ultisnips'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'sheerun/vim-polyglot'
 "Plugin 'klen/python-mode'
 "Plugin 'w0rp/ale'
 "Plugin 'janko/vim-test'
@@ -196,6 +201,10 @@ Plugin 'vim-airline/vim-airline-themes'
 " }}}
 
 " To Add {{{
+" Plugin 't9md/vim-choosewin'
+" Plugin 'eugen0329/vim-esearch'
+" Plugin 'google/vim-maktaba'
+" Plugin 'wellle/targets.vim'
 " }}}
 
 " To check out {{{

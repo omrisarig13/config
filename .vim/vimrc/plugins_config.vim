@@ -239,9 +239,7 @@ let g:mundo_preview_bottom=1
 " }}}
 
 " WinResizer Config {{{
-" TODO: Add the option to ignore the start key in the plugin at github.
-" let g:winresizer_start_key = ''
-let g:winresizer_enable_start_key = 0
+let g:winresizer_start_key = ''
 noremap <leader>wr :WinResizerStartResize<CR>
 noremap <leader>wm :WinResizerStartMove<CR>
 " }}}
@@ -423,6 +421,14 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " UltiSnips Config }}}
+
+" Vim operator insert Config. {{{
+nmap <space>i <Plug>(operator-insert)
+" Vim operator insert Config. }}}
+
+" Vim operator append Config. {{{
+nmap <space>a <Plug>(operator-append)
+" Vim operator append Config. }}}
 
 " TODO: Move on those values when the plugins are added. {{{
 "
