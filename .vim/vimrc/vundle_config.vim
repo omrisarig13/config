@@ -84,8 +84,7 @@ Plugin 'unblevable/quick-scope'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'bronson/vim-visual-star-search'
-" Plugin 'mhinz/vim-grepper'
-Plugin 'omrisarig13/vim-grepper'
+Plugin 'mhinz/vim-grepper'
 Plugin 'wincent/ferret'
 Plugin 'google/vim-searchindex'
 Plugin 'brooth/far.vim'
@@ -95,6 +94,7 @@ Plugin 'Konfekt/FastFold'
 Plugin 'pseewald/vim-anyfold'
 " }}}
 Plugin 'matze/vim-move'
+Plugin 'wellle/targets.vim'
 " }}}
 
 " Windows Plugins {{{
@@ -102,6 +102,8 @@ Plugin 'matze/vim-move'
 " TODO: Revert to the old win-reasizer once the pull request is approved.
 Plugin 'omrisarig13/winresizer'
 Plugin 'dhruvasagar/vim-zoom'
+Plugin 't9md/vim-choosewin'
+Plugin 'weilbith/nerdtree_choosewin-plugin'
 " }}}
 
 " Source Control Plugins {{{
@@ -201,10 +203,11 @@ Plugin 'sheerun/vim-polyglot'
 " }}}
 
 " To Add {{{
-" Plugin 't9md/vim-choosewin'
 " Plugin 'eugen0329/vim-esearch'
 " Plugin 'google/vim-maktaba'
-" Plugin 'wellle/targets.vim'
+" Plugin 'metakirby5/codi.vim'
+" Plugin 'jaredgorski/SpaceCamp'
+" Plugin 'reedes/vim-pencil'
 " }}}
 
 " To check out {{{

@@ -151,6 +151,12 @@ augroup UmlCompile
     autocmd BufReadPre *.uml command! -buffer Run !viewnior %:t:r.svg &
     autocmd BufReadPre *.uml command! -buffer Clean
 augroup END
+augroup JavaCompile
+    autocmd!
+    autocmd BufReadPre *.java command! -buffer Make !javac %
+    autocmd BufReadPre *.java command! -buffer Run !java %:t:r
+    autocmd BufReadPre *.java command! -buffer Clean echom "!rm %:t:r.class"
+augroup END
 
 " Add mapping for making and runnig.
 nnoremap gc :make<cr>

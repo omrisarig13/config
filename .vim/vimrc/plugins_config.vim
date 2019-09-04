@@ -430,6 +430,11 @@ nmap <space>i <Plug>(operator-insert)
 nmap <space>a <Plug>(operator-append)
 " Vim operator append Config. }}}
 
+" vim-choosewin Config {{{
+nmap <leader> <Plug>(choosewin)
+let g:choosewin_overlay_enable=1
+" vim-choosewin Config }}}
+
 " TODO: Move on those values when the plugins are added. {{{
 "
 "        " Syntastic config
