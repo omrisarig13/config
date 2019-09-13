@@ -50,6 +50,11 @@ Plugin 'apalmer1377/factorus'
 " }}}
 " CPP Plugins {{{
 Plugin 'bfrg/vim-cpp-modern'
+" vim-clang-format {{{
+" TODO: Move over all the formatting option and customize them better for my
+" taste.
+Plugin 'rhysd/vim-clang-format'
+" vim-clang-format }}}
 " }}}
 " Plant Uml Plugins {{{
 Plugin 'aklt/plantuml-syntax'
@@ -70,6 +75,7 @@ Plugin 'tpope/vim-abolish'
 " }}}
 " English Text Plugins {{{
 Plugin 'Ron89/thesaurus_query.vim'
+Plugin 'reedes/vim-pencil'
 " }}}
 " Cmake Plugins {{{
 Plugin 'pboettch/vim-cmake-syntax'
@@ -160,6 +166,8 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'soywod/kronos.vim'
 Plugin 'omrisarig13/vim-auto-abbrev'
+Plugin 'metakirby5/codi.vim'
+Plugin 'dhruvasagar/vim-table-mode'
 
 Plugin 'kana/vim-operator-user'
 Plugin 'mwgkgk/vim-operator-insert'
@@ -203,11 +211,9 @@ Plugin 'sheerun/vim-polyglot'
 " }}}
 
 " To Add {{{
-" Plugin 'eugen0329/vim-esearch'
 " Plugin 'google/vim-maktaba'
-" Plugin 'metakirby5/codi.vim'
-" Plugin 'jaredgorski/SpaceCamp'
-" Plugin 'reedes/vim-pencil'
+" Plugin 'google/vim-glaive'
+" Plugin 'google/vim-codefmt'
 " }}}
 
 " To check out {{{
@@ -280,6 +286,7 @@ Plugin 'sheerun/vim-polyglot'
 " Plugin 'neoclide/vim-node-rpc' - Coc seems to be the better option.
 " Plugin 'andymass/vim-matchup' - The regular vim behavior is good enough.
 " Plugin 'zivyangll/git-blame.vim' - Fugitive has Gblame that is a better option.
+" Plugin 'eugen0329/vim-esearch' - Grepper and ferret seems better.
 " }}}
 " }}}
 " }}}

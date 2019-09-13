@@ -29,8 +29,6 @@ syntax on " Make vim understand the different syntax for the different file type
 let g:load_doxygen_syntax=1
 set wildignore+=*/.git/*,*/.hg/* " Ignore hg and git directory when working on files.
 set updatetime=100 " Set the update time to be very fast, instead of vim's 4 second default.
-set number " Set the line numbers to show.
-set relativenumber " Set the lines number to be relative as well.
 " }}}
 
 " Set the splitting of new files to be below and right to the current file. {{{
@@ -166,9 +164,9 @@ nnoremap <leader>sr :Run<cr>
 
 " Set the color scheme to be a random from given range of colors. {{{
 function! RandomColorScheme()
-  let mycolors = split(globpath("~/.vim/colors","*"),"\n")
-  execute 'source ' . mycolors[localtime() % len(mycolors)]
-  unlet mycolors
+    let mycolors = split(globpath("~/.vim/colors","*"),"\n")
+    execute 'source ' . mycolors[localtime() % len(mycolors)]
+    unlet mycolors
 endfunction
 
 function! RemoveColor()
@@ -244,11 +242,6 @@ nnoremap <leader>sevv :tabnew $HOME/.vim/vimrc/vundle_config.vim<cr>
 nnoremap <leader>ssc :source %<cr>
 " }}}
 
-" Create a new line above and below the cursor position. {{{
-noremap <leader>sj o<Esc>k
-noremap <leader>sk O<Esc>j
-" }}}
-
 " Skeletons for new files creation. {{{
 " TODO: Try to change it and use the actual skeleton mechanism instead.
 function! CheckHFile()
@@ -271,8 +264,8 @@ endfunction
 
 function! CheckPyFile()
     if (getline("1") !~ "if '__main__' == __name__:")
-    normal!ggOif '__main__' == __name__:
-    normal!o    main()
+        normal!ggOif '__main__' == __name__:
+        normal!o    main()
     endif
 endfunction
 
@@ -353,3 +346,17 @@ nnoremap <leader>h OSTOP USING THE <LEADER>H KEYS!!!!<Esc>
 " Diff format {{{
 set diffopt=filler,internal,algorithm:histogram,indent-heuristic
 " Diff format }}}
+
+" Indentation Settings {{{
+nnoremap == mmgg=G`m
+set cinoptions=t0(0,W4(s,m1
+" Indentation Settings }}}
+
+" Line Numbers {{{
+set number " Set the line numbers to show.
+set relativenumber " Set the lines number to be relative as well.
+augroup help_line_numbers
+    autocmd!
+    autocmd FileType help set number relativenumber
+augroup END
+" Line Numbers }}}
