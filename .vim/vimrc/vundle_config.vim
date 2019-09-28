@@ -172,6 +172,8 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'kana/vim-operator-user'
 Plugin 'mwgkgk/vim-operator-insert'
 Plugin 'mwgkgk/vim-operator-append'
+Plugin 'inkarkat/vim-ReplaceWithRegister'
+Plugin 'inkarkat/vim-ReplaceWithSameIndentRegister'
 " }}}
 
 " Application Plugins {{{
@@ -208,12 +210,17 @@ Plugin 'sheerun/vim-polyglot'
 " Plugin 'neoclide/coc.nvim'
 " Plugin 'WolfgangMehner/vim-plugins'
 " Plugin 'rbong/vim-crystalline' - If airline doesn't work
-" }}}
-
-" To Add {{{
+" Code writing Plugins. {{{
 " Plugin 'google/vim-maktaba'
 " Plugin 'google/vim-glaive'
 " Plugin 'google/vim-codefmt'
+" Code writing Plugins. }}}
+" }}}
+
+" To Add {{{
+" Plugin 'svermeulen/vim-subversive'
+" Plugin 'liuchengxu/vim-clap'
+" Plugin 'KenN7/vim-arsync'
 " }}}
 
 " To check out {{{

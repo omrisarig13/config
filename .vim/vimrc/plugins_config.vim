@@ -62,6 +62,7 @@ command! ColorTheMeInABox colorscheme themeinabox
 command! ColorSpringNight colorscheme spring-night
 command! ColorSpaceCamp colorscheme spacecamp_lite
 command! ColorDesertNight colorscheme desert-night
+" Interesting colors to remember: lodestone, brogrammer
 " }}}
 
 " MultipleCursor Config {{{
@@ -288,7 +289,7 @@ let g:which_key_map.s = {'name' : '+self'}
 " }}}
 
 " Marvim Config {{{
-let g:marvim_store = '/home/omri/.vim/marvim'
+let g:marvim_store = '~/.vim/marvim'
 let g:marvim_find_key = '-mf'
 let g:marvim_store_key = '-ms'
 "}}}
