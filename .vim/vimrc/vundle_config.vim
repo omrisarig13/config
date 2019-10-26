@@ -17,6 +17,7 @@ Plugin 'kracejic/themeinabox.vim'
 Plugin 'rhysd/vim-color-spring-night'
 Plugin 'jaredgorski/SpaceCamp'
 Plugin 'sainnhe/vim-color-desert-night'
+Plugin 'NLKNguyen/papercolor-theme'
 " }}}
 Plugin 'junegunn/limelight.vim'
 " }}}
@@ -67,7 +68,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'iamcco/markdown-preview.nvim'
 " }}}
 " Vim-script Plugins {{{
-Plugin 'rbtnn/vim-popup_signature'
+" Plugin 'rbtnn/vim-popup_signature'
 Plugin 'google/vimdoc'
 " }}}
 " Spelling Plugins {{{
@@ -150,13 +151,13 @@ Plugin 'tpope/vim-repeat'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'zhimsel/vim-stay'
 Plugin 'christoomey/vim-system-copy'
-Plugin 'chaoren/vim-wordmotion'
+" Plugin 'chaoren/vim-wordmotion'
 Plugin 'markonm/traces.vim'
 Plugin 'junegunn/vim-peekaboo'
 " YankRing {{{
 " TODO: Read the full documentation and understand how to best use this suprer
 " usefull plugin.
-Plugin 'vim-scripts/YankRing.vim'
+" Plugin 'vim-scripts/YankRing.vim'
 " }}}
 Plugin 'AndrewRadev/sideways.vim'
 Plugin 'Lenovsky/nuake'
@@ -168,6 +169,7 @@ Plugin 'soywod/kronos.vim'
 Plugin 'omrisarig13/vim-auto-abbrev'
 Plugin 'metakirby5/codi.vim'
 Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'tpope/vim-eunuch'
 
 Plugin 'kana/vim-operator-user'
 Plugin 'mwgkgk/vim-operator-insert'

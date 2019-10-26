@@ -289,7 +289,7 @@ let g:which_key_map.s = {'name' : '+self'}
 " }}}
 
 " Marvim Config {{{
-let g:marvim_store = '~/.vim/marvim'
+let g:marvim_store = '/home/omri/.vim/marvim'
 let g:marvim_find_key = '-mf'
 let g:marvim_store_key = '-ms'
 "}}}
@@ -421,6 +421,7 @@ let g:calendar_cyclic_view = 1
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsEditSplit="tabdo"
 " UltiSnips Config }}}
 
 " Vim operator insert Config. {{{
@@ -435,6 +436,10 @@ nmap <space>a <Plug>(operator-append)
 nmap <leader> <Plug>(choosewin)
 let g:choosewin_overlay_enable=1
 " vim-choosewin Config }}}
+
+" ClangFormat Config {{{
+let g:clang_format#code_style="mozilla"
+" ClangFormat Config }}}
 
 " TODO: Move on those values when the plugins are added. {{{
 "

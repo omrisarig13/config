@@ -360,3 +360,12 @@ augroup help_line_numbers
     autocmd FileType help set number relativenumber
 augroup END
 " Line Numbers }}}
+
+" Translate {{{
+function! GetTranslation(original_word)
+    let l:system_string = 'trans -l english -s danish -b ' . a:original_word
+    let @"=system(l:system_string)[:-2]
+endfunction
+command! GetTranslation :call GetTranslation(expand("<cword>"))
+nnoremap <leader>st :call GetTranslation("")<cr>
+" Translate }}}
