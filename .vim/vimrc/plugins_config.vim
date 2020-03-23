@@ -245,13 +245,13 @@ noremap <leader>wr :WinResizerStartResize<CR>
 noremap <leader>wm :WinResizerStartMove<CR>
 " }}}
 
-" Pymatcher Config. {{{
-if !has('python')
-    echo 'In order to use pymatcher plugin, you need +python compiled vim'
-else
-    let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-endif
-" }}}
+"           " Pymatcher Config. {{{
+"           if !has('python')
+"               echo 'In order to use pymatcher plugin, you need +python compiled vim'
+"           else
+"               let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+"           endif
+"           " }}}
 
 " Grepper Config {{{
 nmap <leader>gs  <plug>(GrepperOperator)
@@ -438,8 +438,33 @@ let g:choosewin_overlay_enable=1
 " vim-choosewin Config }}}
 
 " ClangFormat Config {{{
+" let g:clang_format#code_style="mozilla"
 let g:clang_format#code_style="mozilla"
+nnoremap <leader>cf :ClangFormat<CR>
 " ClangFormat Config }}}
+
+" Syntastic config {{{
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_c_checkers = ['gcc', 'clang_check', 'clang_tidy', 'cppclean', 'make']
+let g:syntastic_python_checkers = ['pylint', 'bandit', 'flake8', 'frosted', 'mypy', 'prospector', 'py3kwarn', 'pycodestyle', 'pydocstyle', 'pyflakes', 'pylama', 'python']
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": ["c", "cpp"],
+    \ "passive_filetypes": ["python"] }
+" Syntastic config }}}
+
+" YouCompleteMe config {{{
+let g:ycm_language_server = [
+  \   { 'name': 'kotlin',
+  \     'filetypes': [ 'kotlin' ],
+  \     'cmdline': [ '/usr/bin/kotlin-language-server' ],
+  \   }
+  \ ]
+" YouCompleteMe config }}}
 
 " TODO: Move on those values when the plugins are added. {{{
 "

@@ -26,7 +26,7 @@ Plugin 'junegunn/limelight.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
-Plugin 'FelikZ/ctrlp-py-matcher'
+" Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'octref/rootignore'
 Plugin 'junegunn/fzf.vim'
 " }}}
@@ -52,8 +52,6 @@ Plugin 'apalmer1377/factorus'
 " CPP Plugins {{{
 Plugin 'bfrg/vim-cpp-modern'
 " vim-clang-format {{{
-" TODO: Move over all the formatting option and customize them better for my
-" taste.
 Plugin 'rhysd/vim-clang-format'
 " vim-clang-format }}}
 " }}}
@@ -75,7 +73,7 @@ Plugin 'google/vimdoc'
 Plugin 'tpope/vim-abolish'
 " }}}
 " English Text Plugins {{{
-Plugin 'Ron89/thesaurus_query.vim'
+" Plugin 'Ron89/thesaurus_query.vim'
 Plugin 'reedes/vim-pencil'
 " }}}
 " Cmake Plugins {{{
@@ -146,14 +144,14 @@ Plugin 'simnalamburt/vim-mundo'
 Plugin 'liuchengxu/vim-which-key'
 Plugin 'arthurxavierx/vim-caser'
 Plugin 'tpope/vim-surround'
-Plugin 'chamindra/marvim'
+Plugin 'omrisarig13/marvim'
 Plugin 'tpope/vim-repeat'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'zhimsel/vim-stay'
 Plugin 'christoomey/vim-system-copy'
 " Plugin 'chaoren/vim-wordmotion'
 Plugin 'markonm/traces.vim'
-Plugin 'junegunn/vim-peekaboo'
+" Plugin 'junegunn/vim-peekaboo'
 " YankRing {{{
 " TODO: Read the full documentation and understand how to best use this suprer
 " usefull plugin.
@@ -165,7 +163,7 @@ Plugin 'chrisbra/NrrwRgn'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'soywod/kronos.vim'
+" Plugin 'soywod/kronos.vim'
 Plugin 'omrisarig13/vim-auto-abbrev'
 Plugin 'metakirby5/codi.vim'
 Plugin 'dhruvasagar/vim-table-mode'
@@ -176,6 +174,7 @@ Plugin 'mwgkgk/vim-operator-insert'
 Plugin 'mwgkgk/vim-operator-append'
 Plugin 'inkarkat/vim-ReplaceWithRegister'
 Plugin 'inkarkat/vim-ReplaceWithSameIndentRegister'
+Plugin 'AndrewRadev/splitjoin.vim'
 " }}}
 
 " Application Plugins {{{
@@ -188,6 +187,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'valloric/youcompleteme'
 "Plugin 'rdnetto/YCM-Generator'
 "Plugin 'davits/dyevim'
+" TODO: Understand why it is not working and try to fix it.
 Plugin 'SirVer/ultisnips'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -212,10 +212,10 @@ Plugin 'sheerun/vim-polyglot'
 " Plugin 'neoclide/coc.nvim'
 " Plugin 'WolfgangMehner/vim-plugins'
 " Plugin 'rbong/vim-crystalline' - If airline doesn't work
-" Code writing Plugins. {{{
-" Plugin 'google/vim-maktaba'
-" Plugin 'google/vim-glaive'
-" Plugin 'google/vim-codefmt'
+" Code writing Plugins. TODO: Read full docs {{{
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
 " Code writing Plugins. }}}
 " }}}
 
@@ -223,9 +223,19 @@ Plugin 'sheerun/vim-polyglot'
 " Plugin 'svermeulen/vim-subversive'
 " Plugin 'liuchengxu/vim-clap'
 " Plugin 'KenN7/vim-arsync'
+" Plugin 'aonemd/kuroi.vim'
+" Plugin 'tpope/vim-dispatch'
+Plugin 'vim/killersheep'
+Plugin 'udalov/kotlin-vim'
+" Plugin 'Shadowsith/kotlincomplete.vim'
+" Plugin 'hsanson/vim-android'
 " }}}
 
 " To check out {{{
+" Plugin 'vim-volt/volt'
+" Plugin 'Jorengarenar/fauxClip'
+" Plugin 'arzg/vim-rust-syntax-ext'
+" Plugin 'skywind3000/asynctasks.vim'
 "   https://github.com/tpope?tab=repositories
 "   https://www.vim.org/scripts/script.php?script_id=2353
 "   https://www.vim.org/scripts/script.php?script_id=213
@@ -296,6 +306,8 @@ Plugin 'sheerun/vim-polyglot'
 " Plugin 'andymass/vim-matchup' - The regular vim behavior is good enough.
 " Plugin 'zivyangll/git-blame.vim' - Fugitive has Gblame that is a better option.
 " Plugin 'eugen0329/vim-esearch' - Grepper and ferret seems better.
+" Plugin 'LucHermitte/lh-vim-lib' - Folding doesn't work good enough.
+" Plugin 'LucHermitte/VimFold4C' - Folding doesn't work good enough.
 " }}}
 " }}}
 " }}}
@@ -312,9 +324,12 @@ Plugin 'sheerun/vim-polyglot'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+call glaive#Install() " TODO: Understand what it does and move from here.
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 
+Glaive codefmt plugin[mappings]
+Glaive codefmt google_java_executable="java -jar /usr/local/java/google-java-format-1.7-all-deps.jar"
 
 " vim:nospell

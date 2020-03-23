@@ -48,7 +48,8 @@ set encoding=utf-8
 set textwidth=80
 augroup TextWidth
     autocmd!
-    autocmd FileType python,c,markdown,uml,cpp setlocal textwidth=80
+    autocmd FileType python setlocal textwidth=79
+    autocmd FileType c,markdown,uml,cpp setlocal textwidth=80
     autocmd FileType txt,csv setlocal textwidth=0
     autocmd BufReadPre *.csv setlocal textwidth=0
 augroup END
@@ -363,9 +364,14 @@ augroup END
 
 " Translate {{{
 function! GetTranslation(original_word)
-    let l:system_string = 'trans -l english -s danish -b ' . a:original_word
+    let l:system_string = 'trans da:en -b ' . a:original_word
     let @"=system(l:system_string)[:-2]
 endfunction
 command! GetTranslation :call GetTranslation(expand("<cword>"))
 nnoremap <leader>st :call GetTranslation("")<cr>
 " Translate }}}
+
+" Move in history {{{
+cnoremap <c-p> <up>
+cnoremap <c-n> <down>
+" Move in history }}}
