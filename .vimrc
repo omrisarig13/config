@@ -17,3 +17,9 @@ source $HOME/.vim/vimrc/abbrev.vim
 
 " Load the actual vimrc file.
 source $HOME/.vim/vimrc/personal.vim
+
+if has('nvim')
+    source $HOME/.vim/vimrc/nvim_specific.vim
+else
+    source $HOME/.vim/vimrc/vim_specific.vim
+endif
