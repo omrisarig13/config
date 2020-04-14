@@ -455,6 +455,7 @@ let g:syntastic_mode_map = {
     \ "mode": "active",
     \ "active_filetypes": ["c", "cpp"],
     \ "passive_filetypes": ["python"] }
+let g:syntastic_java_checkers = []
 " Syntastic config }}}
 
 " YouCompleteMe config {{{
@@ -464,6 +465,11 @@ let g:ycm_language_server = [
   \     'cmdline': [ '/usr/bin/kotlin-language-server' ],
   \   }
   \ ]
+nnoremap <leader>yt :YcmCompleter GetType<CR>
+" Let clangd fully control code completion
+let g:ycm_clangd_uses_ycmd_caching = 0
+" Use installed clangd, not YCM-bundled clangd which doesn't get updates.
+let g:ycm_clangd_binary_path = exepath("clangd")
 " YouCompleteMe config }}}
 
 " TODO: Move on those values when the plugins are added. {{{

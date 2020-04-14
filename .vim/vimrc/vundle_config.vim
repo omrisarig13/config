@@ -229,6 +229,7 @@ Plugin 'vim/killersheep'
 Plugin 'udalov/kotlin-vim'
 " Plugin 'Shadowsith/kotlincomplete.vim'
 " Plugin 'hsanson/vim-android'
+" Plugin 'ludovicchabant/vim-gutentags'
 " }}}
 
 " To check out {{{
@@ -236,6 +237,32 @@ Plugin 'udalov/kotlin-vim'
 " Plugin 'Jorengarenar/fauxClip'
 " Plugin 'arzg/vim-rust-syntax-ext'
 " Plugin 'skywind3000/asynctasks.vim'
+" Plugin 'dense-analysis/ale'
+" Plugin 'tpope/vim-tbone'
+" Plugin 'rbong/vim-crystalline'
+" Plugin 'mg979/vim-xtabline'
+" Plugin 'svermeulen/vim-subversive'
+" Plugin 'rhysd/reply.vim'
+" Plugin 'justinmk/vim-gtfo'
+" Plugin 'bbchung/clighter8'
+" Plugin 'LucHermitte/clang_complete'
+" Plugin 'LucHermitte/vim-clang'
+" Plugin 'LucHermitte/vim-compil-hints'
+" Plugin 'LucHermitte/vim-refactor'
+" Plugin 'LucHermitte/lh-cmake'
+" Plugin 'LucHermitte/vim-system-tools'
+" Plugin 'LucHermitte/VimFold4C'
+" Plugin 'LucHermitte/vim-UT'
+" Plugin 'LucHermitte/valgrind.vim'
+" Plugin 'LucHermitte/SearchInRuntimet'
+" Plugin 'LucHermitte/GOD.vim'
+" Plugin 'LucHermitte/vim-jira-complete'
+" Plugin 'Andersbakken/rtags'
+" Plugin 'pechorin/any-jump.vim'
+" Plugin 'tomasiser/vim-code-dark'
+" Plugin 'ianding1/leetcode.vim'
+" Plugin 'ajmwagar/vim-deus'
+" Plugin 'puremourning/vimspector'
 "   https://github.com/tpope?tab=repositories
 "   https://www.vim.org/scripts/script.php?script_id=2353
 "   https://www.vim.org/scripts/script.php?script_id=213
@@ -246,6 +273,7 @@ Plugin 'udalov/kotlin-vim'
 "   https://github.com/wsdjeg/DotFiles
 "   https://github.com/huyvohcmc/dotfiles
 "   https://github.com/reireias/dotfiles
+"   https://github.com/LucHermitte/local_vimrc
 " }}}
 
 " Not Used {{{
