@@ -47,7 +47,7 @@ Plugin 'kkoomen/vim-doge'
 " C Plugins {{{
 Plugin 'brookhong/cscope.vim'
 Plugin 'hari-rangarajan/cctree'
-Plugin 'apalmer1377/factorus'
+Plugin 'apalmer1377/factorus' " TODO: Open an issue, try to talk with the plugin writer and find out if I can write it for him.
 " }}}
 " CPP Plugins {{{
 Plugin 'bfrg/vim-cpp-modern'
@@ -66,8 +66,13 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'iamcco/markdown-preview.nvim'
 " }}}
 " Vim-script Plugins {{{
-" Plugin 'rbtnn/vim-popup_signature'
+" Code writing Plugins. TODO: Read full docs {{{
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
+" Code writing Plugins. }}}
 Plugin 'google/vimdoc'
+Plugin 'LucHermitte/lh-vim-lib'
 " }}}
 " Spelling Plugins {{{
 Plugin 'tpope/vim-abolish'
@@ -121,6 +126,9 @@ Plugin 'whiteinge/diffconflicts'
 Plugin 'rbong/vim-flog'
 Plugin 'rhysd/committia.vim'
 Plugin 'sodapopcan/vim-twiggy'
+" gitlab Plugins {{{
+Plugin 'omrisarig13/vim-mr-interface'
+" gitlab Plugins }}}
 " }}}
 " }}}
 
@@ -153,8 +161,7 @@ Plugin 'christoomey/vim-system-copy'
 Plugin 'markonm/traces.vim'
 " Plugin 'junegunn/vim-peekaboo'
 " YankRing {{{
-" TODO: Read the full documentation and understand how to best use this suprer
-" usefull plugin.
+" TODO: Read the full documentation and understand how to best use this plugin.
 " Plugin 'vim-scripts/YankRing.vim'
 " }}}
 Plugin 'AndrewRadev/sideways.vim'
@@ -183,7 +190,12 @@ Plugin 'itchyny/calendar.vim'
 
 " Keep to last {{{
 Plugin 'honza/vim-snippets'
-Plugin 'scrooloose/syntastic'
+" if has('nvim')
+    " Plugin 'Shougo/deoplete.nvim'
+" else
+    " Plugin 'scrooloose/syntastic'
+" endif
+Plugin 'dense-analysis/ale'
 Plugin 'valloric/youcompleteme'
 "Plugin 'rdnetto/YCM-Generator'
 "Plugin 'davits/dyevim'
@@ -212,11 +224,6 @@ Plugin 'sheerun/vim-polyglot'
 " Plugin 'neoclide/coc.nvim'
 " Plugin 'WolfgangMehner/vim-plugins'
 " Plugin 'rbong/vim-crystalline' - If airline doesn't work
-" Code writing Plugins. TODO: Read full docs {{{
-Plugin 'google/vim-maktaba'
-Plugin 'google/vim-codefmt'
-Plugin 'google/vim-glaive'
-" Code writing Plugins. }}}
 " }}}
 
 " To Add {{{
@@ -227,6 +234,7 @@ Plugin 'google/vim-glaive'
 " Plugin 'tpope/vim-dispatch'
 Plugin 'vim/killersheep'
 Plugin 'udalov/kotlin-vim'
+Plugin 'mzlogin/vim-markdown-toc'
 " Plugin 'Shadowsith/kotlincomplete.vim'
 " Plugin 'hsanson/vim-android'
 " Plugin 'ludovicchabant/vim-gutentags'
@@ -262,7 +270,11 @@ Plugin 'udalov/kotlin-vim'
 " Plugin 'tomasiser/vim-code-dark'
 " Plugin 'ianding1/leetcode.vim'
 " Plugin 'ajmwagar/vim-deus'
-" Plugin 'puremourning/vimspector'
+" Plugin 'Konfekt/vim-office'
+" Plugin 'chiphogg/vim-vtd'
+" Plugin 'vim-test/vim-test'
+" Plugin 'editorconfig/editorconfig-vim'
+Plugin 'puremourning/vimspector'
 "   https://github.com/tpope?tab=repositories
 "   https://www.vim.org/scripts/script.php?script_id=2353
 "   https://www.vim.org/scripts/script.php?script_id=213
@@ -274,6 +286,7 @@ Plugin 'udalov/kotlin-vim'
 "   https://github.com/huyvohcmc/dotfiles
 "   https://github.com/reireias/dotfiles
 "   https://github.com/LucHermitte/local_vimrc
+"   https://github.com/dbarnett/dotfiles
 " }}}
 
 " Not Used {{{
@@ -289,7 +302,7 @@ Plugin 'udalov/kotlin-vim'
 " like a good plugin.
 " Plugin 'sjbach/lustyz' }}}
 " TODO: Try to understand why it doesn't work and fix it, since it looks {{{
-" like a good plugin. - from some reason it always take over the c-n mapping.
+" linnne a good plugin. - from some reason it always take over the c-n mapping.
 " Plugin 'mg979/vim-visual-multi' }}}
 " }}}
 " Unnecessary {{{
@@ -336,6 +349,7 @@ Plugin 'udalov/kotlin-vim'
 " Plugin 'eugen0329/vim-esearch' - Grepper and ferret seems better.
 " Plugin 'LucHermitte/lh-vim-lib' - Folding doesn't work good enough.
 " Plugin 'LucHermitte/VimFold4C' - Folding doesn't work good enough.
+" Plugin 'rbtnn/vim-popup_signature' - This feature is now part of YouCompleteMe
 " }}}
 " }}}
 " }}}

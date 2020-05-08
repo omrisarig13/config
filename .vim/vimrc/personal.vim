@@ -161,6 +161,8 @@ augroup END
 nnoremap gc :make<cr>
 nnoremap gC :Make<cr>
 nnoremap <leader>sr :Run<cr>
+" Run the current line as a vim ex command.
+nnoremap <leader>srv :execute getline(".")<cr>
 " }}}
 
 " Set the color scheme to be a random from given range of colors. {{{
@@ -280,10 +282,10 @@ augroup END
 " }}}
 
 " Stop the insert command once you are there too much time without action. {{{
-augroup stop_insert_group
-    autocmd!
-    autocmd FocusLost * stopinsert
-augroup END
+" augroup stop_insert_group
+    " autocmd!
+    " autocmd FocusLost * stopinsert
+" augroup END
 " }}}
 
 " Set the foldings of some common files. {{{

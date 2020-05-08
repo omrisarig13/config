@@ -62,6 +62,7 @@ command! ColorTheMeInABox colorscheme themeinabox
 command! ColorSpringNight colorscheme spring-night
 command! ColorSpaceCamp colorscheme spacecamp_lite
 command! ColorDesertNight colorscheme desert-night
+command! ColorPaper colorscheme PaperColor
 " Interesting colors to remember: lodestone, brogrammer
 " }}}
 
@@ -229,7 +230,9 @@ function! s:config_fuzzyall(...) abort
   \ }), get(a:, 1, {}))
 endfunction
 
+noremap <silent><expr> // incsearch#go(<SID>config_fuzzyall())
 noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
+noremap <silent><expr> ?? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
 noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
 noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 " }}}
@@ -502,3 +505,12 @@ let g:ycm_clangd_binary_path = exepath("clangd")
 " }}}
 
 " vim:nospell
+
+" vimspector {{{
+let g:vimspector_enable_mappings = 'HUMAN'
+" vimspector }}}
+
+" vim-mr-interface {{{
+" TODO: Remove it when the rest of the code is read.
+" Glaive vim-mr-interface !read_body_from_buffer
+" vim-mr-interface }}}
