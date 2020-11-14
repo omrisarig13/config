@@ -57,16 +57,24 @@ set colorcolumn=-0
 " }}}
 
 " Set the format options {{{
-set formatoptions=
-set formatoptions+=t " Auto wrap text by text width value
-set formatoptions+=c " Auto wrap comments.
-set formatoptions+=o " When creating a new line, add a comment leader when appropriate.
-set formatoptions+=q " Allow formatting of comments with gq
-set formatoptions+=r " Auto add comment leader after pressing Enter.
-set formatoptions+=n " Recognize numbered lists when formatting text.
-set formatoptions+=1 " Don't break a line after one character word.
-set formatoptions+=j " When joining lines, remove the comment leader when it makes sense.
-set formatoptions+=p " Don't break lines at single spaces that follow periods.
+" If clang-format file exists use it, otherwise, use hard-written config.
+if !empty(findfile('.clang-format', ';'))
+    augroup TextWidth
+        autocmd!
+        autocmd FileType c,cpp setlocal formatprg=clang-format\ -style=file
+    augroup END
+else
+    set formatoptions=
+    set formatoptions+=t " Auto wrap text by text width value
+    set formatoptions+=c " Auto wrap comments.
+    set formatoptions+=o " When creating a new line, add a comment leader when appropriate.
+    set formatoptions+=q " Allow formatting of comments with gq
+    set formatoptions+=r " Auto add comment leader after pressing Enter.
+    set formatoptions+=n " Recognize numbered lists when formatting text.
+    set formatoptions+=1 " Don't break a line after one character word.
+    set formatoptions+=j " When joining lines, remove the comment leader when it makes sense.
+    set formatoptions+=p " Don't break lines at single spaces that follow periods.
+endif
 " }}}
 
 " Tab options {{{
@@ -199,9 +207,10 @@ augroup END
 " }}}
 
 " Create and move between tabs. {{{
-noremap <C-t> :tabnew<CR>
-noremap <C-n> :tabn<CR>
-noremap <C-p> :tabp<CR>
+noremap <leader>tn :tabnew<CR>
+" noremap <C-t> :tabnew<CR>
+" noremap <C-n> :tabn<CR>
+" noremap <C-p> :tabp<CR>
 " }}}
 
 " Make the command c-p and c-n act better. {{{
@@ -228,6 +237,9 @@ command! Wq :wq
 
 " Map the escape in insert mode, to avoid moving the fingers. {{{
 inoremap hh <Esc>
+inoremap Hh <Esc>
+inoremap HH <Esc>
+inoremap hH <Esc>
 inoremap hhh h<Esc>
 inoremap jk <Esc>
 " }}}
@@ -373,7 +385,45 @@ command! GetTranslation :call GetTranslation(expand("<cword>"))
 nnoremap <leader>st :call GetTranslation("")<cr>
 " Translate }}}
 
-" Move in history {{{
-cnoremap <c-p> <up>
-cnoremap <c-n> <down>
-" Move in history }}}
+" Cscope Config {{{
+" TODO: Change the creation of new databases to be in the root directory of the
+" project, and not in the current location. Should be done after adding a plugin
+" that would find out the base repository project.
+" Options {{{
+set cscopeprg=/usr/bin/cscope
+set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
+set cscopeverbose
+let g:cscope_silent = 1
+" }}}
+" Load the cscope in the when openning a c file. {{{
+function! InitCscope()
+    if has("cscope")
+        set csto=0
+        set cst
+        set nocsverb
+        " add any database in current directory
+        if filereadable("cscope.out")
+            cs add cscope.out
+        " else add database pointed to by environment
+        elseif $CSCOPE_DB != ""
+            cs add $CSCOPE_DB
+        endif
+        set csverb
+    endif
+endfunction
+augroup CscopeAuto
+    autocmd!
+    autocmd Filetype c,cpp,h :call InitCscope()
+augroup END
+" }}}
+" Custom commands {{{
+" Create a new cscope database, and add it to the current instance of vim. {{{
+function! CreateCscope()
+    execute "!cscope -b *.c *.h */*.c */*.h */*/*.c */*/*.h /usr/include/*.h /usr/include/*/*.h /usr/include/*/*/*.h /usr/include/*/*/*/*.h /usr/include/*/*/*/*/*.h /usr/include/*/*/*/*/*.h"
+    cscope add cscope.out
+endfunction
+" }}}
+nnoremap <leader>nb :call CreateCscope()<CR>
+" }}}
+" }}}
+

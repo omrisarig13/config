@@ -9,3 +9,4 @@
 "    execute 'source ' . expand("<sfile>:p:h") . '/scripts/next_last_operations.vim'
 execute 'source ' . expand("<sfile>:p:h") . '/scripts/PlantumlMake.vim'
 execute 'source ' . expand("<sfile>:p:h") . '/scripts/c_format_actions.vim'
+execute 'source ' . expand("<sfile>:p:h") . '/scripts/cscope_macros.vim'

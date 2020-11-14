@@ -25,35 +25,31 @@ Plugin 'junegunn/limelight.vim'
 " File system Plugins {{{
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'kien/ctrlp.vim'
-" Plugin 'FelikZ/ctrlp-py-matcher'
-Plugin 'octref/rootignore'
 Plugin 'junegunn/fzf.vim'
 " }}}
 
 " Sessions Plugins {{{
 Plugin 'tpope/vim-obsession'
+" TODO: Try to understand why it doesn't work and fix it {{{
+" The auto-completion of this plugins doesn't work from some reason (some plugin
+" that is related to adding git branches to the names of the sessions). I should
+" understand what is the problem and try to fix it, it doesn't look like a big
+" overhead.
 Plugin 'dhruvasagar/vim-prosession'
+" }}}
 " }}}
 
 " Language Plugins {{{
 " Comment Plugins {{{
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'vim-scripts/DoxygenToolkit.vim'
-" Documentation Plugins {{{
 Plugin 'kkoomen/vim-doge'
-" Documentation Plugins }}}
 " }}}
 " C Plugins {{{
-Plugin 'brookhong/cscope.vim'
 Plugin 'hari-rangarajan/cctree'
 Plugin 'apalmer1377/factorus' " TODO: Open an issue, try to talk with the plugin writer and find out if I can write it for him.
 " }}}
 " CPP Plugins {{{
 Plugin 'bfrg/vim-cpp-modern'
-" vim-clang-format {{{
-Plugin 'rhysd/vim-clang-format'
-" vim-clang-format }}}
 " }}}
 " Plant Uml Plugins {{{
 Plugin 'aklt/plantuml-syntax'
@@ -78,7 +74,6 @@ Plugin 'LucHermitte/lh-vim-lib'
 Plugin 'tpope/vim-abolish'
 " }}}
 " English Text Plugins {{{
-" Plugin 'Ron89/thesaurus_query.vim'
 Plugin 'reedes/vim-pencil'
 " }}}
 " Cmake Plugins {{{
@@ -195,7 +190,7 @@ Plugin 'honza/vim-snippets'
 " else
     " Plugin 'scrooloose/syntastic'
 " endif
-Plugin 'dense-analysis/ale'
+" Plugin 'dense-analysis/ale'
 Plugin 'valloric/youcompleteme'
 "Plugin 'rdnetto/YCM-Generator'
 "Plugin 'davits/dyevim'
@@ -274,7 +269,48 @@ Plugin 'mzlogin/vim-markdown-toc'
 " Plugin 'chiphogg/vim-vtd'
 " Plugin 'vim-test/vim-test'
 " Plugin 'editorconfig/editorconfig-vim'
+" Plugin 'fmoralesc/vim-tutor-mode'
+" Plugin 'mipmip/vim-scimark' Watch out - there are prerequirments that should
+" be installed as well.
+" Plugin 'rhysd/git-messenger.vim'
+" Plugin 'Konfekt/vim-CtrlXA'
+" Plugin 'AlphaMycelium/pathfinder.vim'
+" Plugin 'wvanlint/twf'
+" Plugin 'stefandtw/quickfix-reflector.vim'
+" Plugin 'lervag/vimtex'
+" Plugin 'wellle/context.vim'
+" Plugin 'fredkschott/covim'
+" Plugin 'guns/vim-sexp'
+" Plugin 'wsdjeg/vim-fetch'
+" Plugin 'kamykn/spelunker.vim'
+" Plugin 'ntpeters/vim-better-whitespace'
+" Plugin 'FooSoft/vim-argwrap'
+" Plugin 'arcticicestudio/nord-vim'
+" Plugin 'junegunn/vim-easy-align'
+" Plugin 'RRethy/vim-hexokinase'
+" Plugin 'lervag/vimtex'
+" Plugin 'embark-theme/vim'
+" Plugin 'lpinilla/vim-codepainter'
+" Plugin 'kyazdani42/nvim-tree.lua'
+" Plugin 'ms-jpq/chadtree'
+" Plugin 'weirongxu/coc-explorer'
+" Plugin 'scr1pt0r/crease.vim'
+" Plugin 'vim-add-ons/clavichord-omni-completion'
+" Plugin 'bignimbus/you-are-here.vim'
+" Plugin 'mg979/docgen.vim'
+" Plugin 'michaelb/sniprun'
+" Plugin 'Yggdroot/indentLine'
+" Plugin 'rhysd/clever-f.vim'
+" Plugin 'VsVim/VsVim'
+" Plugin 'MattesGroeger/vim-bookmarks'
+" Plugin 'michaelb/vim-tips'
+" Plugin 'tommcdo/vim-exchange'
+" Plugin 'voldikss/vim-floaterm'
+" Plugin 'ledesmablt/vim-run'
 Plugin 'puremourning/vimspector'
+if has('nvim')
+    Plugin 'glacambre/firenvim' " Amazing!!!!
+endif
 "   https://github.com/tpope?tab=repositories
 "   https://www.vim.org/scripts/script.php?script_id=2353
 "   https://www.vim.org/scripts/script.php?script_id=213
@@ -287,6 +323,11 @@ Plugin 'puremourning/vimspector'
 "   https://github.com/reireias/dotfiles
 "   https://github.com/LucHermitte/local_vimrc
 "   https://github.com/dbarnett/dotfiles
+"
+"   https://github.com/zdcthomas/dmux
+"   https://github.com/lotabout/skim
+"   https://github.com/tmuxinator/tmuxinator
+"   https://github.com/mhinz/vim-galore
 " }}}
 
 " Not Used {{{
@@ -350,6 +391,13 @@ Plugin 'puremourning/vimspector'
 " Plugin 'LucHermitte/lh-vim-lib' - Folding doesn't work good enough.
 " Plugin 'LucHermitte/VimFold4C' - Folding doesn't work good enough.
 " Plugin 'rbtnn/vim-popup_signature' - This feature is now part of YouCompleteMe
+" Plugin 'kien/ctrlp.vim' - Replaced with fzf
+" Plugin 'FelikZ/ctrlp-py-matcher' - ctrlp Replaced with fzf
+" Plugin 'octref/rootignore' - ctrlp Replaced with fzf
+" Plugin 'vim-scripts/DoxygenToolkit.vim' - vim-doge is better
+" Plugin 'brookhong/cscope.vim' - The built-in support of cscope, with cscope script are good enough.
+" Plugin 'rhysd/vim-clang-format' - Not needed since vim has support for this now.
+" Plugin 'Ron89/thesaurus_query.vim' - Not used, so there is no reason to keep it in the config.
 " }}}
 " }}}
 " }}}

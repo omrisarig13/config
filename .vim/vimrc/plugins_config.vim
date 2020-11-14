@@ -1,7 +1,7 @@
 
 " NERDTree Config. {{{
-nnoremap <F2> :NERDTreeToggle<CR>
-nnoremap <leader><F2> :NERDTreeTabsToggle<CR>
+nnoremap <F2> :NERDTreeTabsToggle<CR>
+nnoremap <leader><F2> :NERDTreeToggle<CR>
 " }}}
 
 " NERDCommenter Config. {{{
@@ -77,105 +77,6 @@ let g:multi_cursor_skip_key              = '<C-x>'
 let g:multi_cursor_quit_key              = '<esc>'
 let g:multi_cursor_exit_from_visual_mode = 0
 let g:multi_cursor_exit_from_insert_mode = 0
-" }}}
-
-" Cscope Config {{{
-" TODO: Change the creation of new databases to be in the root directory of the
-" project, and not in the current location. Should be done after adding a plugin
-" that would find out the base repository project.
-" Options {{{
-set cscopeprg=/usr/bin/cscope
-set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
-set cscopeverbose
-let g:cscope_silent = 1
-" }}}
-" Load the cscope in the when openning a c file. {{{
-function! InitCscope()
-    if has("cscope")
-        set csto=0
-        set cst
-        set nocsverb
-        " add any database in current directory
-        if filereadable("cscope.out")
-            cs add cscope.out
-        " else add database pointed to by environment
-        elseif $CSCOPE_DB != ""
-            cs add $CSCOPE_DB
-        endif
-        set csverb
-    endif
-endfunction
-augroup CscopeAuto
-    autocmd!
-    autocmd Filetype c,cpp,h :call InitCscope()
-augroup END
-" }}}
-" Custom commands {{{{{{
-" Create a new cscope database, and add it to the current instance of vim. {{{
-function! CreateCscope()
-    execute "!cscope -b *.c *.h */*.c */*.h */*/*.c */*/*.h /usr/include/*.h /usr/include/*/*.h /usr/include/*/*/*.h /usr/include/*/*/*/*.h /usr/include/*/*/*/*/*.h /usr/include/*/*/*/*/*.h"
-    cscope add cscope.out
-endfunction
-" }}}
-" Create a new cscope query, putting the result in a new tab. {{{
-function! QueryInTab(type)
-    normal mM
-    tabnew %
-    normal `M
-    call CscopeFind(a:type, expand('<cword>'))
-endfunction
-" }}}
-nnoremap <leader>nb :call CreateCscope()<CR>
-nnoremap <leader>nn :call CscopeFindInteractive(expand('<cword>'))<CR>
-" s: Find this C symbol {{{
-nnoremap  <leader>ns :call CscopeFind('s', expand('<cword>'))<CR>
-nnoremap  <leader>nvs :vsplit<CR>:call CscopeFind('s', expand('<cword>'))<CR>
-nnoremap  <leader>nss :split<CR>:call CscopeFind('s', expand('<cword>'))<CR>
-nnoremap  <leader>nts :call QueryInTab('s')<CR>
-" }}}
-" g: Find this definition {{{
-nnoremap  <leader>ng :call CscopeFind('g', expand('<cword>'))<CR>
-nnoremap  <leader>nvg :vsplit<CR>:call CscopeFind('g', expand('<cword>'))<CR>
-nnoremap  <leader>nsg :split<CR>:call CscopeFind('g', expand('<cword>'))<CR>
-nnoremap  <leader>ntg :call QueryInTab('g')<CR>
-" }}}
-" d: Find functions called by this function {{{
-nnoremap  <leader>nd :call CscopeFind('d', expand('<cword>'))<CR>
-nnoremap  <leader>nvd :vsplit<CR>:call CscopeFind('d', expand('<cword>'))<CR>
-nnoremap  <leader>nsd :split<CR>:call CscopeFind('d', expand('<cword>'))<CR>
-nnoremap  <leader>ntd :call QueryInTab('d')<CR>
-" }}}
-" c: Find functions calling this function {{{
-nnoremap  <leader>nc :call CscopeFind('c', expand('<cword>'))<CR>
-nnoremap  <leader>nvc :vsplit<CR>:call CscopeFind('c', expand('<cword>'))<CR>
-nnoremap  <leader>nsc :split<CR>:call CscopeFind('c', expand('<cword>'))<CR>
-nnoremap  <leader>ntc :call QueryInTab('c')<CR>
-" }}}
-" t: Find this text string {{{
-nnoremap  <leader>nt :call CscopeFind('t', expand('<cword>'))<CR>
-nnoremap  <leader>nvt :vsplit<CR>:call CscopeFind('t', expand('<cword>'))<CR>
-nnoremap  <leader>nst :split<CR>:call CscopeFind('t', expand('<cword>'))<CR>
-nnoremap  <leader>ntt :call QueryInTab('t')<CR>
-" }}}
-" e: Find this egrep pattern {{{
-nnoremap  <leader>ne :call CscopeFind('e', expand('<cword>'))<CR>
-nnoremap  <leader>nve :vsplit<CR>:call CscopeFind('e', expand('<cword>'))<CR>
-nnoremap  <leader>nse :split<CR>:call CscopeFind('e', expand('<cword>'))<CR>
-nnoremap  <leader>nte :call QueryInTab('e')<CR>
-" }}}
-" f: Find this file {{{
-nnoremap  <leader>nf :call CscopeFind('f', expand('<cword>'))<CR>
-nnoremap  <leader>nvf :vsplit<CR>:call CscopeFind('f', expand('<cword>'))<CR>
-nnoremap  <leader>nsf :split<CR>:call CscopeFind('f', expand('<cword>'))<CR>
-nnoremap  <leader>ntf :call QueryInTab('f')<CR>
-" }}}
-" i: Find files #including this file {{{
-nnoremap  <leader>ni :call CscopeFind('i', expand('<cword>'))<CR>
-nnoremap  <leader>nvi :vsplit<CR>:call CscopeFind('i', expand('<cword>'))<CR>
-nnoremap  <leader>nsi :split<CR>:call CscopeFind('i', expand('<cword>'))<CR>
-nnoremap  <leader>nti :call QueryInTab('i')<CR>
-" }}}
-" }}}}}}
 " }}}
 
 " CCTree Config {{{
@@ -340,6 +241,8 @@ nmap <leader>mpe <Plug>MarkdownPreviewStop
 " Fzf Config {{{
 let g:fzf_history_dir = '~/.vim/fzf_history'
 let g:fzf_buffers_jump = 1
+nnoremap <leader>e :Files<cr>
+nnoremap <leader>ee :execute "Files " . expand("%:p:h")<cr>
 nnoremap <leader>efb :Files<cr>
 nnoremap <leader>efc :execute "Files " . expand("%:p:h")<cr>
 nnoremap <leader>efr :execute "Files " . FindRootDirectory()<cr>
@@ -374,7 +277,7 @@ set viewoptions=cursor,folds,slash,unix
 " Rooter Config {{{
 let g:rooter_manual_only = 1
 let g:rooter_patterns = ['Makefile', '.git/', '.hg/']
-let g:rooter_use_lcd = 1
+let g:rooter_cd_cmd="lcd"
 " }}}
 
 " vim-system-copy Config {{{
@@ -510,7 +413,24 @@ let g:ycm_clangd_binary_path = exepath("clangd")
 let g:vimspector_enable_mappings = 'HUMAN'
 " vimspector }}}
 
+" vim-doge {{{
+let g:doge_comment_jump_wrap = 0
+let g:doge_comment_jump_modes = ['n', 's']
+" vim-doge }}}
+
+" codefmt {{{
+nnoremap === :FormatCode<cr>
+" codefmt }}}
+
+
 " vim-mr-interface {{{
-" TODO: Remove it when the rest of the code is read.
-" Glaive vim-mr-interface !read_body_from_buffer
+Glaive vim-mr-interface gitlab_private_token="taBjewLRUzeJmTyyeHAC"
+Glaive vim-mr-interface names_to_id=`{'test':18354543}`
+
+nnoremap <unique> <silent> <leader>mc :MRInterfaceAddComment<CR>
+nnoremap <unique> <silent> <leader>md :MRInterfaceAddGeneralDiscussionThread<CR>
+nnoremap <unique> <silent> <leader>mC :MRInterfaceAddCodeDiscussionThread<CR>
+nnoremap <unique> <silent> <leader>mo :MRInterfaceAddCodeDiscussionThreadOnOldCode<CR>
+nnoremap <unique> <silent> <leader>mn :MRInterfaceAddCodeDiscussionThreadOnNewCode<CR>
+nnoremap <unique> <silent> <leader>ma :MRInterfaceAddDefaultToCache<CR>
 " vim-mr-interface }}}
