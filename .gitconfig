@@ -1,0 +1,18 @@
+[user]
+	email = omri.sarig13@gmail.com
+	name = Omri Sarig
+[alias]
+	fetch-all = fetch --all --prune
+	branches = branch -l
+	all-branches = branch -a
+	safe-pull = merge --ff-only
+	full-log = log --all --graph
+	full-short-log = log --all --graph --oneline
+	cdiff = diff --cached
+	amend = commit --amend --no-edit
+	push-amended = push --force-with-lease
+[merge]
+	tool = vimdiff
+[cinnabar]
+	version-check = 1586350839
+	helper = /home/omri/.mozbuild/git-cinnabar/git-cinnabar-helper
