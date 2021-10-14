@@ -84,14 +84,24 @@ if has("cscope")
     " go back to where you were before the search.  
     "
 
-    nmap <leader>ns :cs find s <C-R>=expand("<cword>")<CR><CR>	
-    nmap <leader>ng :cs find g <C-R>=expand("<cword>")<CR><CR>	
-    nmap <leader>nc :cs find c <C-R>=expand("<cword>")<CR><CR>	
-    nmap <leader>nt :cs find t <C-R>=expand("<cword>")<CR><CR>	
-    nmap <leader>ne :cs find e <C-R>=expand("<cword>")<CR><CR>	
-    nmap <leader>nf :cs find f <C-R>=expand("<cfile>")<CR><CR>	
-    nmap <leader>ni :cs find i <C-R>=expand("<cfile>")<CR><CR>	
-    nmap <leader>nd :cs find d <C-R>=expand("<cword>")<CR><CR>	
+    nmap <leader>ns :tab split<cr>:cs find s <C-R>=expand("<cword>")<CR><CR>	
+    nmap <leader>ng :tab split<cr>:cs find g <C-R>=expand("<cword>")<CR><CR>	
+    nmap <leader>nc :tab split<cr>:cs find c <C-R>=expand("<cword>")<CR><CR>	
+    nmap <leader>nt :tab split<cr>:cs find t <C-R>=expand("<cword>")<CR><CR>	
+    nmap <leader>ne :tab split<cr>:cs find e <C-R>=expand("<cword>")<CR><CR>	
+    nmap <leader>nf :tab split<cr>:cs find f <C-R>=expand("<cfile>")<CR><CR>	
+    nmap <leader>ni :tab split<cr>:cs find i <C-R>=expand("<cfile>")<CR><CR>	
+    nmap <leader>nd :tab split<cr>:cs find d <C-R>=expand("<cword>")<CR><CR>	
+
+
+    nmap <leader><leader>ns :cs find s <C-R>=expand("<cword>")<CR><CR>	
+    nmap <leader><leader>ng :cs find g <C-R>=expand("<cword>")<CR><CR>	
+    nmap <leader><leader>nc :cs find c <C-R>=expand("<cword>")<CR><CR>	
+    nmap <leader><leader>nt :cs find t <C-R>=expand("<cword>")<CR><CR>	
+    nmap <leader><leader>ne :cs find e <C-R>=expand("<cword>")<CR><CR>	
+    nmap <leader><leader>nf :cs find f <C-R>=expand("<cfile>")<CR><CR>	
+    nmap <leader><leader>ni :cs find i <C-R>=expand("<cfile>")<CR><CR>	
+    nmap <leader><leader>nd :cs find d <C-R>=expand("<cword>")<CR><CR>	
 
 
     " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type

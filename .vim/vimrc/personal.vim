@@ -11,6 +11,8 @@
 " Add better Windo action from here: https://vi.stackexchange.com/questions/4827/what-is-a-better-way-to-use-windo-without-changing-of-window
 " Decide what to do with the statusline after adding the airline (?) plugin.
 " Add an automatic script for adding abbreviations
+" Find a plugin that works with cscope and path relative to the current
+"  directory.
 " }}}
 
 " General {{{
@@ -27,8 +29,9 @@ set timeoutlen=500 " Set the timeout to be half a second.
 filetype plugin indent on " Make vim understand the different file types.
 syntax on " Make vim understand the different syntax for the different file types
 let g:load_doxygen_syntax=1
-set wildignore+=*/.git/*,*/.hg/* " Ignore hg and git directory when working on files.
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/* " Ignore hg, git and svn directories when working on files.
 set updatetime=100 " Set the update time to be very fast, instead of vim's 4 second default.
+set wildignorecase " Better completion for the `e` command
 " }}}
 
 " Set the splitting of new files to be below and right to the current file. {{{
@@ -58,30 +61,41 @@ set colorcolumn=-0
 
 " Set the format options {{{
 " If clang-format file exists use it, otherwise, use hard-written config.
-if !empty(findfile('.clang-format', ';'))
-    augroup TextWidth
-        autocmd!
-        autocmd FileType c,cpp setlocal formatprg=clang-format\ -style=file
-    augroup END
-else
-    set formatoptions=
-    set formatoptions+=t " Auto wrap text by text width value
-    set formatoptions+=c " Auto wrap comments.
-    set formatoptions+=o " When creating a new line, add a comment leader when appropriate.
-    set formatoptions+=q " Allow formatting of comments with gq
-    set formatoptions+=r " Auto add comment leader after pressing Enter.
-    set formatoptions+=n " Recognize numbered lists when formatting text.
-    set formatoptions+=1 " Don't break a line after one character word.
-    set formatoptions+=j " When joining lines, remove the comment leader when it makes sense.
-    set formatoptions+=p " Don't break lines at single spaces that follow periods.
-endif
+" if !empty(findfile('.clang-format', ';'))
+    " augroup TextWidth
+        " autocmd!
+        " autocmd FileType c,cpp setlocal formatprg=clang-format\ -style=file
+    " augroup END
+" else
+    " set formatoptions=
+    " set formatoptions+=t " Auto wrap text by text width value
+    " set formatoptions+=c " Auto wrap comments.
+    " set formatoptions+=o " When creating a new line, add a comment leader when appropriate.
+    " set formatoptions+=q " Allow formatting of comments with gq
+    " set formatoptions+=r " Auto add comment leader after pressing Enter.
+    " set formatoptions+=n " Recognize numbered lists when formatting text.
+    " set formatoptions+=1 " Don't break a line after one character word.
+    " set formatoptions+=j " When joining lines, remove the comment leader when it makes sense.
+    " set formatoptions+=p " Don't break lines at single spaces that follow periods.
+" endif
+augroup TextWidth
+    autocmd!
+    " autocmd FileType c,cpp setlocal formatprg=clang-format\ --style=Mozilla
+    autocmd FileType c,cpp setlocal formatprg=clang-format
+augroup END
 " }}}
 
 " Tab options {{{
+set expandtab
 set tabstop=4
 set shiftwidth=4
-set expandtab
 set softtabstop=4
+" augroup SpecialTabs
+    " autocmd!
+    " autocmd FileType c,cpp,javascript setlocal tabstop=2
+    " autocmd FileType c,cpp,javascript setlocal shiftwidth=2
+    " autocmd FileType c,cpp,javascript setlocal softtabstop=2
+" augroup END
 set shiftround
 set list
 set listchars=
@@ -90,7 +104,7 @@ set listchars=
 " them and spaces).
 augroup CodeVisibleTab
     autocmd!
-    autocmd FileType c,cpp,h,python,vim setlocal listchars=tab:>-
+    autocmd FileType c,cpp,h,python,vim,javascript setlocal listchars=tab:>-
 augroup END
 " }}}
 
@@ -154,7 +168,7 @@ augroup PythonCompile
 augroup END
 augroup UmlCompile
     autocmd!
-    autocmd BufReadPre *.uml command! -buffer Make !/usr/bin/java -jar /home/omri/.vim/bundle/vim-slumlord/plantuml.jar -tsvg %
+    autocmd BufReadPre *.uml command! -buffer Make !/usr/bin/java -jar /home/omsa/.vim/bundle/vim-slumlord/plantuml.jar -tsvg %
     autocmd BufReadPre *.uml command! -buffer Run !viewnior %:t:r.svg &
     autocmd BufReadPre *.uml command! -buffer Clean
 augroup END
@@ -231,6 +245,8 @@ set wildmenu
 " Add Capital letters commands for saving and exiting. {{{
 command! W :windo w
 command! Q :windo q
+command! WQQ :wq | tabprev
+command! QQ :q | tabprev
 command! WQ :windo wq
 command! Wq :wq
 " }}}
@@ -240,6 +256,7 @@ inoremap hh <Esc>
 inoremap Hh <Esc>
 inoremap HH <Esc>
 inoremap hH <Esc>
+inoremap h: <Esc>
 inoremap hhh h<Esc>
 inoremap jk <Esc>
 " }}}
@@ -426,4 +443,96 @@ endfunction
 nnoremap <leader>nb :call CreateCscope()<CR>
 " }}}
 " }}}
+
+" For recursive macros, a test {{{
+nnoremap qqq qqq:set nowrapscan<cr>qq
+nnoremap <leader>sns :set wrapscan<cr>
+" }}}
+"
+" Some temp config to try {{{
+
+augroup TabMovement
+    autocmd!
+    autocmd TabLeave * let g:lasttab = tabpagenr()
+augroup END
+nnoremap <silent> ggt :exe "tabn ".g:lasttab<cr>
+nnoremap <silent> ggg gg
+nnoremap <silent> +gt :tabn<cr>
+nnoremap <silent> +1gt :tabn<cr>
+nnoremap <silent> +2gt :tabn+2<cr>
+nnoremap <silent> +3gt :tabn+3<cr>
+nnoremap <silent> +4gt :tabn+4<cr>
+nnoremap <silent> +5gt :tabn+5<cr>
+nnoremap <silent> +6gt :tabn+6<cr>
+nnoremap <silent> +7gt :tabn+7<cr>
+nnoremap <silent> +8gt :tabn+8<cr>
+nnoremap <silent> +9gt :tabn+9<cr>
+nnoremap -gt gT
+nnoremap -1gt gT
+nnoremap -2gt 2gT
+nnoremap -3gt 3gT
+nnoremap -4gt 4gT
+nnoremap -5gt 5gT
+nnoremap -6gt 6gT
+nnoremap -7gt 7gT
+nnoremap -8gt 8gT
+nnoremap -9gt 9gT
+nnoremap <silent> +2gT :tabn+2<cr>
+nnoremap <silent> +3gT :tabn+3<cr>
+nnoremap <silent> +4gT :tabn+4<cr>
+nnoremap <silent> +5gT :tabn+5<cr>
+nnoremap <silent> +6gT :tabn+6<cr>
+nnoremap <silent> +7gT :tabn+7<cr>
+nnoremap <silent> +8gT :tabn+8<cr>
+nnoremap <silent> +9gT :tabn+9<cr>
+nnoremap -gT gT
+nnoremap -1gT gT
+nnoremap -2gT 2gT
+nnoremap -3gT 3gT
+nnoremap -4gT 4gT
+nnoremap -5gT 5gT
+nnoremap -6gT 6gT
+nnoremap -7gT 7gT
+nnoremap -8gT 8gT
+nnoremap -9gT 9gT
+nnoremap <c-w>to :tabonly<cr>
+
+nnoremap <c-w>S :tab split<cr>
+" Some temp config to try }}}
+
+" TAB Plugin {{{
+" Enable working with tabs either with place or with last used by default
+" Enable both options by specific commands.
+" Add command that will show the stack.
+" Handle the case of moving tabs around.
+" }}}
+"
+"
+" Useful - to work with {{{
+" Replace all int32.. to int32_t
+" :%s/\(int\)\(8\|\(16\)\|\(32\)\|\(64\)\)\([^_]\)/\1\2_t\6/g
+" }}}
+"
+" Temp {{{
+augroup GitCommitMacros
+    autocmd!
+    " Put fixup at the right places at interactive rebase
+    autocmd Filetype gitrebase let @f="mmkf(W#ddnp0cefhh`m@f"
+    autocmd Filetype gitrebase let @r="}@f"
+augroup END
+" }}}
+"
+" CGreen Plugin idea:
+" * Wrap cgreen-runner and parse the result, to let the user jump through it
+"   with the quickfix.
+" * Wrap cgreen-debug and make it run with the debugger built into vim (with
+"   termdebug).
+
+" Add debugging for c and cpp programs. {{{
+augroup OmniCompletion
+    autocmd!
+    autocmd FileType cmake setlocal omnifunc=syntaxcomplete#Complete
+augroup END
+" }}}
+
 

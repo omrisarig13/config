@@ -9,6 +9,22 @@ alias ll="ls -la --color"
 alias l="ls -b --color"
 alias ..="cd ../"
 alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
+alias ......="cd ../../../../../"
+alias .......="cd ../../../../../../"
+alias ........="cd ../../../../../../../"
+alias .........="cd ../../../../../../../../"
+alias ..........="cd ../../../../../../../../../"
+alias ...........="cd ../../../../../../../../../../"
+alias ............="cd ../../../../../../../../../../../"
+alias .............="cd ../../../../../../../../../../../../"
+alias ..............="cd ../../../../../../../../../../../../../"
+alias ...............="cd ../../../../../../../../../../../../../../"
+alias ................="cd ../../../../../../../../../../../../../../../"
+alias .................="cd ../../../../../../../../../../../../../../../../"
+alias ..................="cd ../../../../../../../../../../../../../../../../../"
+alias ...................="cd ../../../../../../../../../../../../../../../../../../"
 alias remove_exes="find . -perm -1 -type f -maxdepth 1 2>/dev/null | xargs rm"
 alias ivm="vim"
 
@@ -20,8 +36,14 @@ alias :wa=
 
 alias potion="~/Projects/vim/potion/bin/potion"
 
+alias python=python3
+alias pip=pip3
+
 # Some custom commands
 alias learn_vim="vim -u ~/Projects/vim/vimrc"
+alias cmak="cmake"
+alias camke="cmake"
+alias amke="make"
 
 export PATH="${PATH}:/home/omri/bin"
 export PATH="${PATH}:/home/omri/.gem/ruby/2.5.0/bin"
@@ -54,7 +76,7 @@ colors() {
 		echo; echo
 	done
 }
-r
+
 [[ -f ~/.extend.bashrc ]] && . ~/.extend.bashrc
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
@@ -66,8 +88,8 @@ parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\[\033[36m\]\$(parse_git_branch)\033[00m\] $ "
-fortune | cowsay -f $(ls /usr/share/cows | shuf -n1)
+PS1="\[\033[1;34m\]\D{} \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\[\033[36m\]\$(parse_git_branch)\033[00m\] $ "
+fortune | cowsay
 
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"

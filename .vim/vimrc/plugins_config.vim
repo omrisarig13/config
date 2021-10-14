@@ -1,7 +1,7 @@
 
 " NERDTree Config. {{{
-nnoremap <F2> :NERDTreeTabsToggle<CR>
-nnoremap <leader><F2> :NERDTreeToggle<CR>
+nnoremap <leader><F2> :NERDTreeTabsToggle<CR>
+nnoremap <F2> :NERDTreeToggle<CR>
 " }}}
 
 " NERDCommenter Config. {{{
@@ -63,6 +63,7 @@ command! ColorSpringNight colorscheme spring-night
 command! ColorSpaceCamp colorscheme spacecamp_lite
 command! ColorDesertNight colorscheme desert-night
 command! ColorPaper colorscheme PaperColor
+command! ColorKuroi colorscheme kuroi
 " Interesting colors to remember: lodestone, brogrammer
 " }}}
 
@@ -116,9 +117,9 @@ augroup END
 " }}}
 
 " Incsearch Config {{{
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+" map /  <Plug>(incsearch-forward)
+" map ?  <Plug>(incsearch-backward)
+" map g/ <Plug>(incsearch-stay)
 " }}}
 
 " Incsearch-Fuzzy Config {{{
@@ -131,11 +132,11 @@ function! s:config_fuzzyall(...) abort
   \ }), get(a:, 1, {}))
 endfunction
 
-noremap <silent><expr> // incsearch#go(<SID>config_fuzzyall())
-noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
-noremap <silent><expr> ?? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
-noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
-noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
+" noremap <silent><expr> // incsearch#go(<SID>config_fuzzyall())
+" noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
+" noremap <silent><expr> ?? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
+" noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
+" noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 " }}}
 
 " Mundo Config {{{
@@ -158,8 +159,10 @@ noremap <leader>wm :WinResizerStartMove<CR>
 "           " }}}
 
 " Grepper Config {{{
-nmap <leader>gs  <plug>(GrepperOperator)
-xmap <leader>gs  <plug>(GrepperOperator)
+nmap <leader>ggs  <plug>(GrepperOperator)
+xmap <leader>ggs  <plug>(GrepperOperator)
+nmap <leader>gs  :tab split<cr><plug>(GrepperOperator)
+xmap <leader>gs  :tab split<cr><plug>(GrepperOperator)
 nnoremap <leader>gg :Grepper<cr>
 let g:grepper = {'side' : 1}
 " }}}
@@ -200,7 +203,7 @@ let g:marvim_store_key = '-ms'
 
 " Prosession Config {{{
 let g:prosession_tmux_title = 1
-let g:prosession_per_branch = 1
+let g:prosession_per_branch = 0
 " Create a command to close the current session and close vim together.
 command! PQ execute "normal! :ProsessionDelete\<cr>:qa\<cr>"
 " }}}
@@ -241,14 +244,15 @@ nmap <leader>mpe <Plug>MarkdownPreviewStop
 " Fzf Config {{{
 let g:fzf_history_dir = '~/.vim/fzf_history'
 let g:fzf_buffers_jump = 1
-nnoremap <leader>e :Files<cr>
+nnoremap <leader><leader>e :GFiles<cr>
 nnoremap <leader>ee :execute "Files " . expand("%:p:h")<cr>
 nnoremap <leader>efb :Files<cr>
-nnoremap <leader>efc :execute "Files " . expand("%:p:h")<cr>
 nnoremap <leader>efr :execute "Files " . FindRootDirectory()<cr>
 nnoremap <leader>egf :GFiles<cr>
 nnoremap <leader>egs :GFiles?<cr>
-nnoremap <leader>eb :Buffers<cr>
+nnoremap <leader>eb :GBranches<cr>
+nnoremap <leader>eb :GBranches<cr>
+nnoremap <leader>ebb :Buffers<cr>
 nnoremap <leader>el :Lines<CR>
 nnoremap <leader>ebl :BLines<cr>
 nnoremap <leader>et :Tags<cr>
@@ -264,10 +268,26 @@ nnoremap <leader>eft :Filetypes<cr>
 " }}}
 
 " Fugitive Config {{{
-nnoremap <leader>Gs :Gstatus<CR>
-nnoremap <leader>Gl :Git log<CR>
-nnoremap <leader>Gc :Gcommit<CR>
+" let g:fugitive_git_executable = '"/mnt/c/Program Files/Git/cmd/git.exe"'
+" let g:fugitive_git_executable = 'wgit'
+nnoremap <leader>Gs :G<CR>
+nnoremap <leader>GS :G<CR>
+nnoremap <leader>Grl :Git log<CR>
+nnoremap <leader>GRl :Git log<CR>
+nnoremap <leader>GRL :Git log<CR>
+nnoremap <leader>Gl :Flog<CR>
+nnoremap <leader>GL :Flog<CR>
+" nnoremap <leader>Gl :Git full-short-log<CR>
+" nnoremap <leader>GL :Git full-short-log<CR>
+nnoremap <leader>Gc :G commit<CR>
+nnoremap <leader>GC :G commit<CR>
 nnoremap <leader>Gw :Gwrite<CR>
+nnoremap <leader>GW :Gwrite<CR>
+let g:fugitive_autoreload_status = v:false
+augroup GitFold
+    autocmd!
+    autocmd FileType git setlocal foldmethod=syntax
+augroup END
 " }}}
 
 " Stay Config {{{
@@ -345,7 +365,7 @@ let g:choosewin_overlay_enable=1
 
 " ClangFormat Config {{{
 " let g:clang_format#code_style="mozilla"
-let g:clang_format#code_style="mozilla"
+let g:clang_format#code_style="Mozilla"
 nnoremap <leader>cf :ClangFormat<CR>
 " ClangFormat Config }}}
 
@@ -356,11 +376,20 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_c_checkers = ['gcc', 'clang_check', 'clang_tidy', 'cppclean', 'make']
-let g:syntastic_python_checkers = ['pylint', 'bandit', 'flake8', 'frosted', 'mypy', 'prospector', 'py3kwarn', 'pycodestyle', 'pydocstyle', 'pyflakes', 'pylama', 'python']
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "active_filetypes": ["c", "cpp"],
-    \ "passive_filetypes": ["python"] }
+" let g:syntastic_python_checkers = ['pylint', 'bandit', 'flake8', 'frosted', 'mypy', 'prospector', 'py3kwarn', 'pycodestyle', 'pydocstyle', 'pyflakes', 'pylama', 'python']
+" let g:syntastic_python_checkers = ['pylint', 'pep8', 'pep257', 'bandit', 'flake8', 'frosted', 'mypy', 'prospector', 'py3kwarn', 'pycodestyle', 'pydocstyle', 'pyflakes', 'pylama']
+let g:syntastic_python_checkers = ['pylint', 'pep8', 'pep257']
+" if has('nvim')
+    let g:syntastic_mode_map = {
+        \ "mode": "passive",
+        \ "active_filetypes": ["c", "cpp"],
+        \ "passive_filetypes": ["python"] }
+" else
+    " let g:syntastic_mode_map = {
+        " \ "mode": "passive",
+        " \ "active_filetypes": [],
+        " \ "passive_filetypes": ["python", "c", "cpp"] }
+" endif
 let g:syntastic_java_checkers = []
 " Syntastic config }}}
 
@@ -376,6 +405,14 @@ nnoremap <leader>yt :YcmCompleter GetType<CR>
 let g:ycm_clangd_uses_ycmd_caching = 0
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
 let g:ycm_clangd_binary_path = exepath("clangd")
+
+" Hover exists only in vim.
+let g:ycm_auto_hover = ""
+if has('nvim')
+else
+    nmap <c-h> <plug>(YCMHover)
+endif
+
 " YouCompleteMe config }}}
 
 " TODO: Move on those values when the plugins are added. {{{
@@ -424,13 +461,20 @@ nnoremap === :FormatCode<cr>
 
 
 " vim-mr-interface {{{
-Glaive vim-mr-interface gitlab_private_token="taBjewLRUzeJmTyyeHAC"
 Glaive vim-mr-interface names_to_id=`{'test':18354543}`
 
-nnoremap <unique> <silent> <leader>mc :MRInterfaceAddComment<CR>
-nnoremap <unique> <silent> <leader>md :MRInterfaceAddGeneralDiscussionThread<CR>
-nnoremap <unique> <silent> <leader>mC :MRInterfaceAddCodeDiscussionThread<CR>
-nnoremap <unique> <silent> <leader>mo :MRInterfaceAddCodeDiscussionThreadOnOldCode<CR>
-nnoremap <unique> <silent> <leader>mn :MRInterfaceAddCodeDiscussionThreadOnNewCode<CR>
-nnoremap <unique> <silent> <leader>ma :MRInterfaceAddDefaultToCache<CR>
+nnoremap <silent> <leader>mc :MRInterfaceAddComment<CR>
+nnoremap <silent> <leader>md :MRInterfaceAddGeneralDiscussionThread<CR>
+nnoremap <silent> <leader>mC :MRInterfaceAddCodeDiscussionThread<CR>
+nnoremap <silent> <leader>mo :MRInterfaceAddCodeDiscussionThreadOnOldCode<CR>
+nnoremap <silent> <leader>mn :MRInterfaceAddCodeDiscussionThreadOnNewCode<CR>
+nnoremap <silent> <leader>ma :MRInterfaceAddDefaultToCache<CR>
 " vim-mr-interface }}}
+
+" vim-subversive {{{
+nmap gs <plug>(SubversiveSubstitute)
+" vim-subversive }}}
+
+" vim-tabularize {{{
+nnoremap <leader>tp mmvip:Tabularize /\<CR>`m
+" vim-tabularize }}}

@@ -16,16 +16,18 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'kracejic/themeinabox.vim'
 Plugin 'rhysd/vim-color-spring-night'
 Plugin 'jaredgorski/SpaceCamp'
-Plugin 'sainnhe/vim-color-desert-night'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'aonemd/kuroi.vim'
 " }}}
 Plugin 'junegunn/limelight.vim'
 " }}}
 
 " File system Plugins {{{
 Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
+" Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'stsewd/fzf-checkout.vim'
 " }}}
 
 " Sessions Plugins {{{
@@ -43,6 +45,7 @@ Plugin 'dhruvasagar/vim-prosession'
 " Comment Plugins {{{
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kkoomen/vim-doge'
+Plugin 'vim-scripts/DoxygenToolkit.vim' " vim-doge is better
 " }}}
 " C Plugins {{{
 Plugin 'hari-rangarajan/cctree'
@@ -60,6 +63,7 @@ Plugin 'scrooloose/vim-slumlord'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'iamcco/markdown-preview.nvim'
+Plugin 'mzlogin/vim-markdown-toc'
 " }}}
 " Vim-script Plugins {{{
 " Code writing Plugins. TODO: Read full docs {{{
@@ -80,14 +84,17 @@ Plugin 'reedes/vim-pencil'
 Plugin 'pboettch/vim-cmake-syntax'
 Plugin 'vhdirk/vim-cmake'
 " }}}
+" Kotlin Plugins {{{
+Plugin 'udalov/kotlin-vim'
+" }}}
 " }}}
 
 " Movement Plugins {{{
 Plugin 'easymotion/vim-easymotion'
 Plugin 'unblevable/quick-scope'
 " Searching {{{
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'haya14busa/incsearch-fuzzy.vim'
+" Plugin 'haya14busa/incsearch.vim'
+" Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'bronson/vim-visual-star-search'
 Plugin 'mhinz/vim-grepper'
 Plugin 'wincent/ferret'
@@ -100,6 +107,8 @@ Plugin 'pseewald/vim-anyfold'
 " }}}
 Plugin 'matze/vim-move'
 Plugin 'wellle/targets.vim'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'justinmk/vim-ipmotion'
 " }}}
 
 " Windows Plugins {{{
@@ -115,6 +124,7 @@ Plugin 'weilbith/nerdtree_choosewin-plugin'
 Plugin 'airblade/vim-rooter'
 " Git Plugins {{{
 Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/gv.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'whiteinge/diffconflicts'
@@ -176,20 +186,23 @@ Plugin 'mwgkgk/vim-operator-insert'
 Plugin 'mwgkgk/vim-operator-append'
 Plugin 'inkarkat/vim-ReplaceWithRegister'
 Plugin 'inkarkat/vim-ReplaceWithSameIndentRegister'
+Plugin 'svermeulen/vim-subversive'
 Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'rhysd/reply.vim'
 " }}}
 
 " Application Plugins {{{
 Plugin 'itchyny/calendar.vim'
+Plugin 'vim/killersheep'
 " }}}
 
 " Keep to last {{{
 Plugin 'honza/vim-snippets'
-" if has('nvim')
+if has('nvim')
     " Plugin 'Shougo/deoplete.nvim'
-" else
-    " Plugin 'scrooloose/syntastic'
-" endif
+else
+    Plugin 'scrooloose/syntastic'
+endif
 " Plugin 'dense-analysis/ale'
 Plugin 'valloric/youcompleteme'
 "Plugin 'rdnetto/YCM-Generator'
@@ -199,6 +212,9 @@ Plugin 'SirVer/ultisnips'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'kana/vim-textobj-user'
+Plugin 'glts/vim-textobj-comment'
+Plugin 'sgur/vim-textobj-parameter'
 "Plugin 'klen/python-mode'
 "Plugin 'w0rp/ale'
 "Plugin 'janko/vim-test'
@@ -222,30 +238,29 @@ Plugin 'sheerun/vim-polyglot'
 " }}}
 
 " To Add {{{
-" Plugin 'svermeulen/vim-subversive'
-" Plugin 'liuchengxu/vim-clap'
-" Plugin 'KenN7/vim-arsync'
-" Plugin 'aonemd/kuroi.vim'
+" To Check {{{
 " Plugin 'tpope/vim-dispatch'
-Plugin 'vim/killersheep'
-Plugin 'udalov/kotlin-vim'
-Plugin 'mzlogin/vim-markdown-toc'
 " Plugin 'Shadowsith/kotlincomplete.vim'
 " Plugin 'hsanson/vim-android'
 " Plugin 'ludovicchabant/vim-gutentags'
-" }}}
-
-" To check out {{{
+" Plugin 'dense-analysis/ale'
 " Plugin 'vim-volt/volt'
 " Plugin 'Jorengarenar/fauxClip'
 " Plugin 'arzg/vim-rust-syntax-ext'
 " Plugin 'skywind3000/asynctasks.vim'
-" Plugin 'dense-analysis/ale'
-" Plugin 'tpope/vim-tbone'
 " Plugin 'rbong/vim-crystalline'
 " Plugin 'mg979/vim-xtabline'
-" Plugin 'svermeulen/vim-subversive'
-" Plugin 'rhysd/reply.vim'
+" }}}
+" Small Issues {{{
+" Plugin 'zef/vim-cycle' - Check how much it affects the regular action of c-a, c-x (doing this at the start of the line, for example).
+" Plugin 'justinmk/vim-sneak' - Runs over s command, decide if this is really wanted.
+" Plugin 'MHordecki/vim-subword' - Could not run without python provider.
+" Plugin 'kana/vim-textobj-line' - Collide with targets.vim, needs to see if this is actually wanted, and if so, change the default mapping of it.
+" Plugin 'tpope/vim-tbone' - Not really needed now, maybe in the future.
+" }}}
+" }}}
+
+" To check out {{{
 " Plugin 'justinmk/vim-gtfo'
 " Plugin 'bbchung/clighter8'
 " Plugin 'LucHermitte/clang_complete'
@@ -307,6 +322,12 @@ Plugin 'mzlogin/vim-markdown-toc'
 " Plugin 'tommcdo/vim-exchange'
 " Plugin 'voldikss/vim-floaterm'
 " Plugin 'ledesmablt/vim-run'
+" Plugin 'romainl/vim-qf'
+" Plugin 'tpope/vim-unimpaired'
+" Plugin 'gsiano/vmux-clipboard'
+" Plugin 'svermeulen/vim-easyclip'
+" Plugin 'KenN7/vim-arsync'
+" Plugin ''
 Plugin 'puremourning/vimspector'
 if has('nvim')
     Plugin 'glacambre/firenvim' " Amazing!!!!
@@ -398,6 +419,7 @@ endif
 " Plugin 'brookhong/cscope.vim' - The built-in support of cscope, with cscope script are good enough.
 " Plugin 'rhysd/vim-clang-format' - Not needed since vim has support for this now.
 " Plugin 'Ron89/thesaurus_query.vim' - Not used, so there is no reason to keep it in the config.
+" Plugin 'liuchengxu/vim-clap' - FZF is working better.
 " }}}
 " }}}
 " }}}
