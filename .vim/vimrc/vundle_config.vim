@@ -118,6 +118,7 @@ Plugin 'omrisarig13/winresizer'
 Plugin 'dhruvasagar/vim-zoom'
 Plugin 't9md/vim-choosewin'
 Plugin 'weilbith/nerdtree_choosewin-plugin'
+Plugin 'omrisarig13/vim-tab-movements'
 " }}}
 
 " Source Control Plugins {{{
@@ -262,6 +263,7 @@ Plugin 'sgur/vim-textobj-parameter'
 
 " To check out {{{
 " Plugin 'justinmk/vim-gtfo'
+" Plugin 'gcmt/taboo.vim'
 " Plugin 'bbchung/clighter8'
 " Plugin 'LucHermitte/clang_complete'
 " Plugin 'LucHermitte/vim-clang'
@@ -327,6 +329,7 @@ Plugin 'sgur/vim-textobj-parameter'
 " Plugin 'gsiano/vmux-clipboard'
 " Plugin 'svermeulen/vim-easyclip'
 " Plugin 'KenN7/vim-arsync'
+" Plugin 'nickspoons/vim-movefast'
 " Plugin ''
 Plugin 'puremourning/vimspector'
 if has('nvim')
