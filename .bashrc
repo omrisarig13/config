@@ -45,8 +45,11 @@ alias cmak="cmake"
 alias camke="cmake"
 alias amke="make"
 
+# alias wgit="git.exe"
+
 export PATH="${PATH}:/home/omri/bin"
 export PATH="${PATH}:/home/omri/.gem/ruby/2.5.0/bin"
+# export LD_LIBRARY_PATH="${PATH}:/usr/local/lib"
 
 [[ $- != *i* ]] && return
 
@@ -82,7 +85,9 @@ colors() {
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
 # Add git data
-source ~/.config/git/completion.bash
+source ~/.config/git/completion.sh
+export PATH="${PATH}:/home/omsa/.config/git/git-extra-commands/bin"
+source ~/.local/bin/bashmarks.sh
 
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -98,3 +103,11 @@ bind -m vi-insert "\C-l":clear-screen
 bind '"hh":vi-movement-mode'
 
 expor=/usr/share/doc/python2/html/
+
+~/LinuxProjects/a_word_a_term/a.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+shopt -s cdspell
