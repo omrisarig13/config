@@ -275,8 +275,6 @@ nnoremap <leader>GS :G<CR>
 nnoremap <leader>Grl :Git log<CR>
 nnoremap <leader>GRl :Git log<CR>
 nnoremap <leader>GRL :Git log<CR>
-nnoremap <leader>Gl :Flog<CR>
-nnoremap <leader>GL :Flog<CR>
 " nnoremap <leader>Gl :Git full-short-log<CR>
 " nnoremap <leader>GL :Git full-short-log<CR>
 nnoremap <leader>Gc :G commit<CR>
@@ -288,6 +286,7 @@ augroup GitFold
     autocmd!
     autocmd FileType git setlocal foldmethod=syntax
 augroup END
+command! FLOG :execute "Flog" | tabmove-1
 " }}}
 
 " Stay Config {{{
