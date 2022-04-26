@@ -83,12 +83,15 @@ colors() {
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
 # Complete Yocto commands
-source ~/.config/yocto-completion/yocto_completion.sh
+[[ -f ~/.config/yocto-completion/yocto_completion.sh ]] && . ~/.config/yocto-completion/yocto_completion.sh
+[[ -f ~/.config/yocto-completion/yocto_completion.sh ]] || echo "Warning: No yocto-completion configured"
 
 # Add git data
-source ~/.config/git/completion.sh
+[[ -f ~/.config/git/completion.sh ]] && . ~/.config/git/completion.sh
+[[ -f ~/.config/git/completion.sh ]] || echo "Warning: No git completion configured"
 export PATH="${PATH}:/home/omsa/.config/git/git-extra-commands/bin"
-source ~/.local/bin/bashmarks.sh
+[[ -f ~/.local/bin/bashmarks.sh ]] && . ~/.local/bin/bashmarks.sh
+[[ -f ~/.local/bin/bashmarks.sh ]] || echo "Warning: No bashmarks configured"
 
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
