@@ -315,3 +315,6 @@ RPi4
 RPi3
 conf
 Yocto's
+bashmarks
+gitconfig
+vimrc
