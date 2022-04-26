@@ -114,7 +114,7 @@ Plugin 'justinmk/vim-ipmotion'
 " Windows Plugins {{{
 " Plugin 'simeji/winresizer'
 " TODO: Revert to the old win-reasizer once the pull request is approved.
-Plugin 'omrisarig13/winresizer'
+" Plugin 'omrisarig13/winresizer'
 Plugin 'dhruvasagar/vim-zoom'
 Plugin 't9md/vim-choosewin'
 Plugin 'weilbith/nerdtree_choosewin-plugin'
