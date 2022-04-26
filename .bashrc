@@ -108,8 +108,6 @@ bind '"hh":vi-movement-mode'
 
 expor=/usr/share/doc/python2/html/
 
-~/LinuxProjects/a_word_a_term/a.sh
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
