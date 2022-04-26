@@ -47,8 +47,6 @@ alias amke="make"
 
 # alias wgit="git.exe"
 
-export PATH="${PATH}:/home/omri/bin"
-export PATH="${PATH}:/home/omri/.gem/ruby/2.5.0/bin"
 # export LD_LIBRARY_PATH="${PATH}:/usr/local/lib"
 
 [[ $- != *i* ]] && return
