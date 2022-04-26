@@ -84,6 +84,9 @@ colors() {
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
+# Complete Yocto commands
+source ~/.config/yocto-completion/yocto_completion.sh
+
 # Add git data
 source ~/.config/git/completion.sh
 export PATH="${PATH}:/home/omsa/.config/git/git-extra-commands/bin"
