@@ -98,7 +98,6 @@ parse_git_branch() {
 }
 
 PS1="\[\033[1;34m\]\D{} \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\[\033[36m\]\$(parse_git_branch)\033[00m\] $ "
-fortune | cowsay
 
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
@@ -113,3 +112,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 shopt -s cdspell
+
+fortune | cowsay -f tux
