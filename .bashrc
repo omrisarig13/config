@@ -45,6 +45,12 @@ alias cmak="cmake"
 alias camke="cmake"
 alias amke="make"
 
+alias clipboard='xclip -sel clip'
+alias ip-scan='sudo nmap -T4 -sP 172.16.6.0/23'
+alias ip-scan-rasp='sudo nmap -T4 -sP 172.16.6.0/23 | grep Raspberry -B 2'
+
+alias mount-omsa='sudo mount -o uid=omsa,gid=omsa'
+
 # alias wgit="git.exe"
 
 # export LD_LIBRARY_PATH="${PATH}:/usr/local/lib"
