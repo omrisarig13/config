@@ -11,8 +11,18 @@
 	cdiff = diff --cached
 	amend = commit --amend --no-edit
 	push-amended = push --force-with-lease
+	submodule-diff = '!'"git diff && git submodule foreach 'git diff'"
+	submodule-update = 'submodule update --remote --merge'
 [merge]
 	tool = vimdiff
 [cinnabar]
 	version-check = 1586350839
 	helper = /home/omri/.mozbuild/git-cinnabar/git-cinnabar-helper
+[diff]
+	submodule = log
+[safe]
+	directory = *
+[submodule]
+	recurse = True
+[push]
+	recurseSubmodules = check
