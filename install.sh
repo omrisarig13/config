@@ -38,7 +38,7 @@ popd
 
 echo "Adding vim configuration and plugins"
 pushd ~/.vim
-mkdir -p bundle swapdir undodir
+mkdir -p bundle swapdir undodir nvim_swapdir nvim_undodir
 pushd bundle
 git clone https://github.com/VundleVim/Vundle.vim.git
 vim -c "PluginInstall" -c "q" -c "q"

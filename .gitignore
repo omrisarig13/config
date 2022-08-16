@@ -4,4 +4,6 @@
 .vim/session/
 .vim/swapdir/
 .vim/undodir/
+.vim/nvim_swapdir/
+.vim/nvim_undodir/
 .vim/view/

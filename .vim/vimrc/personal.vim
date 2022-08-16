@@ -144,8 +144,13 @@ augroup END
 " }}}
 
 " Set vim to save the undo files and the swap files in a dedicated place. {{{
-set undodir=~/.vim/undodir
-set dir=~/.vim/swapdir
+if has('nvim')
+    set undodir=~/.vim/nvim_undodir
+    set dir=~/.vim/nvim_swapdir
+else
+    set undodir=~/.vim/undodir
+    set dir=~/.vim/swapdir
+endif
 " }}}
 
 " Open files more easily. {{{
@@ -156,7 +161,7 @@ nnoremap <C-w>ft :execute "tabnew " . expand("<cfile>")<CR>
 " basic compile and run for some file types {{{
 augroup CCompile
     autocmd!
-    autocmd FileType c,cpp,h command! -buffer Make make "%:t:r"
+    " autocmd FileType c,cpp,h command! -buffer Make make "%:t:r"
     autocmd FileType c,cpp,h command! -buffer Run !"./%:t:r"
     autocmd FileType c,cpp,h command! -buffer Clean !rm "%:t:r"
 augroup END
