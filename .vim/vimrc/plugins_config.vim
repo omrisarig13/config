@@ -53,7 +53,7 @@ endif
 
 " Colorscheme Config {{{
 function! SetSolarized()
-    let g:solarized_termcolors=256
+    " let g:solarized_termcolors=256
     set background=dark
     colorscheme solarized
 endfunction
@@ -196,7 +196,7 @@ let g:which_key_map.s = {'name' : '+self'}
 " }}}
 
 " Marvim Config {{{
-let g:marvim_store = '/home/omri/.vim/marvim'
+let g:marvim_store = $HOME.'/.vim/marvim'
 let g:marvim_find_key = '-mf'
 let g:marvim_store_key = '-ms'
 "}}}
@@ -209,7 +209,7 @@ command! PQ execute "normal! :ProsessionDelete\<cr>:qa\<cr>"
 " }}}
 
 " Plantuml syntax config {{{
-let g:plantuml_executable_script = "/home/omri/.vim/scripts/plantuml.sh"
+let g:plantuml_executable_script = "/home/omsa/.vim/scripts/plantuml.sh"
 " }}}
 
 " vim-move Config {{{
@@ -478,6 +478,22 @@ nmap gs <plug>(SubversiveSubstitute)
 nnoremap <leader>tp mmvip:Tabularize /\<CR>`m
 " vim-tabularize }}}
 
+" firenvim {{{
+let g:firenvim_config = { 
+    \ 'globalSettings': {
+        \ 'alt': 'all',
+    \  },
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'cmdline': 'neovim',
+            \ 'content': 'text',
+            \ 'priority': 0,
+            \ 'selector': 'textarea',
+            \ 'takeover': 'never',
+        \ },
+    \ }
+\ }
+" firenvim }}}
 
 "                        
 "                        
@@ -511,3 +527,8 @@ nnoremap <leader>tp mmvip:Tabularize /\<CR>`m
 "                        
 "                        command YcmGetDocFloatWin :call <SID>Hover()
 "                        autocmd FileType c,cpp,h,hpp nmap K :YcmGetDocFloatWin<cr>
+
+" Autopep8 {{{
+let g:autopep8_disable_show_diff=1
+let g:autopep8_on_save = 1
+" }}}

@@ -54,9 +54,17 @@ Plugin 'apalmer1377/factorus' " TODO: Open an issue, try to talk with the plugin
 " CPP Plugins {{{
 Plugin 'bfrg/vim-cpp-modern'
 " }}}
+" Python Plugins {{{
+Plugin 'tell-k/vim-autopep8'
+" }}}
 " Plant Uml Plugins {{{
 Plugin 'aklt/plantuml-syntax'
 Plugin 'scrooloose/vim-slumlord'
+" Tests {{{
+Plugin 'skanehira/preview-uml.vim'
+Plugin 'tyru/open-browser.vim'
+Plugin 'weirongxu/plantuml-previewer.vim'
+" }}} Tests
 " }}}
 " Markdown Plugins {{{
 " tabular must precede vim-markdown.
@@ -114,7 +122,7 @@ Plugin 'justinmk/vim-ipmotion'
 " Windows Plugins {{{
 " Plugin 'simeji/winresizer'
 " TODO: Revert to the old win-reasizer once the pull request is approved.
-" Plugin 'omrisarig13/winresizer'
+Plugin 'omrisarig13/winresizer'
 Plugin 'dhruvasagar/vim-zoom'
 Plugin 't9md/vim-choosewin'
 Plugin 'weilbith/nerdtree_choosewin-plugin'
@@ -152,7 +160,7 @@ Plugin 'wellle/tmux-complete.vim'
 " }}}
 
 " Feature Plugins {{{
-Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'terryma/vim-multiple-cursors' - just annoying
 Plugin 'dominikduda/vim_current_word'
 Plugin 'simnalamburt/vim-mundo'
 Plugin 'liuchengxu/vim-which-key'
@@ -240,7 +248,7 @@ Plugin 'sgur/vim-textobj-parameter'
 
 " To Add {{{
 " To Check {{{
-" Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-dispatch'
 " Plugin 'Shadowsith/kotlincomplete.vim'
 " Plugin 'hsanson/vim-android'
 " Plugin 'ludovicchabant/vim-gutentags'
