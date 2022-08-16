@@ -26,3 +26,5 @@
 	recurse = True
 [push]
 	recurseSubmodules = check
+[init]
+	defaultBranch = main
