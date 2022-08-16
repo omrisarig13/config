@@ -99,6 +99,8 @@ export PATH="${PATH}:/home/omsa/.config/git/git-extra-commands/bin"
 [[ -f ~/.local/bin/bashmarks.sh ]] && . ~/.local/bin/bashmarks.sh
 [[ -f ~/.local/bin/bashmarks.sh ]] || echo "Warning: No bashmarks configured"
 
+export CY_TOOLS_PATHS="/home/omsa/Programs/Cypress/ModusToolbox_2.4.0.5972/tools_2.4"
+
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
