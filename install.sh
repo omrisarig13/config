@@ -5,7 +5,7 @@ echo "Warning: This was not tested yet"
 CURRENT_PATH=`pwd`
 
 echo "Installing must have utilities"
-sudo apt install git vim tmux cowsay fortune-mod
+sudo apt install git vim tmux cowsay fortune-mod cmake
 
 echo "Creating symbolic links to config files."
 echo "Old config files are backed up."
@@ -43,4 +43,10 @@ pushd bundle
 git clone https://github.com/VundleVim/Vundle.vim.git
 vim -c "PluginInstall" -c "q" -c "q"
 popd
+popd
+
+echo "Installing YouCompleteMe"
+pushd ~/.vim/bundle/youcompleteme
+sudo apt install default-jre npm golang
+python3 install.py --clangd-completer --all --verbose
 popd
