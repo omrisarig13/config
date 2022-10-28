@@ -410,7 +410,11 @@ let g:ycm_auto_hover = ""
 if has('nvim')
 else
     nmap <c-h> <plug>(YCMHover)
+    nnoremap <silent> <leader>yh <Plug>(YCMToggleInlayHints)
 endif
+
+let g:ycm_enable_inlay_hints = 1
+" let g:ycm_clear_inlay_hints_in_insert_mode = 0
 
 " YouCompleteMe config }}}
 
@@ -530,5 +534,5 @@ let g:firenvim_config = {
 
 " Autopep8 {{{
 let g:autopep8_disable_show_diff=1
-let g:autopep8_on_save = 1
+let g:autopep8_on_save = 0
 " }}}

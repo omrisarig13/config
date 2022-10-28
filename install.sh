@@ -5,7 +5,7 @@ echo "Warning: This was not tested yet"
 CURRENT_PATH=`pwd`
 
 echo "Installing must have utilities"
-sudo apt install git vim tmux cowsay fortune-mod cmake
+sudo apt install git vim tmux cowsay fortune-mod fortunes cmake
 
 echo "Creating symbolic links to config files."
 echo "Old config files are backed up."

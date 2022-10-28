@@ -1,5 +1,5 @@
 [user]
-	email = omri.sarig13@gmail.com
+	email = omri.sarig@prevas.dk
 	name = Omri Sarig
 [alias]
 	fetch-all = fetch --all --prune
@@ -28,3 +28,7 @@
 	recurseSubmodules = check
 [init]
 	defaultBranch = main
+[core]
+	autocrlf = input
+[pull]
+	ff = only

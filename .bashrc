@@ -1,7 +1,9 @@
 #
 # ~/.bashrc
 #
-export VISUAL=vim
+alias mvim="VIMRUNTIME=/usr/share/vim/vim90 /home/omsa/Programs/vim/src/vim"
+alias vimm="mvim"
+export VISUAL=mvim
 export EDITOR="$VISUAL"
 
 alias ls="ls --color"
@@ -26,9 +28,9 @@ alias .................="cd ../../../../../../../../../../../../../../../../"
 alias ..................="cd ../../../../../../../../../../../../../../../../../"
 alias ...................="cd ../../../../../../../../../../../../../../../../../../"
 alias remove_exes="find . -perm -1 -type f -maxdepth 1 2>/dev/null | xargs rm"
-alias ivm="vim"
+alias ivm="mvim"
 
-alias :e="vim"
+alias :e="mvim"
 alias :q="exit"
 alias :qa="exit"
 alias :w=
@@ -40,7 +42,7 @@ alias python=python3
 alias pip=pip3
 
 # Some custom commands
-alias learn_vim="vim -u ~/Projects/vim/vimrc"
+alias learn_vim="mvim -u ~/Projects/mvim/vimrc"
 alias cmak="cmake"
 alias camke="cmake"
 alias amke="make"
@@ -119,6 +121,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export LIBGPHOTO2_INSTALL_PATH=~/.local
+
 shopt -s cdspell
 
 fortune | cowsay -f tux
+export PATH="$PATH:/home/omsa/Downloads/010editor" #ADDED BY 010 EDITOR

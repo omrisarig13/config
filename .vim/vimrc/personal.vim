@@ -32,6 +32,7 @@ let g:load_doxygen_syntax=1
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/* " Ignore hg, git and svn directories when working on files.
 set updatetime=100 " Set the update time to be very fast, instead of vim's 4 second default.
 set wildignorecase " Better completion for the `e` command
+set fileformats=unix " Make vim read all files as Unix, making windows line ending visible.
 " }}}
 
 " Set the splitting of new files to be below and right to the current file. {{{
@@ -474,6 +475,10 @@ augroup END
 "   with the quickfix.
 " * Wrap cgreen-debug and make it run with the debugger built into vim (with
 "   termdebug).
+" General plugin idea:
+" * Increase the functionality of the tabmover to allow for staying in insert
+"   mode inside the tab, and returning to this mode automatically when going back
+"   to this mode.
 
 " Add debugging for c and cpp programs. {{{
 augroup OmniCompletion
