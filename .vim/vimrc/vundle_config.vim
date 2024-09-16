@@ -210,10 +210,11 @@ Plugin 'honza/vim-snippets'
 if has('nvim')
     " Plugin 'Shougo/deoplete.nvim'
 else
-    Plugin 'scrooloose/syntastic'
+    " Plugin 'scrooloose/syntastic'
 endif
 " Plugin 'dense-analysis/ale'
-Plugin 'valloric/youcompleteme'
+" Plugin 'valloric/youcompleteme'
+Plugin 'Exafunction/codeium.vim'
 "Plugin 'rdnetto/YCM-Generator'
 "Plugin 'davits/dyevim'
 " TODO: Understand why it is not working and try to fix it.
@@ -270,6 +271,7 @@ Plugin 'tpope/vim-dispatch'
 " }}}
 
 " To check out {{{
+Plugin 'kergoth/vim-bitbake'
 " Plugin 'justinmk/vim-gtfo'
 " Plugin 'gcmt/taboo.vim'
 " Plugin 'bbchung/clighter8'

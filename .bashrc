@@ -101,8 +101,6 @@ export PATH="${PATH}:/home/omsa/.config/git/git-extra-commands/bin"
 [[ -f ~/.local/bin/bashmarks.sh ]] && . ~/.local/bin/bashmarks.sh
 [[ -f ~/.local/bin/bashmarks.sh ]] || echo "Warning: No bashmarks configured"
 
-export CY_TOOLS_PATHS="/home/omsa/Programs/Cypress/ModusToolbox_2.4.0.5972/tools_2.4"
-
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -127,3 +125,7 @@ shopt -s cdspell
 
 fortune | cowsay -f tux
 export PATH="$PATH:/home/omsa/Downloads/010editor" #ADDED BY 010 EDITOR
+source ~/.config/yocto-completion/yocto_completion.sh
+
+alias sdk_enter_ddau3="source /home/yocto/Projects/PIL/DDAU3/sdk/environment-setup-cortexa9t2hf-neon-oe-linux-gnueabi && PS1='\[\033[1;35m\][DDAU3 SDK] \[\033[1;34m\]\D{} \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\[\033[36m\]\$(parse_git_branch)\033[00m\] $ '"
+alias sdk_enter_nktp="source /home/yocto/Projects/PIL/NKT/sdk/environment-setup-cortexa72-oe-linux && PS1='\[\033[1;35m\][NKTP SDK] \[\033[1;34m\]\D{} \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\[\033[36m\]\$(parse_git_branch)\033[00m\] $ '"

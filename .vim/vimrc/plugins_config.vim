@@ -145,7 +145,7 @@ let g:mundo_preview_bottom=1
 " }}}
 
 " WinResizer Config {{{
-let g:winresizer_start_key = ''
+" let g:winresizer_start_key = ''
 noremap <leader>wr :WinResizerStartResize<CR>
 noremap <leader>wm :WinResizerStartMove<CR>
 " }}}
@@ -536,3 +536,24 @@ let g:firenvim_config = {
 let g:autopep8_disable_show_diff=1
 let g:autopep8_on_save = 0
 " }}}
+
+" codeium.vim {{{
+let g:codeium_disable_bindings = 1
+imap <script><silent><nowait><expr> <Tab> codeium#Accept()
+imap <C-n>   <Cmd>call codeium#CycleCompletions(1)<CR>
+imap <C-p>   <Cmd>call codeium#CycleCompletions(-1)<CR>
+imap <C-x>   <Cmd>call codeium#Clear()<CR>
+" codeium.vim }}}
+
+" airline {{{
+let g:airline_section_c = '%<%<%{airline#extensions#fugitiveline#bufname()}%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#%#__accent_bold#%#__restore__#%#__accent_bold#%#__restore__#%3{codeium#GetStatusString()}'
+" let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='molokai'
+" airline }}}
+
+" vim-table-mode {{{
+" Create this mapping (which already exist in the plugin), to work when the
+" buffer is not in table mode (as table mode is extremely slow with long
+" tables).
+nnoremap <leader>tr :TableModeRealign<cr>
+" vim-table-mode }}}

@@ -208,7 +208,8 @@ function! RemoveColor()
     call RandomColorScheme()
 endfunction
 
-call RandomColorScheme()
+" call RandomColorScheme()
+colorscheme themeinabox
 
 command! RemoveColor call RemoveColor()
 command! NewColor call RandomColorScheme()
@@ -364,17 +365,19 @@ augroup end
 
 " Set the status line {{{
 " TODO: Refactor it after adding airline.
-set statusline=%f                       " Filename of current file.
-set statusline+=\ -\                    " Separator
-set statusline+=%y                      " The type of the current file.
-set statusline+=\ -\                    " Separator
-set statusline+=%{getcwd()}             " The path of vim.
-set statusline+=\ -\                    " Separator
-set statusline+=%{FugitiveStatusline()} " Add the git branch name.
-set statusline+=%=                      " Move the rest of the line to the left side.
-set statusline+=%l                      " Current line number
-set statusline+=/                       " Separator
-set statusline+=%L                      " Total numbers in file.
+set statusline=%f                               " Filename of current file.
+set statusline+=\ -\                            " Separator
+set statusline+=%y                              " The type of the current file.
+set statusline+=\ -\                            " Separator
+set statusline+=%{getcwd()}                     " The path of vim.
+set statusline+=\ -\                            " Separator
+set statusline+=%{FugitiveStatusline()}         " Add the git branch name.
+set statusline+=\ -\                            " Separator
+set statusline+=%3{codeium#GetStatusString()}   " Add Codeium suggestions
+set statusline+=%=                              " Move the rest of the line to the left side.
+set statusline+=%l                              " Current line number
+set statusline+=/                               " Separator
+set statusline+=%L                              " Total numbers in file.
 " }}}
 
 " Temp mapping, to create a better muscle memory. {{{
@@ -499,3 +502,27 @@ nnoremap <leader>rr :redraw!<CR>
 if &term =~ '256color'
     set t_ut=
 endif
+
+function! TabIs2()
+    set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
+endfunction
+command! TabIs2 call TabIs2()
+
+" colorcolumn options {{{
+" set-colorcolumn
+nnoremap <leader>sc :exec 'set colorcolumn+=' . col('.')
+" reset-colorcolumn
+nnoremap <leader>rc :set colorcolumn=-0
+" remove-current-colorcolumn
+nnoremap <leader>rcc :exec 'set colorcolumn-=' . col('.')
+" colorcolumn options }}}
+
+function! ToggleTextWidth()
+    if &textwidth == 0
+        set textwidth=79
+    else
+        set textwidth=0
+    endif
+endfunction
+command! ToggleTextWidth call ToggleTextWidth()
+nnoremap <leader>ttw :ToggleTextWidth<CR>
