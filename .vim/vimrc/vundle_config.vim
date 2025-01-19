@@ -122,7 +122,7 @@ Plugin 'justinmk/vim-ipmotion'
 " Windows Plugins {{{
 " Plugin 'simeji/winresizer'
 " TODO: Revert to the old win-reasizer once the pull request is approved.
-Plugin 'omrisarig13/winresizer'
+" Plugin 'omrisarig13/winresizer'
 Plugin 'dhruvasagar/vim-zoom'
 Plugin 't9md/vim-choosewin'
 Plugin 'weilbith/nerdtree_choosewin-plugin'
@@ -213,7 +213,8 @@ else
     Plugin 'scrooloose/syntastic'
 endif
 " Plugin 'dense-analysis/ale'
-Plugin 'valloric/youcompleteme'
+"Plugin 'valloric/youcompleteme'
+" Plugin 'Exafunction/codeium.vim'
 "Plugin 'rdnetto/YCM-Generator'
 "Plugin 'davits/dyevim'
 " TODO: Understand why it is not working and try to fix it.

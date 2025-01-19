@@ -3,7 +3,7 @@
 #
 alias mvim="VIMRUNTIME=/usr/share/vim/vim90 /home/omsa/Programs/vim/src/vim"
 alias vimm="mvim"
-export VISUAL=mvim
+export VISUAL=vim
 export EDITOR="$VISUAL"
 
 alias ls="ls --color"
@@ -126,4 +126,7 @@ export LIBGPHOTO2_INSTALL_PATH=~/.local
 shopt -s cdspell
 
 fortune | cowsay -f tux
-export PATH="$PATH:/home/omsa/Downloads/010editor" #ADDED BY 010 EDITOR
+export PATH="$PATH:/home/omri/Programs/nvim-linux64/bin"
+
+alias prevas-vpn="OPENSSL_CONF=/home/omri/.config/openconnect-sso/openssl.cnf QTWEBENGINE_DISABLE_SANDBOX=1 openconnect-sso"
+alias prevas-ssh="ssh -i /home/omri/.ssh/prevas/pil-root-key"

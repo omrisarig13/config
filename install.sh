@@ -5,7 +5,7 @@ echo "Warning: This was not tested yet"
 CURRENT_PATH=`pwd`
 
 echo "Installing must have utilities"
-sudo apt install git vim tmux cowsay fortune-mod fortunes cmake
+sudo apt install -y git vim tmux cowsay fortune-mod fortunes cmake
 
 echo "Creating symbolic links to config files."
 echo "Old config files are backed up."
@@ -47,6 +47,6 @@ popd
 
 echo "Installing YouCompleteMe"
 pushd ~/.vim/bundle/youcompleteme
-sudo apt install default-jre npm golang
+sudo apt install -y default-jre npm golang python3.10-dev
 python3 install.py --clangd-completer --all --verbose
 popd
