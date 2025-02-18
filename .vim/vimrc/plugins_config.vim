@@ -241,6 +241,33 @@ nmap <leader>mps <Plug>MarkdownPreview
 nmap <leader>mpe <Plug>MarkdownPreviewStop
 " }}}
 
+" vim-prettier {{{
+function! PrettierIfSmall()
+    if line('$') > 500
+        " Ugly fix to let the user know that prettier is disabled - only second
+        " line will be shown on screen when saving, both lines will be
+        " available in log.
+        echom "Prettier disabled for large files"
+        echom "Prettier disabled for large files"
+    else
+        Prettier
+    endif
+endfunction
+
+augroup VimPrettier
+    autocmd!
+    autocmd BufWritePre *.md call PrettierIfSmall()
+augroup END
+" vim-prettier }}}
+
+" black {{{
+let g:black_linelength = 79
+augroup VimBlack
+    autocmd!
+    autocmd BufWritePre *.py Black
+augroup END
+" black }}}
+
 " Fzf Config {{{
 let g:fzf_history_dir = '~/.vim/fzf_history'
 let g:fzf_buffers_jump = 1
@@ -377,7 +404,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_c_checkers = ['gcc', 'clang_check', 'clang_tidy', 'cppclean', 'make']
 " let g:syntastic_python_checkers = ['pylint', 'bandit', 'flake8', 'frosted', 'mypy', 'prospector', 'py3kwarn', 'pycodestyle', 'pydocstyle', 'pyflakes', 'pylama', 'python']
 " let g:syntastic_python_checkers = ['pylint', 'pep8', 'pep257', 'bandit', 'flake8', 'frosted', 'mypy', 'prospector', 'py3kwarn', 'pycodestyle', 'pydocstyle', 'pyflakes', 'pylama']
-let g:syntastic_python_checkers = ['pylint', 'pep8', 'pep257']
+let g:syntastic_python_checkers = ['pylint', 'pep8', 'pydocstyle']
 " if has('nvim')
     let g:syntastic_mode_map = {
         \ "mode": "passive",
@@ -416,6 +443,9 @@ endif
 let g:ycm_enable_inlay_hints = 1
 " let g:ycm_clear_inlay_hints_in_insert_mode = 0
 
+
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
 " YouCompleteMe config }}}
 
 " TODO: Move on those values when the plugins are added. {{{
@@ -538,15 +568,26 @@ let g:autopep8_on_save = 0
 " }}}
 
 " codeium.vim {{{
-let g:codeium_disable_bindings = 1
-imap <script><silent><nowait><expr> <Tab> codeium#Accept()
-imap <C-n>   <Cmd>call codeium#CycleCompletions(1)<CR>
-imap <C-p>   <Cmd>call codeium#CycleCompletions(-1)<CR>
-imap <C-x>   <Cmd>call codeium#Clear()<CR>
+if g:codeium_enabled
+    let g:codeium_disable_bindings = 1
+    imap <script><silent><nowait><expr> <Tab> codeium#Accept()
+    " imap <C-n>   <Cmd>call codeium#CycleCompletions(1)<CR>
+    " imap <C-p>   <Cmd>call codeium#CycleCompletions(-1)<CR>
+    imap <C-x>   <Cmd>call codeium#Clear()<CR>
+endif
 " codeium.vim }}}
 
+" vim-chatgpt {{{
+" let g:chat_gpt_model='gpt-3.5-turbo'
+let g:chat_gpt_model='gpt-4o-mini'
+" vim-chatgpt }}}
+
 " airline {{{
-let g:airline_section_c = '%<%<%{airline#extensions#fugitiveline#bufname()}%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#%#__accent_bold#%#__restore__#%#__accent_bold#%#__restore__#%3{codeium#GetStatusString()}'
+if g:codeium_enabled
+    let g:airline_section_c = '%<%<%{airline#extensions#fugitiveline#bufname()}%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#%#__accent_bold#%#__restore__#%#__accent_bold#%#__restore__#%3{codeium#GetStatusString()}'
+else
+    let g:airline_section_c = '%<%<%{airline#extensions#fugitiveline#bufname()}%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#%#__accent_bold#%#__restore__#%#__accent_bold#%#__restore__#%3'
+endif
 " let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='molokai'
 " airline }}}
@@ -557,3 +598,7 @@ let g:airline_theme='molokai'
 " tables).
 nnoremap <leader>tr :TableModeRealign<cr>
 " vim-table-mode }}}
+
+" plantuml-previewer {{{
+let g:plantuml_previewer#save_format = "svg"
+" plantuml-previewer }}}

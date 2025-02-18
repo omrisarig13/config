@@ -1,3 +1,7 @@
+let g:codeium_enabled = 1
+let g:ycm_enabled = 1
+let g:syntastic_enabled = 1
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -56,6 +60,7 @@ Plugin 'bfrg/vim-cpp-modern'
 " }}}
 " Python Plugins {{{
 Plugin 'tell-k/vim-autopep8'
+Plugin 'psf/black'
 " }}}
 " Plant Uml Plugins {{{
 Plugin 'aklt/plantuml-syntax'
@@ -72,6 +77,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'iamcco/markdown-preview.nvim'
 Plugin 'mzlogin/vim-markdown-toc'
+Plugin 'omrisarig13/vim-prettier'
 " }}}
 " Vim-script Plugins {{{
 " Code writing Plugins. TODO: Read full docs {{{
@@ -95,6 +101,9 @@ Plugin 'vhdirk/vim-cmake'
 " Kotlin Plugins {{{
 Plugin 'udalov/kotlin-vim'
 " }}}
+" Bash Plugins {{{
+Plugin 'itspriddle/vim-shellcheck'
+" }}}
 " }}}
 
 " Movement Plugins {{{
@@ -105,7 +114,7 @@ Plugin 'unblevable/quick-scope'
 " Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'bronson/vim-visual-star-search'
 Plugin 'mhinz/vim-grepper'
-Plugin 'wincent/ferret'
+" Plugin 'wincent/ferret'
 Plugin 'google/vim-searchindex'
 Plugin 'brooth/far.vim'
 " }}}
@@ -210,11 +219,18 @@ Plugin 'honza/vim-snippets'
 if has('nvim')
     " Plugin 'Shougo/deoplete.nvim'
 else
-    " Plugin 'scrooloose/syntastic'
+    if g:syntastic_enabled
+        Plugin 'scrooloose/syntastic'
+    endif
 endif
 " Plugin 'dense-analysis/ale'
-" Plugin 'valloric/youcompleteme'
-Plugin 'Exafunction/codeium.vim'
+if g:ycm_enabled
+    Plugin 'valloric/youcompleteme'
+endif
+if g:codeium_enabled
+    Plugin 'Exafunction/codeium.vim'
+endif
+Plugin 'CoderCookE/vim-chatgpt'
 "Plugin 'rdnetto/YCM-Generator'
 "Plugin 'davits/dyevim'
 " TODO: Understand why it is not working and try to fix it.
@@ -386,6 +402,7 @@ endif
 " Plugin 'osyo-manga/vim-over'
 " Plugin 't9md/vim-smalls'
 " Plugin 'junegunn/goyo.vim'
+Plugin 'rickhowe/wrapwidth'
 " Plugin 'haya14busa/vim-asterisk'
 " Plugin 'tpope/vim-vinegar'
 " Plugin 'nelstrom/vim-qargs'

@@ -13,6 +13,7 @@
 	push-amended = push --force-with-lease
 	submodule-diff = '!'"git diff && git submodule foreach 'git diff'"
 	submodule-update = 'submodule update --remote --merge'
+	cdiff = "!f() { git range-diff ${1}~1..${1} ${2}~1..${2}; }; f"
 [merge]
 	tool = vimdiff
 [cinnabar]
@@ -32,3 +33,12 @@
 	autocrlf = input
 [pull]
 	ff = only
+[format]
+	signature = 
+[sendemail]
+    smtpServer = smtp.gmail.com
+    smtpServerPort = 587
+    smtpEncryption = tls
+    smtpUser = omri.sarig13@gmail.com
+[credential]
+    helper = store

@@ -33,6 +33,7 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/* " Ignore hg, git and svn directories w
 set updatetime=100 " Set the update time to be very fast, instead of vim's 4 second default.
 set wildignorecase " Better completion for the `e` command
 set fileformats=unix " Make vim read all files as Unix, making windows line ending visible.
+set linebreak " When wrapping, don't cut words in the middle.
 " }}}
 
 " Set the splitting of new files to be below and right to the current file. {{{
@@ -49,13 +50,12 @@ set encoding=utf-8
 " }}}
 
 " Text Width {{{
-set textwidth=80
+set textwidth=79
 augroup TextWidth
     autocmd!
-    autocmd FileType python setlocal textwidth=79
-    autocmd FileType c,markdown,uml,cpp setlocal textwidth=80
-    autocmd FileType txt,csv setlocal textwidth=0
-    autocmd BufReadPre *.csv setlocal textwidth=0
+    autocmd BufReadPre *.py setlocal textwidth=79
+    autocmd BufReadPre *.c,*.h,*.puml,*.cpp,*.md setlocal textwidth=79
+    autocmd BufReadPre *.txt,*.csv setlocal textwidth=0
 augroup END
 set colorcolumn=-0
 " }}}
@@ -63,7 +63,7 @@ set colorcolumn=-0
 " Set the format options {{{
 " If clang-format file exists use it, otherwise, use hard-written config.
 " if !empty(findfile('.clang-format', ';'))
-    " augroup TextWidth
+    " augroup TextFormat2
         " autocmd!
         " autocmd FileType c,cpp setlocal formatprg=clang-format\ -style=file
     " augroup END
@@ -79,7 +79,7 @@ set colorcolumn=-0
     " set formatoptions+=j " When joining lines, remove the comment leader when it makes sense.
     " set formatoptions+=p " Don't break lines at single spaces that follow periods.
 " endif
-augroup TextWidth
+augroup TextFormat
     autocmd!
     " autocmd FileType c,cpp setlocal formatprg=clang-format\ --style=Mozilla
     autocmd FileType c,cpp setlocal formatprg=clang-format
@@ -373,7 +373,9 @@ set statusline+=%{getcwd()}                     " The path of vim.
 set statusline+=\ -\                            " Separator
 set statusline+=%{FugitiveStatusline()}         " Add the git branch name.
 set statusline+=\ -\                            " Separator
-set statusline+=%3{codeium#GetStatusString()}   " Add Codeium suggestions
+if g:codeium_enabled
+    set statusline+=%3{codeium#GetStatusString()}   " Add Codeium suggestions
+endif
 set statusline+=%=                              " Move the rest of the line to the left side.
 set statusline+=%l                              " Current line number
 set statusline+=/                               " Separator
@@ -507,6 +509,10 @@ function! TabIs2()
     set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 endfunction
 command! TabIs2 call TabIs2()
+function! TabIs4()
+    set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+endfunction
+command! TabIs4 call TabIs4()
 
 " colorcolumn options {{{
 " set-colorcolumn
@@ -519,10 +525,16 @@ nnoremap <leader>rcc :exec 'set colorcolumn-=' . col('.')
 
 function! ToggleTextWidth()
     if &textwidth == 0
+        Wrapwidth 0
         set textwidth=79
+        set nowrap
     else
         set textwidth=0
+        set wrap
+        Wrapwidth 79
     endif
 endfunction
 command! ToggleTextWidth call ToggleTextWidth()
 nnoremap <leader>ttw :ToggleTextWidth<CR>
+
+command! Lcdc lcd %:h

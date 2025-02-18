@@ -47,6 +47,6 @@ popd
 
 echo "Installing YouCompleteMe"
 pushd ~/.vim/bundle/youcompleteme
-sudo apt install default-jre npm golang
+sudo apt install default-jre npm golang python3-dev
 python3 install.py --clangd-completer --all --verbose
 popd
