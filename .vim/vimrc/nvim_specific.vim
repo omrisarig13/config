@@ -16,3 +16,14 @@ let g:ale_fixers = {
 " let g:ale_open_list = 1
 let g:ale_c_clangformat_options = '--style=file'
 " TODO: Move it from here.}}}
+
+" Unused providers {{{
+let g:loaded_perl_provider = 0
+let g:loaded_ruby_provider = 0
+" Unused providers }}}
+
+" Unwanted key mappings {{{
+" We use inkarkat/vim-ReplaceWithRegister and prefer to use the `gr<inside>`
+" motion.
+nunmap gri
+" Unwanted key mappings }}}

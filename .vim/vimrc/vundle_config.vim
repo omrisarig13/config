@@ -230,7 +230,10 @@ endif
 if g:codeium_enabled
     Plugin 'Exafunction/codeium.vim'
 endif
-Plugin 'CoderCookE/vim-chatgpt'
+if has('nvim')
+else
+    Plugin 'CoderCookE/vim-chatgpt'
+endif
 "Plugin 'rdnetto/YCM-Generator'
 "Plugin 'davits/dyevim'
 " TODO: Understand why it is not working and try to fix it.

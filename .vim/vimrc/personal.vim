@@ -34,6 +34,7 @@ set updatetime=100 " Set the update time to be very fast, instead of vim's 4 sec
 set wildignorecase " Better completion for the `e` command
 set fileformats=unix " Make vim read all files as Unix, making windows line ending visible.
 set linebreak " When wrapping, don't cut words in the middle.
+set mouse= " Disable mouse from working.
 " }}}
 
 " Set the splitting of new files to be below and right to the current file. {{{
@@ -414,45 +415,48 @@ nnoremap <leader>st :call GetTranslation("")<cr>
 " Translate }}}
 
 " Cscope Config {{{
-" TODO: Change the creation of new databases to be in the root directory of the
-" project, and not in the current location. Should be done after adding a plugin
-" that would find out the base repository project.
-" Options {{{
-set cscopeprg=/usr/bin/cscope
-set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
-set cscopeverbose
-let g:cscope_silent = 1
-" }}}
-" Load the cscope in the when openning a c file. {{{
-function! InitCscope()
-    if has("cscope")
-        set csto=0
-        set cst
-        set nocsverb
-        " add any database in current directory
-        if filereadable("cscope.out")
-            cs add cscope.out
-        " else add database pointed to by environment
-        elseif $CSCOPE_DB != ""
-            cs add $CSCOPE_DB
+if has('nvim')
+else
+    " TODO: Change the creation of new databases to be in the root directory of the
+    " project, and not in the current location. Should be done after adding a plugin
+    " that would find out the base repository project.
+    " Options {{{
+    set cscopeprg=/usr/bin/cscope
+    set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
+    set cscopeverbose
+    let g:cscope_silent = 1
+    " }}}
+    " Load the cscope in the when openning a c file. {{{
+    function! InitCscope()
+        if has("cscope")
+            set csto=0
+            set cst
+            set nocsverb
+            " add any database in current directory
+            if filereadable("cscope.out")
+                cs add cscope.out
+            " else add database pointed to by environment
+            elseif $CSCOPE_DB != ""
+                cs add $CSCOPE_DB
+            endif
+            set csverb
         endif
-        set csverb
-    endif
-endfunction
-augroup CscopeAuto
-    autocmd!
-    autocmd Filetype c,cpp,h :call InitCscope()
-augroup END
-" }}}
-" Custom commands {{{
-" Create a new cscope database, and add it to the current instance of vim. {{{
-function! CreateCscope()
-    execute "!cscope -b *.c *.h */*.c */*.h */*/*.c */*/*.h /usr/include/*.h /usr/include/*/*.h /usr/include/*/*/*.h /usr/include/*/*/*/*.h /usr/include/*/*/*/*/*.h /usr/include/*/*/*/*/*.h"
-    cscope add cscope.out
-endfunction
-" }}}
-nnoremap <leader>nb :call CreateCscope()<CR>
-" }}}
+    endfunction
+    augroup CscopeAuto
+        autocmd!
+        autocmd Filetype c,cpp,h :call InitCscope()
+    augroup END
+    " }}}
+    " Custom commands {{{
+    " Create a new cscope database, and add it to the current instance of vim. {{{
+    function! CreateCscope()
+        execute "!cscope -b *.c *.h */*.c */*.h */*/*.c */*/*.h /usr/include/*.h /usr/include/*/*.h /usr/include/*/*/*.h /usr/include/*/*/*/*.h /usr/include/*/*/*/*/*.h /usr/include/*/*/*/*/*.h"
+        cscope add cscope.out
+    endfunction
+    " }}}
+    nnoremap <leader>nb :call CreateCscope()<CR>
+    " }}}
+endif
 " }}}
 
 " For recursive macros, a test {{{

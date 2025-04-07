@@ -13,9 +13,9 @@ let NERDUsePlaceHolders=0
 
 " EasyMotion Config. {{{
 map <leader>f <Plug>(easymotion-prefix)
-nmap <leader>fwf <Plug>(easymotion-overwin-f)
-nmap <leader>fwj <Plug>(easymotion-overwin-line)
-nmap <leader>fww <Plug>(easymotion-overwin-w)
+nmap <leader><leader>ff <Plug>(easymotion-overwin-f)
+nmap <leader><leader>fl <Plug>(easymotion-overwin-line)
+nmap <leader><leader>fw <Plug>(easymotion-overwin-w)
 nmap <leader>f_ <Plug>(easymotion-jumptoanywhere)
 nmap <leader>f; <Plug>(easymotion-repeat)
 " Set the easymotion keys to be more comfortable to my Dvorak keyboard layout.
@@ -257,15 +257,26 @@ endfunction
 augroup VimPrettier
     autocmd!
     autocmd BufWritePre *.md call PrettierIfSmall()
+    autocmd BufWritePre *.json Prettier
 augroup END
 " vim-prettier }}}
 
 " black {{{
 let g:black_linelength = 79
-augroup VimBlack
-    autocmd!
-    autocmd BufWritePre *.py Black
-augroup END
+function! ToggleBlack()
+    if !exists('#VimBlack#BufWritePre')
+        augroup VimBlack
+            autocmd!
+            autocmd BufWritePre *.py Black
+        augroup END
+    else
+        augroup VimBlack
+            autocmd!
+        augroup END
+    endif
+endfunction
+call ToggleBlack()
+command! ToggleBlack :call ToggleBlack()
 " black }}}
 
 " Fzf Config {{{
@@ -571,8 +582,8 @@ let g:autopep8_on_save = 0
 if g:codeium_enabled
     let g:codeium_disable_bindings = 1
     imap <script><silent><nowait><expr> <Tab> codeium#Accept()
-    " imap <C-n>   <Cmd>call codeium#CycleCompletions(1)<CR>
-    " imap <C-p>   <Cmd>call codeium#CycleCompletions(-1)<CR>
+    imap <C-l>   <Cmd>call codeium#CycleCompletions(1)<CR>
+    imap <C-b>   <Cmd>call codeium#CycleCompletions(-1)<CR>
     imap <C-x>   <Cmd>call codeium#Clear()<CR>
 endif
 " codeium.vim }}}
