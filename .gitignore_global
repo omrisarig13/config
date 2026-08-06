@@ -1,0 +1,10 @@
+compile_commands/
+.factorypath
+.classpath
+.project
+.settings/
+.vale.ini
+.vale_styles/
+.gerrit.nvim
+commit_msg.txt
+nul

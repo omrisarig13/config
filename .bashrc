@@ -1,10 +1,17 @@
+#!/bin/bash
 #
 # ~/.bashrc
 #
 alias mvim="vim"
 alias vimm="vim"
-export VISUAL="vim"
+# alias vi="knvim"
+export VISUAL='nvim'
 export EDITOR="$VISUAL"
+
+export NIX_PATH="nixpkgs=https://nixos.org/channels/nixpkgs-unstable/nixexprs.tar.xz"
+# export NIX_PATH="nixpkgs=https://github.com/NixOS/nixpkgs/archive/refs/heads/release-25.11.tar.gz"
+export PATH="$HOME/.nix-profile/bin:$PATH"
+# export NIX_CACHE_HOME="/scratch/nix/cache"
 
 alias ls="ls --color"
 alias ll="ls -la --color"
@@ -36,13 +43,11 @@ alias :qa="exit"
 alias :w=
 alias :wa=
 
-alias potion="~/Projects/vim/potion/bin/potion"
-
 alias python=python3
 alias pip=pip3
 
 # Some custom commands
-alias learn_vim="mvim -u ~/Projects/mvim/vimrc"
+alias learn_vim="mvim -u \$HOME/Projects/mvim/vimrc"
 alias cmak="cmake"
 alias camke="cmake"
 alias amke="make"
@@ -59,10 +64,100 @@ alias mount-omsa='sudo mount -o uid=omsa,gid=omsa'
 
 [[ $- != *i* ]] && return
 
+[[ -f "$HOME/.extend.bashrc" ]] && . "$HOME/.extend.bashrc"
+
+[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
+
+# Function to source a file with optional warning
+source_if_exists() {
+    local file="$1"
+    local description="$2"
+
+    if [[ -f "$file" ]]; then
+        . "$file"
+    else
+        echo "Warning: No $description configured"
+    fi
+}
+
+# Add git data
+source_if_exists "$HOME/.config/git/git-prompt.sh" "git prompt"
+source_if_exists "$HOME/.config/personal/bin/bashmarks.sh" "bashmarks"
+export PATH="${PATH}:$HOME/.config/git/git-extra-commands/bin"
+
+# Timer for command execution
+timer_start() {
+    timer=${timer:-$(date +%s%3N)}
+}
+
+timer_stop() {
+    local end_time
+    local elapsed
+    local seconds
+    local ms
+    end_time=$(date +%s%3N)
+    elapsed=$((end_time - timer))
+    seconds=$((elapsed / 1000))
+    ms=$((elapsed % 1000))
+    timer_show=$(printf "%d.%03d" $seconds $ms)
+    unset timer
+}
+
+trap 'timer_start' DEBUG
+
+export GIT_PS1_SHOWCONFLICTSTATE="yes"
+export GIT_PS1_DESCRIBE_STYLE="branch"
+PROMPT_COMMAND='timer_stop'
+PS1='\[\033[1;31m\][${timer_show}] \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[35m\]\w\[\033[m\]\[\033[36m\]$(__git_ps1 " (%s)")\[\033[00m\] \n$ '
+
+bind "set completion-ignore-case on"
+bind "set show-all-if-ambiguous on"
+set -o vi
+bind -m vi-insert "\C-l":clear-screen
+bind '"hh":vi-movement-mode'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export LIBGPHOTO2_INSTALL_PATH=$HOME/.local
+
+shopt -s cdspell
+
+fortune | cowsay -f tux
+
+export PATH="${PATH}:/home/omsi/Programs/nvim-0.11.5/bin"
+export PATH="${PATH}:/home/omsi/Programs/ripgrep-14.1.1-x86_64-unknown-linux-musl/"
+# I did not run make install on that, maybe worth doing at some point later.
+export PATH="${PATH}:/home/omsi/Programs/gettext-0.25/gettext-tools/src/"
+export PATH="/home/omsi/Programs/:${PATH}"
+export PATH="/home/omsi/Programs/jdk-24.0.1/bin/:${PATH}"
+export PATH="${PATH}:/home/omsi/.cargo/bin"
+alias knvim='NVIM_APPNAME="nvim-kickstart" nvim'
+alias tvim='NVIM_APPNAME="nvim-v012" nvim'
+alias nvim-ai='NVIM_APPNAME="nvim-copilot" nvim'
+alias knvimf='NVIM_APPNAME="nvim-kickstart" nvim $(fzf)'
+
+alias groot='cd "$(git rev-parse --show-toplevel)"'
+alias groot2='groot ; cd .. ; groot'
+alias groot3='groot ; cd .. ; groot ; cd .. ; groot'
+
+export PATH="$HOME/.local/bin:$PATH"
+export NOTES_DIR=/home/omsi/Projects/notes
+
+# [ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
+
+# MANPATH is being later on overridden by CHEN scripts - so instead of fighting
+# with this script, simply override the `man` command to prefix it with my own
+# manpath
+man() {
+    MANPATH="$MY_MANPATH:$MANPATH" command man "$@"
+}
+
 colors() {
 	local fgc bgc vals seq0
 
-	printf "Color escapes are %s\n" '\e[${value};...;${value}m'
+	printf "Color escapes are %s\n" "\e[\${value};...;\${value}m"
 	printf "Values 30..37 are \e[33mforeground colors\e[m\n"
 	printf "Values 40..47 are \e[43mbackground colors\e[m\n"
 	printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"
@@ -86,51 +181,8 @@ colors() {
 	done
 }
 
-[[ -f ~/.extend.bashrc ]] && . ~/.extend.bashrc
+eval $(ssh-agent -s) >/dev/null
+ssh-add $HOME/.ssh/id_rsa >/dev/null 2>/dev/null
+ssh-add $HOME/.ssh/id_ed25519 >/dev/null 2>/dev/null
 
-[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
-
-# Complete Yocto commands
-# [[ -f ~/.config/yocto-completion/yocto_completion.sh ]] && . ~/.config/yocto-completion/yocto_completion.sh
-# [[ -f ~/.config/yocto-completion/yocto_completion.sh ]] || echo "Warning: No yocto-completion configured"
-
-# Add git data
-[[ -f ~/.config/git/completion.sh ]] && . ~/.config/git/completion.sh
-[[ -f ~/.config/git/completion.sh ]] || echo "Warning: No git completion configured"
-export PATH="${PATH}:/home/omsa/.config/git/git-extra-commands/bin"
-[[ -f ~/.local/bin/bashmarks.sh ]] && . ~/.local/bin/bashmarks.sh
-[[ -f ~/.local/bin/bashmarks.sh ]] || echo "Warning: No bashmarks configured"
-
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-PS1="\[\033[1;35m\]\D{} \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[35m\]\w\[\033[m\]\[\033[36m\]\$(parse_git_branch)\[\033[00m\] \n$ "
-
-bind "set completion-ignore-case on"
-bind "set show-all-if-ambiguous on"
-set -o vi
-bind -m vi-insert "\C-l":clear-screen
-bind '"hh":vi-movement-mode'
-
-expor=/usr/share/doc/python2/html/
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export LIBGPHOTO2_INSTALL_PATH=~/.local
-
-shopt -s cdspell
-
-fortune | cowsay -f tux
-export PATH="$PATH:/home/omsa/Downloads/010editor" #ADDED BY 010 EDITOR
-
-alias sdk_enter_ddau3="source /home/yocto/Projects/PIL/DDAU3/sdk/environment-setup-cortexa9t2hf-neon-oe-linux-gnueabi && PS1='\[\033[1;35m\][DDAU3 SDK] \[\033[1;35m\]\D{} \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\[\033[36m\]\$(parse_git_branch)\033[00m\] $ '"
-alias sdk_enter_photonics="source /home/omsa/Projects/PIL/Photonics/yocto/sdk/environment-setup-cortexa72-oe-linux && PS1='\[\033[1;35m\][PHOTINCS SDK] \[\033[1;35m\]\D{} \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\[\033[36m\]\$(parse_git_branch)\033[00m\] $ '"
-
-alias prevas-vpn="OPENSSL_CONF=${HOME}/.config/openconnect-sso/openssl.cnf QTWEBENGINE_DISABLE_SANDBOX=1 openconnect-sso"
-
-alias pil-ssh="ssh -i ~/.ssh/keys/pil-dev-key"
-alias pil-scp="scp -i ~/.ssh/keys/pil-dev-key"
-
+# vim: ft=bash

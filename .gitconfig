@@ -1,40 +1,67 @@
 [user]
-	email = omri.sarig@prevas.dk
+	email = omri.sarig13@gmail.com
 	name = Omri Sarig
 [alias]
 	fetch-all = fetch --all --prune
+	s = status
 	branches = branch -l
 	all-branches = branch -a
 	safe-pull = merge --ff-only
 	full-log = log --all --graph
 	full-short-log = log --all --graph --oneline
+	fl = log --all --graph --oneline
+	l = log --oneline --format='%C(yellow)%h%C(reset) %C(blue)%cd%C(reset) %C(green)%an%C(reset): %C(white)%s%C(reset)%C(auto)%d%C(reset)' --graph --all
+	clog = log --oneline --format='%C(yellow)%h%C(reset) %C(blue)%cd%C(reset) %C(green)%an%C(reset): %C(white)%s%C(reset)%C(auto)%d%C(reset)' --graph
+	short-log = log --graph --oneline
 	cdiff = diff --cached
 	amend = commit --amend --no-edit
 	push-amended = push --force-with-lease
 	submodule-diff = '!'"git diff && git submodule foreach 'git diff'"
 	submodule-update = 'submodule update --remote --merge'
 	cdiff = "!f() { git range-diff ${1}~1..${1} ${2}~1..${2}; }; f"
+	my-branches = "!git branch && git branch -r | grep omsi"
+	remove-gerrit-branches = "!git branch | grep '^[[:space:]]*change-' | xargs -r git branch -D"
+	pmaster = "push origin HEAD:refs/for/master"
+	pgen9 = "push origin HEAD:refs/for/gen_9.0"
+	name = rev-parse --short
+	my-name = rev-parse --short HEAD
+	conflict-history = !$(git rev-parse --show-toplevel)/tools/scripts/git_merges/git-conflict-history
+	qm-cleanup = !$(git rev-parse --show-toplevel)/tools/scripts/git_merges/git-qm-cleanup
+	qm-create-final-merge-branch = !$(git rev-parse --show-toplevel)/tools/scripts/git_merges/git-qm-create-final-merge-branch
+	qm-create-merge-commit = !$(git rev-parse --show-toplevel)/tools/scripts/git_merges/git-qm-create-merge-commit
+	qm-daily = !$(git rev-parse --show-toplevel)/tools/scripts/git_merges/git-qm-daily
+	qm-start = !$(git rev-parse --show-toplevel)/tools/scripts/git_merges/git-qm-start
+	cherry-diff = "!f() { git range-diff \"$1^..$1\" \"$2^..$2\"; }; f"
+	generate-gerrit-id = "!f() { if git rev-parse --verify HEAD >/dev/null 2>&1; then refhash=$(git rev-parse HEAD); else refhash=$(git hash-object -t tree /dev/null); fi; random=$({ git var GIT_COMMITTER_IDENT; echo \"$refhash\"; } | git hash-object --stdin); echo \"Change-Id: I$random\"; }; f"
+	my-commit = "!f() { git commit -m \"$(cat commit_msg.txt | git stripspace --strip-comments)\" ; }; f"
+	submit = "!f() { git fetch && git rebase --autostash \"origin/$1\" && git push origin \"HEAD:refs/for/$1\"; }; f"
 [merge]
 	tool = vimdiff
+	conflictStyle = zdiff3
 [cinnabar]
 	version-check = 1586350839
 	helper = /home/omri/.mozbuild/git-cinnabar/git-cinnabar-helper
+[difftool "nvim_difftool"]
+	cmd = NVIM_APPNAME=\"nvim-v012\" nvim -c \"packadd nvim.difftool\" -d \"$LOCAL\" \"$REMOTE\"
 [diff]
 	submodule = log
+	tool = nvim_difftool
 [safe]
 	directory = *
 [submodule]
-	recurse = True
+	recurse = False
 [push]
 	recurseSubmodules = check
 [init]
 	defaultBranch = main
 [core]
 	autocrlf = input
+	excludesfiles = /home/omsi/.config/personal/.gitignore_global
+	excludesFile = /home/omsi/.config/personal/.gitignore_global
 [pull]
 	ff = only
 [format]
-	signature = 
+	signature =
 [sendemail]
     smtpServer = smtp.gmail.com
     smtpServerPort = 587
@@ -42,3 +69,14 @@
     smtpUser = omri.sarig13@gmail.com
 [credential]
     helper = store
+[rerere]
+	enabled = true
+[commit]
+	verbose = true
+[stash]
+	showPatch = true
+[url "https://github.com/"]
+	insteadOf = gh:
+[log]
+	date = format-local:%Y-%m-%d_%H:%M
+	; date = local
