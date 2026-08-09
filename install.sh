@@ -4,9 +4,6 @@ echo "Warning: This was not tested yet"
 
 CURRENT_PATH=`pwd`
 
-echo "Installing must have utilities"
-#sudo apt install git vim tmux cowsay fortune-mod fortunes cmake
-
 echo "Creating symbolic links to config files."
 echo "Old config files are backed up."
 [[ -f ~/.tmux.conf ]] && mv ~/.tmux.conf ~/.tmux.conf_back
@@ -17,6 +14,13 @@ ln -s $CURRENT_PATH/nvim ~/.config/nvim
 ln -s $CURRENT_PATH/home.nix ~/.config/home-manager/
 [[ -f ~/.config/git/config ]] && mv ~/.config/git/config ~/.config/git/config_back
 ln -s $CURRENT_PATH/git_config ~/.config/git/config
+[[ -f ~/.config/git/git-prompt.sh ]] && mv ~/.config/git/git-prompt.sh ~/.config/git/git-prompt.sh_back
+ln -s $CURRENT_PATH/git-prompt.sh ~/.config/git/git-prompt.sh
+
+rm -r ~/.fonts
+mkdir -p ~/.fonts/
+ln -s $CURRENT_PATH/fonts/Hack/*.ttf ~/.fonts/
+fc-cache -fv
 
 echo "Adding bashmarks"
 mkdir -p ~/.local/bin
@@ -31,3 +35,5 @@ git clone https://github.com/unixorn/git-extra-commands.git
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 mv git-completion.bash completion.sh
 popd
+
+home-manager switch -b backup

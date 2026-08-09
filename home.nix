@@ -33,6 +33,10 @@ in
     pkgs.fortune
     pkgs.nodejs
 
+    pkgs.btop
+    pkgs.htop
+    pkgs.home-manager
+
     pkgs.fd
 
     pkgs.just

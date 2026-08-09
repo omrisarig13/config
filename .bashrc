@@ -87,19 +87,15 @@ export PATH="${PATH}:$HOME/.config/git/git-extra-commands/bin"
 
 # Timer for command execution
 timer_start() {
-    timer=${timer:-$(date +%s%3N)}
+    timer=${timer:-$(date +%s)}
 }
 
 timer_stop() {
     local end_time
     local elapsed
-    local seconds
-    local ms
-    end_time=$(date +%s%3N)
+    end_time=$(date +%s)
     elapsed=$((end_time - timer))
-    seconds=$((elapsed / 1000))
-    ms=$((elapsed % 1000))
-    timer_show=$(printf "%d.%03d" $seconds $ms)
+    timer_show=$(printf "%d" $elapsed)
     unset timer
 }
 

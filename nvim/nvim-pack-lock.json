@@ -10,11 +10,6 @@
       "src": "gh:aaronhallaert/advanced-git-search.nvim",
       "version": "'main'"
     },
-    "blink-copilot": {
-      "rev": "7ad8209b2f880a2840c94cdcd80ab4dc511d4f39",
-      "src": "gh:fang2hou/blink-copilot",
-      "version": "'main'"
-    },
     "blink.cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "gh:saghen/blink.cmp",
@@ -30,18 +25,13 @@
       "src": "gh:github/copilot.vim",
       "version": "'release'"
     },
-    "demant.nvim": {
-      "rev": "03da068a2510feef6949c8c4a0e2fd7b23f66c27",
-      "src": "ssh://git@gitlab.ci.demant.com:42022/csfw/tools/neovim/demant.nvim.git",
-      "version": "'main'"
-    },
     "diffview.nvim": {
-      "rev": "276d8a79bd90aece4960cf8bcf292cc7a35a4f57",
+      "rev": "62dc5adf4e77489a2a6d3bf36ef6e4ac5738b634",
       "src": "gh:dlyongemallo/diffview.nvim",
       "version": "'main'"
     },
     "flash.nvim": {
-      "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
+      "rev": "b6346946d10d07998efee029fb0f7a593806d0cd",
       "src": "gh:folke/flash.nvim",
       "version": "'main'"
     },
@@ -50,18 +40,8 @@
       "src": "gh:rafamadriz/friendly-snippets",
       "version": "'main'"
     },
-    "gerrit-blame.nvim": {
-      "rev": "de9d6f08efd76b29a29b55f976085455c777499c",
-      "src": "gh:omrisarig13/gerrit-blame.nvim",
-      "version": "'main'"
-    },
-    "gerrit.nvim": {
-      "rev": "48c69e346c3e07c02bbf2e65a3a0715af6ce1f58",
-      "src": "ssh://git@gitlab.ci.demant.com/csfw/tools/neovim/gerrit.nvim.git",
-      "version": "'main'"
-    },
     "gitsigns.nvim": {
-      "rev": "25050e4ed39e628282831d4cbecb1850454ce915",
+      "rev": "31d6fb2d618bca1482b9f274751ead5f03461408",
       "src": "gh:lewis6991/gitsigns.nvim",
       "version": "'main'"
     },
@@ -81,17 +61,17 @@
       "version": "'master'"
     },
     "mini.nvim": {
-      "rev": "ff8b3580935818ef2f21bdd651f057a2ae071eab",
+      "rev": "8cef23520832134c05e4524e49f0468623501053",
       "src": "gh:echasnovski/mini.nvim",
       "version": "'main'"
     },
     "nvim": {
-      "rev": "0303a7208dba448c459767486a38a6ec05c4216b",
+      "rev": "79e2049a0fdf7ec840f8463fe1d962c94493196b",
       "src": "gh:catppuccin/nvim",
       "version": "'main'"
     },
     "nvim-lspconfig": {
-      "rev": "229b79051b380377664edc4cbd534930154921a1",
+      "rev": "43ed3797b266e1ee8d222e491379ad471c9d3146",
       "src": "gh:neovim/nvim-lspconfig",
       "version": "'master'"
     },
@@ -106,17 +86,17 @@
       "version": "'master'"
     },
     "nvim-treesitter": {
-      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "rev": "3d3321b560a63ff92a8692401f303a5123336b86",
       "src": "gh:nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
     "nvim-web-devicons": {
-      "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
+      "rev": "2ae6958df7ced50baac5035cec0c15799eedfbf7",
       "src": "gh:nvim-tree/nvim-web-devicons",
       "version": "'master'"
     },
     "pickme.nvim": {
-      "rev": "3bfd63fa0a1fa362afc9dfa86b83100e75903e6b",
+      "rev": "80a2540cda81be76c8c80b47dc37f87738ddf696",
       "src": "gh:2kabhishek/pickme.nvim",
       "version": "'main'"
     },
@@ -151,7 +131,7 @@
       "version": "'main'"
     },
     "telescope.nvim": {
-      "rev": "7d324792b7943e4aa16ad007212e6acc6f9fe335",
+      "rev": "427b576c16792edad01a92b89721d923c19ad60f",
       "src": "gh:nvim-telescope/telescope.nvim",
       "version": "'master'"
     },
@@ -171,7 +151,7 @@
       "version": "'master'"
     },
     "vim-flog": {
-      "rev": "665b16ac8915f746bc43c9572b4581a5e9047216",
+      "rev": "676198e8d43b3eef380b01aea2535826574fba28",
       "src": "gh:rbong/vim-flog",
       "version": "'master'"
     },
