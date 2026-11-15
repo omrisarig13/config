@@ -181,4 +181,6 @@ eval $(ssh-agent -s) >/dev/null
 ssh-add $HOME/.ssh/id_rsa >/dev/null 2>/dev/null
 ssh-add $HOME/.ssh/id_ed25519 >/dev/null 2>/dev/null
 
+eval $(oh-my-posh init bash --config ~/.config/personal/oh-my-posh.json)
+
 # vim: ft=bash

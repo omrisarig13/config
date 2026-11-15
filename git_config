@@ -1,3 +1,5 @@
 [include]
 	path = "~/.config/personal/.gitconfig"
 
+[sendemail]
+	smtppass = ulnjtutuvrfqykgk

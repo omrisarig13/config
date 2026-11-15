@@ -41,10 +41,10 @@ in
 
     pkgs.just
 
-    pkgs.python314
-    pkgs.python314Packages.pip
-    pkgs.python314Packages.restructuredtext-lint
-    pkgs.python314Packages.ipython
+    # pkgs.python314
+    # pkgs.python314Packages.pip
+    # pkgs.python314Packages.restructuredtext-lint
+    # pkgs.python314Packages.ipython
 
     pkgs.lua
     pkgs.lua55Packages.tree-sitter-cli
@@ -64,6 +64,23 @@ in
     pkgs.nixfmt
     pkgs.shfmt
     pkgs.shellcheck
+    pkgs.delta
+
+    pkgs.silver-searcher-ng
+    pkgs.ripgrep
+
+    # Git Development
+    # pkgs.perl
+    # pkgs.curl
+    # pkgs.expat
+    # pkgs.gettext
+    # pkgs.asciidoc
+    # pkgs.xmlto
+    # pkgs.autoconf
+    # pkgs.clang
+    pkgs.b4
+
+    pkgs.oh-my-posh
 
     # pkgs.github-copilot-cli - Not currently working...
 

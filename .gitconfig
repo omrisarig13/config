@@ -56,8 +56,11 @@
 	defaultBranch = main
 [core]
 	autocrlf = input
-	excludesfiles = /home/omsi/.config/personal/.gitignore_global
-	excludesFile = /home/omsi/.config/personal/.gitignore_global
+	pager = delta
+	excludesfiles = /home/omri/.config/personal/.gitignore_global
+	excludesFile = /home/omri/.config/personal/.gitignore_global
+[delta]
+	side-by-side = true
 [pull]
 	ff = only
 [format]

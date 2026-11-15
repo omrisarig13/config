@@ -1,0 +1,83 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "version": 2,
+    "final_space": true,
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "type": "executiontime",
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "trailing_diamond": " ",
+                    "background": "#ff0055",
+                    "foreground": "#ffffff",
+                    "template": " {{ .FormattedMs }}",
+                    "properties": {
+                        "always_enabled": true,
+                        "threshold": 0,
+                        "style": "austin"
+                    }
+                },
+                {
+                    "type": "session",
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "trailing_diamond": " ",
+                    "background": "#0066ff",
+                    "foreground": "#ffffff",
+                    "template": " {{ .UserName }}@{{ .HostName }}"
+                },
+                {
+                    "type": "path",
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "trailing_diamond": " ",
+                    "background": "#9d00ff",
+                    "foreground": "#ffffff",
+                    "template": " {{ .Path }}",
+                    "properties": {
+                        "style": "full"
+                    }
+                },
+                {
+                    "type": "git",
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "trailing_diamond": "",
+                    "background": "#00ff87",
+                    "background_templates": [
+                        "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffaa00{{ end }}"
+                    ],
+                    "foreground": "#0a0a0f",
+                    "template": " {{ .HEAD }} {{ if or (.Working.Changed) (.Staging.Changed) }}●{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ else }}✓{{ end }}",
+                    "properties": {
+                        "fetch_status": true
+                    }
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "type": "status",
+                    "style": "plain",
+                    "foreground": "#00ff87",
+                    "foreground_templates": [
+                        "{{ if gt .Code 0 }}#ff0055{{ end }}"
+                    ],
+                    "template": "$",
+                    "properties": {
+                        "always_enabled": true
+                    }
+                }
+            ]
+        }
+    ]
+}
